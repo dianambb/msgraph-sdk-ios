@@ -89,6 +89,17 @@
     return [[self messages] message:message];
 }
 
+- (MSGraphUserJoinedGroupsCollectionRequestBuilder *)joinedGroups
+{
+    return [[MSGraphUserJoinedGroupsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"joinedGroups"]  
+                                                                         client:self.client];
+}
+
+- (MSGraphGroupRequestBuilder *)joinedGroups:(NSString *)group
+{
+    return [[self joinedGroups] group:group];
+}
+
 - (MSGraphUserMailFoldersCollectionRequestBuilder *)mailFolders
 {
     return [[MSGraphUserMailFoldersCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"mailFolders"]  
@@ -150,6 +161,17 @@
     return [[self events] event:event];
 }
 
+- (MSGraphUserPeopleCollectionRequestBuilder *)people
+{
+    return [[MSGraphUserPeopleCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"people"]  
+                                                                   client:self.client];
+}
+
+- (MSGraphPersonRequestBuilder *)people:(NSString *)person
+{
+    return [[self people] person:person];
+}
+
 - (MSGraphUserContactsCollectionRequestBuilder *)contacts
 {
     return [[MSGraphUserContactsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"contacts"]  
@@ -172,15 +194,88 @@
     return [[self contactFolders] contactFolder:contactFolder];
 }
 
+-(MSGraphInferenceClassificationRequestBuilder *)inferenceClassification
+{
+    return [[MSGraphInferenceClassificationRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"inferenceClassification"] client:self.client];
+
+}
+
 -(MSGraphProfilePhotoRequestBuilder *)photo
 {
     return [[MSGraphProfilePhotoRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"photo"] client:self.client];
 
 }
 
+- (MSGraphUserPhotosCollectionRequestBuilder *)photos
+{
+    return [[MSGraphUserPhotosCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"photos"]  
+                                                                   client:self.client];
+}
+
+- (MSGraphProfilePhotoRequestBuilder *)photos:(NSString *)profilePhoto
+{
+    return [[self photos] profilePhoto:profilePhoto];
+}
+
 -(MSGraphDriveRequestBuilder *)drive
 {
     return [[MSGraphDriveRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"drive"] client:self.client];
+
+}
+
+-(MSGraphOfficeGraphInsightsRequestBuilder *)insights
+{
+    return [[MSGraphOfficeGraphInsightsRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"insights"] client:self.client];
+
+}
+
+- (MSGraphUserTrendingAroundCollectionRequestBuilder *)trendingAround
+{
+    return [[MSGraphUserTrendingAroundCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"trendingAround"]  
+                                                                           client:self.client];
+}
+
+- (MSGraphDriveItemRequestBuilder *)trendingAround:(NSString *)driveItem
+{
+    return [[self trendingAround] driveItem:driveItem];
+}
+
+- (MSGraphUserWorkingWithCollectionRequestBuilder *)workingWith
+{
+    return [[MSGraphUserWorkingWithCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"workingWith"]  
+                                                                        client:self.client];
+}
+
+- (MSGraphUserRequestBuilder *)workingWith:(NSString *)user
+{
+    return [[self workingWith] user:user];
+}
+
+- (MSGraphUserTasksCollectionWithReferencesRequestBuilder *)tasks
+{
+    return [[MSGraphUserTasksCollectionWithReferencesRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"tasks"]  
+                                                                                client:self.client];
+}
+
+- (MSGraphTaskRequestBuilder *)tasks:(NSString *)task
+{
+    return [[self tasks] task:task];
+}
+
+- (MSGraphUserPlansCollectionWithReferencesRequestBuilder *)plans
+{
+    return [[MSGraphUserPlansCollectionWithReferencesRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"plans"]  
+                                                                                client:self.client];
+}
+
+- (MSGraphPlanRequestBuilder *)plans:(NSString *)plan
+{
+    return [[self plans] plan:plan];
+}
+
+-(MSGraphNotesRequestBuilder *)notes
+{
+    return [[MSGraphNotesRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"notes"] client:self.client];
 
 }
 
@@ -193,6 +288,17 @@
 - (MSGraphProfilePhotoStreamRequest *) photoValue
 {
     return [self photoValueWithOptions:nil];
+}
+
+- (MSGraphProfilePhotoStreamRequest *) photosValueWithOptions:(NSArray *)options
+{
+    NSURL *photosURL = [self.requestURL URLByAppendingPathComponent:@"photos/$value"];
+    return [[MSGraphProfilePhotoStreamRequest alloc] initWithURL:photosURL options:options client:self.client];
+}
+
+- (MSGraphProfilePhotoStreamRequest *) photosValue
+{
+    return [self photosValueWithOptions:nil];
 }
 
 - (MSGraphUserAssignLicenseRequestBuilder *)assignLicenseWithAddLicenses:(NSArray *)addLicenses removeLicenses:(NSArray *)removeLicenses 
@@ -224,6 +330,22 @@
                                                       saveToSentItems:saveToSentItems
                                                                   URL:actionURL
                                                                client:self.client];
+
+
+}
+
+- (MSGraphUserFindMeetingTimesRequestBuilder *)findMeetingTimesWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionHints:(BOOL)returnSuggestionHints 
+{
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.findMeetingTimes"];
+    return [[MSGraphUserFindMeetingTimesRequestBuilder alloc] initWithAttendees:attendees
+                                                             locationConstraint:locationConstraint
+                                                                 timeConstraint:timeConstraint
+                                                                meetingDuration:meetingDuration
+                                                                  maxCandidates:maxCandidates
+                                                            isOrganizerOptional:isOrganizerOptional
+                                                          returnSuggestionHints:returnSuggestionHints
+                                                                            URL:actionURL
+                                                                         client:self.client];
 
 
 }

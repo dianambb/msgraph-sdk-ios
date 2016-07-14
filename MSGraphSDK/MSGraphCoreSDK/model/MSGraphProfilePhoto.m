@@ -33,20 +33,24 @@
     _height = [self.dictionary[@"height"] intValue];
     return _height;
 }
+
 - (void) setHeight: (int32_t) val
 {
     _height = val;
     self.dictionary[@"height"] = @(val);
 }
+
 - (int32_t) width
 {
     _width = [self.dictionary[@"width"] intValue];
     return _width;
 }
+
 - (void) setWidth: (int32_t) val
 {
     _width = val;
     self.dictionary[@"width"] = @(val);
 }
+
 
 @end

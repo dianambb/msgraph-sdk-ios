@@ -11,12 +11,12 @@
 
 @interface MSGraphRecurrencePattern : MSObject
 
-	@property (nonatomic, setter=setType:, getter=type) MSGraphRecurrencePatternType* type;
-		@property (nonatomic, setter=setInterval:, getter=interval) int32_t interval;
-		@property (nonatomic, setter=setMonth:, getter=month) int32_t month;
-		@property (nonatomic, setter=setDayOfMonth:, getter=dayOfMonth) int32_t dayOfMonth;
-		@property (nonatomic, setter=setDaysOfWeek:, getter=daysOfWeek) NSArray* daysOfWeek;
-		@property (nonatomic, setter=setFirstDayOfWeek:, getter=firstDayOfWeek) MSGraphDayOfWeek* firstDayOfWeek;
-		@property (nonatomic, setter=setIndex:, getter=index) MSGraphWeekIndex* index;
-	
+@property (nullable, nonatomic, setter=setType:, getter=type) MSGraphRecurrencePatternType* type;
+@property (nonatomic, setter=setInterval:, getter=interval) int32_t interval;
+@property (nonatomic, setter=setMonth:, getter=month) int32_t month;
+@property (nonatomic, setter=setDayOfMonth:, getter=dayOfMonth) int32_t dayOfMonth;
+@property (nullable, nonatomic, setter=setDaysOfWeek:, getter=daysOfWeek) NSArray* daysOfWeek;
+@property (nullable, nonatomic, setter=setFirstDayOfWeek:, getter=firstDayOfWeek) MSGraphDayOfWeek* firstDayOfWeek;
+@property (nullable, nonatomic, setter=setIndex:, getter=index) MSGraphWeekIndex* index;
+
 @end

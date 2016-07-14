@@ -34,10 +34,12 @@
     }
     return _item;
 }
+
 - (void) setItem: (MSGraphOutlookItem*) val
 {
     _item = val;
     self.dictionary[@"item"] = val;
 }
+
 
 @end

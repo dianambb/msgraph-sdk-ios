@@ -15,7 +15,6 @@
 @interface MSGraphPatternedRecurrence()
 {
     MSGraphRecurrencePattern* _pattern;
-    MSGraphRecurrenceRange* _range;
 }
 @end
 
@@ -28,21 +27,11 @@
     }
     return _pattern;
 }
+
 - (void) setPattern: (MSGraphRecurrencePattern*) val
 {
     _pattern = val;
     self.dictionary[@"pattern"] = val;
 }
-- (MSGraphRecurrenceRange*) range
-{
-    if(!_range){
-        _range = [[MSGraphRecurrenceRange alloc] initWithDictionary: self.dictionary[@"range"]];
-    }
-    return _range;
-}
-- (void) setRange: (MSGraphRecurrenceRange*) val
-{
-    _range = val;
-    self.dictionary[@"range"] = val;
-}
+
 @end

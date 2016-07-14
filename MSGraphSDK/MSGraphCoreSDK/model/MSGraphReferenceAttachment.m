@@ -14,6 +14,12 @@
 
 @interface MSGraphReferenceAttachment()
 {
+    NSString* _sourceUrl;
+    MSGraphReferenceAttachmentProvider* _providerType;
+    NSString* _thumbnailUrl;
+    NSString* _previewUrl;
+    MSGraphReferenceAttachmentPermission* _permission;
+    BOOL _isFolder;
 }
 @end
 
@@ -26,5 +32,83 @@
     }
     return self;
 }
+- (NSString*) sourceUrl
+{
+    return self.dictionary[@"sourceUrl"];
+}
+
+- (void) setSourceUrl: (NSString*) val
+{
+    self.dictionary[@"sourceUrl"] = val;
+}
+
+- (MSGraphReferenceAttachmentProvider*) providerType
+{
+    if(!_providerType){
+        _providerType = [self.dictionary[@"providerType"] toMSGraphReferenceAttachmentProvider];
+    }
+    return _providerType;
+}
+
+- (void) setProviderType: (MSGraphReferenceAttachmentProvider*) val
+{
+    _providerType = val;
+    self.dictionary[@"providerType"] = val;
+}
+
+- (NSString*) thumbnailUrl
+{
+    if([[NSNull null] isEqual:self.dictionary[@"thumbnailUrl"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"thumbnailUrl"];
+}
+
+- (void) setThumbnailUrl: (NSString*) val
+{
+    self.dictionary[@"thumbnailUrl"] = val;
+}
+
+- (NSString*) previewUrl
+{
+    if([[NSNull null] isEqual:self.dictionary[@"previewUrl"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"previewUrl"];
+}
+
+- (void) setPreviewUrl: (NSString*) val
+{
+    self.dictionary[@"previewUrl"] = val;
+}
+
+- (MSGraphReferenceAttachmentPermission*) permission
+{
+    if(!_permission){
+        _permission = [self.dictionary[@"permission"] toMSGraphReferenceAttachmentPermission];
+    }
+    return _permission;
+}
+
+- (void) setPermission: (MSGraphReferenceAttachmentPermission*) val
+{
+    _permission = val;
+    self.dictionary[@"permission"] = val;
+}
+
+- (BOOL) isFolder
+{
+    _isFolder = [self.dictionary[@"isFolder"] boolValue];
+    return _isFolder;
+}
+
+- (void) setIsFolder: (BOOL) val
+{
+    _isFolder = val;
+    self.dictionary[@"isFolder"] = @(val);
+}
+
 
 @end

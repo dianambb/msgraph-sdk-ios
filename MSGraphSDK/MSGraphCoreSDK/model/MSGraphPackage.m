@@ -22,10 +22,16 @@
 
 - (NSString*) type
 {
+    if([[NSNull null] isEqual:self.dictionary[@"type"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"type"];
 }
+
 - (void) setType: (NSString*) val
 {
     self.dictionary[@"type"] = val;
 }
+
 @end

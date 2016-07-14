@@ -22,8 +22,11 @@
     NSString* _conversationThreadId;
     NSArray* _newParticipants;
     NSString* _conversationId;
+    NSArray* _extensions;
     MSGraphPost* _inReplyTo;
     NSArray* _attachments;
+    NSArray* _singleValueExtendedProperties;
+    NSArray* _multiValueExtendedProperties;
 }
 @end
 
@@ -43,11 +46,13 @@
     }
     return _body;
 }
+
 - (void) setBody: (MSGraphItemBody*) val
 {
     _body = val;
     self.dictionary[@"body"] = val;
 }
+
 - (NSDate*) receivedDateTime
 {
     if(!_receivedDateTime){
@@ -55,21 +60,25 @@
     }
     return _receivedDateTime;
 }
+
 - (void) setReceivedDateTime: (NSDate*) val
 {
     _receivedDateTime = val;
     self.dictionary[@"receivedDateTime"] = val;
 }
+
 - (BOOL) hasAttachments
 {
     _hasAttachments = [self.dictionary[@"hasAttachments"] boolValue];
     return _hasAttachments;
 }
+
 - (void) setHasAttachments: (BOOL) val
 {
     _hasAttachments = val;
     self.dictionary[@"hasAttachments"] = @(val);
 }
+
 - (MSGraphRecipient*) from
 {
     if(!_from){
@@ -77,11 +86,13 @@
     }
     return _from;
 }
+
 - (void) setFrom: (MSGraphRecipient*) val
 {
     _from = val;
     self.dictionary[@"from"] = val;
 }
+
 - (MSGraphRecipient*) sender
 {
     if(!_sender){
@@ -89,19 +100,27 @@
     }
     return _sender;
 }
+
 - (void) setSender: (MSGraphRecipient*) val
 {
     _sender = val;
     self.dictionary[@"sender"] = val;
 }
+
 - (NSString*) conversationThreadId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"conversationThreadId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"conversationThreadId"];
 }
+
 - (void) setConversationThreadId: (NSString*) val
 {
     self.dictionary[@"conversationThreadId"] = val;
 }
+
 - (NSArray*) getNewParticipants
 {
     if(!_newParticipants){
@@ -120,19 +139,52 @@
     }
     return _newParticipants;
 }
+
 - (void) setNewParticipants: (NSArray*) val
 {
     _newParticipants = val;
     self.dictionary[@"newParticipants"] = val;
 }
+
 - (NSString*) conversationId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"conversationId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"conversationId"];
 }
+
 - (void) setConversationId: (NSString*) val
 {
     self.dictionary[@"conversationId"] = val;
 }
+
+- (NSArray*) extensions
+{
+    if(!_extensions){
+        
+    NSMutableArray *extensionsResult = [NSMutableArray array];
+    NSArray *extensions = self.dictionary[@"extensions"];
+
+    if ([extensions isKindOfClass:[NSArray class]]){
+        for (id extension in extensions){
+            [extensionsResult addObject:[[MSGraphExtension alloc] initWithDictionary: extension]];
+        }
+    }
+
+    _extensions = extensionsResult;
+        
+    }
+    return _extensions;
+}
+
+- (void) setExtensions: (NSArray*) val
+{
+    _extensions = val;
+    self.dictionary[@"extensions"] = val;
+}
+
 - (MSGraphPost*) inReplyTo
 {
     if(!_inReplyTo){
@@ -140,11 +192,13 @@
     }
     return _inReplyTo;
 }
+
 - (void) setInReplyTo: (MSGraphPost*) val
 {
     _inReplyTo = val;
     self.dictionary[@"inReplyTo"] = val;
 }
+
 - (NSArray*) attachments
 {
     if(!_attachments){
@@ -163,10 +217,62 @@
     }
     return _attachments;
 }
+
 - (void) setAttachments: (NSArray*) val
 {
     _attachments = val;
     self.dictionary[@"attachments"] = val;
 }
+
+- (NSArray*) singleValueExtendedProperties
+{
+    if(!_singleValueExtendedProperties){
+        
+    NSMutableArray *singleValueExtendedPropertiesResult = [NSMutableArray array];
+    NSArray *singleValueExtendedProperties = self.dictionary[@"singleValueExtendedProperties"];
+
+    if ([singleValueExtendedProperties isKindOfClass:[NSArray class]]){
+        for (id singleValueLegacyExtendedProperty in singleValueExtendedProperties){
+            [singleValueExtendedPropertiesResult addObject:[[MSGraphSingleValueLegacyExtendedProperty alloc] initWithDictionary: singleValueLegacyExtendedProperty]];
+        }
+    }
+
+    _singleValueExtendedProperties = singleValueExtendedPropertiesResult;
+        
+    }
+    return _singleValueExtendedProperties;
+}
+
+- (void) setSingleValueExtendedProperties: (NSArray*) val
+{
+    _singleValueExtendedProperties = val;
+    self.dictionary[@"singleValueExtendedProperties"] = val;
+}
+
+- (NSArray*) multiValueExtendedProperties
+{
+    if(!_multiValueExtendedProperties){
+        
+    NSMutableArray *multiValueExtendedPropertiesResult = [NSMutableArray array];
+    NSArray *multiValueExtendedProperties = self.dictionary[@"multiValueExtendedProperties"];
+
+    if ([multiValueExtendedProperties isKindOfClass:[NSArray class]]){
+        for (id multiValueLegacyExtendedProperty in multiValueExtendedProperties){
+            [multiValueExtendedPropertiesResult addObject:[[MSGraphMultiValueLegacyExtendedProperty alloc] initWithDictionary: multiValueLegacyExtendedProperty]];
+        }
+    }
+
+    _multiValueExtendedProperties = multiValueExtendedPropertiesResult;
+        
+    }
+    return _multiValueExtendedProperties;
+}
+
+- (void) setMultiValueExtendedProperties: (NSArray*) val
+{
+    _multiValueExtendedProperties = val;
+    self.dictionary[@"multiValueExtendedProperties"] = val;
+}
+
 
 @end

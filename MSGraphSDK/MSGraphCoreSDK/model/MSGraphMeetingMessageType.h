@@ -10,7 +10,7 @@ typedef NS_ENUM(NSInteger, MSGraphMeetingMessageTypeValue){
 	MSGraphMeetingMessageTypeMeetingRequest = 1,
 	MSGraphMeetingMessageTypeMeetingCancelled = 2,
 	MSGraphMeetingMessageTypeMeetingAccepted = 3,
-	MSGraphMeetingMessageTypeMeetingTenativelyAccepted = 4,
+	MSGraphMeetingMessageTypeMeetingTentativelyAccepted = 4,
 	MSGraphMeetingMessageTypeMeetingDeclined = 5,
     MSGraphMeetingMessageTypeEndOfEnum
 };
@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, MSGraphMeetingMessageTypeValue){
 +(MSGraphMeetingMessageType*) meetingRequest;
 +(MSGraphMeetingMessageType*) meetingCancelled;
 +(MSGraphMeetingMessageType*) meetingAccepted;
-+(MSGraphMeetingMessageType*) meetingTenativelyAccepted;
++(MSGraphMeetingMessageType*) meetingTentativelyAccepted;
 +(MSGraphMeetingMessageType*) meetingDeclined;
 
 +(MSGraphMeetingMessageType*) UnknownEnumValue;

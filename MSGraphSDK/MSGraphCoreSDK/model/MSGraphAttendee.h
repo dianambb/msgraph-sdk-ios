@@ -3,14 +3,12 @@
 
 
 @class MSGraphResponseStatus; 
-#import "MSGraphAttendeeType.h"
 
 
-#import "MSGraphRecipient.h"
+#import "MSGraphAttendeeBase.h"
 
-@interface MSGraphAttendee : MSGraphRecipient
+@interface MSGraphAttendee : MSGraphAttendeeBase
 
-	@property (nonatomic, setter=setStatus:, getter=status) MSGraphResponseStatus* status;
-		@property (nonatomic, setter=setType:, getter=type) MSGraphAttendeeType* type;
-	
+@property (nullable, nonatomic, setter=setStatus:, getter=status) MSGraphResponseStatus* status;
+
 @end

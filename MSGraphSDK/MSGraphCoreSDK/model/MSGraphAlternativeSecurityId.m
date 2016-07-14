@@ -27,25 +27,39 @@
     _type = [self.dictionary[@"type"] intValue];
     return _type;
 }
+
 - (void) setType: (int32_t) val
 {
     _type = val;
     self.dictionary[@"type"] = @(val);
 }
+
 - (NSString*) identityProvider
 {
+    if([[NSNull null] isEqual:self.dictionary[@"identityProvider"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"identityProvider"];
 }
+
 - (void) setIdentityProvider: (NSString*) val
 {
     self.dictionary[@"identityProvider"] = val;
 }
+
 - (NSString*) key
 {
+    if([[NSNull null] isEqual:self.dictionary[@"key"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"key"];
 }
+
 - (void) setKey: (NSString*) val
 {
     self.dictionary[@"key"] = val;
 }
+
 @end

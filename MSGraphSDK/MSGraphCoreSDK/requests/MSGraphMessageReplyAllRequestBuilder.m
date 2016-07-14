@@ -7,6 +7,9 @@
 @interface MSGraphMessageReplyAllRequestBuilder()
 
 
+@property (nonatomic, getter=message) MSGraphMessage * message;
+
+
 @property (nonatomic, getter=comment) NSString * comment;
 
 @end
@@ -14,10 +17,11 @@
 @implementation MSGraphMessageReplyAllRequestBuilder
 
 
-- (instancetype)initWithComment:(NSString *)comment URL:(NSURL *)url client:(ODataBaseClient*)client
+- (instancetype)initWithMessage:(MSGraphMessage *)message comment:(NSString *)comment URL:(NSURL *)url client:(ODataBaseClient*)client
 {
     self = [super initWithURL:url client:client];
     if (self){
+        _message = message;
         _comment = comment;
     }
     return self;
@@ -31,7 +35,8 @@
 - (MSGraphMessageReplyAllRequest *)requestWithOptions:(NSArray *)options
 {
 
-    return [[MSGraphMessageReplyAllRequest alloc] initWithComment:self.comment
+    return [[MSGraphMessageReplyAllRequest alloc] initWithMessage:self.message
+                                                          comment:self.comment
                                                               URL:self.requestURL
                                                           options:options
                                                            client:self.client];

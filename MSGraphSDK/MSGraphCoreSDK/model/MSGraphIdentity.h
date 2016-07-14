@@ -8,7 +8,7 @@
 
 @interface MSGraphIdentity : MSObject
 
-	@property (nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
-		@property (nonatomic, setter=setIdentityId:, getter=identityId) NSString* identityId;
-	
+@property (nullable, nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
+@property (nullable, nonatomic, setter=setIdentityId:, getter=identityId) NSString* identityId;
+
 @end

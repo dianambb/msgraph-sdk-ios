@@ -8,7 +8,7 @@
 
 @interface MSGraphImage : MSObject
 
-	@property (nonatomic, setter=setHeight:, getter=height) int32_t height;
-		@property (nonatomic, setter=setWidth:, getter=width) int32_t width;
-	
+@property (nonatomic, setter=setHeight:, getter=height) int32_t height;
+@property (nonatomic, setter=setWidth:, getter=width) int32_t width;
+
 @end

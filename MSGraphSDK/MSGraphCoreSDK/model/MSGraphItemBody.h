@@ -9,7 +9,7 @@
 
 @interface MSGraphItemBody : MSObject
 
-	@property (nonatomic, setter=setContentType:, getter=contentType) MSGraphBodyType* contentType;
-		@property (nonatomic, setter=setContent:, getter=content) NSString* content;
-	
+@property (nullable, nonatomic, setter=setContentType:, getter=contentType) MSGraphBodyType* contentType;
+@property (nullable, nonatomic, setter=setContent:, getter=content) NSString* content;
+
 @end

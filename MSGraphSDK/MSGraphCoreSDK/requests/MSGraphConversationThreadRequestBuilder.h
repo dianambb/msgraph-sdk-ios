@@ -18,8 +18,6 @@
 - (MSGraphConversationThreadReplyRequestBuilder *)replyWithPost:(MSGraphPost *)post ;
 
 
-
-
 - (MSGraphConversationThreadRequest *) request;
 
 - (MSGraphConversationThreadRequest *) requestWithOptions:(NSArray *)options;

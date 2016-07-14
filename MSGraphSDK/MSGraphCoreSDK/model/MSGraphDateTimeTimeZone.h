@@ -8,7 +8,7 @@
 
 @interface MSGraphDateTimeTimeZone : MSObject
 
-	@property (nonatomic, setter=setDateTime:, getter=dateTime) NSString* dateTime;
-		@property (nonatomic, setter=setTimeZone:, getter=timeZone) NSString* timeZone;
-	
+@property (nonnull, nonatomic, setter=setDateTime:, getter=dateTime) NSString* dateTime;
+@property (nullable, nonatomic, setter=setTimeZone:, getter=timeZone) NSString* timeZone;
+
 @end

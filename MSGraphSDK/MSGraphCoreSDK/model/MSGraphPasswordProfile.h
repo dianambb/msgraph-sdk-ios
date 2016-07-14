@@ -8,7 +8,7 @@
 
 @interface MSGraphPasswordProfile : MSObject
 
-	@property (nonatomic, setter=setPassword:, getter=password) NSString* password;
-		@property (nonatomic, setter=setForceChangePasswordNextSignIn:, getter=forceChangePasswordNextSignIn) BOOL forceChangePasswordNextSignIn;
-	
+@property (nullable, nonatomic, setter=setPassword:, getter=password) NSString* password;
+@property (nonatomic, setter=setForceChangePasswordNextSignIn:, getter=forceChangePasswordNextSignIn) BOOL forceChangePasswordNextSignIn;
+
 @end

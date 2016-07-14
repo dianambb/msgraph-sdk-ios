@@ -25,7 +25,7 @@
 - (MSURLSessionDataTask *)getWithCompletion:(MSGraphGroupAcceptedSendersCollectionCompletionHandler)completionHandler
 {
 
-    MSURLSessionDataTask * task = [self collectionTaskWithRequest:[self get]
+    MSURLSessionDataTask * sessionDataTask = [self collectionTaskWithRequest:[self get]
                                              odObjectWithDictionary:^(id response){
                                             return [[MSGraphDirectoryObject alloc] initWithDictionary:response];
                                          }
@@ -38,8 +38,8 @@
                                                 completionHandler(collectionResponse, nil, error);
                                             }
                                         }];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 
@@ -57,13 +57,13 @@
 
 - (MSURLSessionDataTask *)addDirectoryObject:(MSGraphDirectoryObject*)directoryObject withCompletion:(MSGraphDirectoryObjectCompletionHandler)completionHandler
 {
-    MSURLSessionDataTask *task = [self taskWithRequest:[self addDirectoryObject:directoryObject]
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self addDirectoryObject:directoryObject]
 							     odObjectWithDictionary:^(NSDictionary *response){
                                             return [[MSGraphDirectoryObject alloc] initWithDictionary:response];
                                         }
                                               completion:completionHandler];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 

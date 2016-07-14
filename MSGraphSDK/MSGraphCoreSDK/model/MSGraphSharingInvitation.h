@@ -9,9 +9,9 @@
 
 @interface MSGraphSharingInvitation : MSObject
 
-	@property (nonatomic, setter=setEmail:, getter=email) NSString* email;
-		@property (nonatomic, setter=setInvitedBy:, getter=invitedBy) MSGraphIdentitySet* invitedBy;
-		@property (nonatomic, setter=setRedeemedBy:, getter=redeemedBy) NSString* redeemedBy;
-		@property (nonatomic, setter=setSignInRequired:, getter=signInRequired) BOOL signInRequired;
-	
+@property (nullable, nonatomic, setter=setEmail:, getter=email) NSString* email;
+@property (nullable, nonatomic, setter=setInvitedBy:, getter=invitedBy) MSGraphIdentitySet* invitedBy;
+@property (nullable, nonatomic, setter=setRedeemedBy:, getter=redeemedBy) NSString* redeemedBy;
+@property (nonatomic, setter=setSignInRequired:, getter=signInRequired) BOOL signInRequired;
+
 @end

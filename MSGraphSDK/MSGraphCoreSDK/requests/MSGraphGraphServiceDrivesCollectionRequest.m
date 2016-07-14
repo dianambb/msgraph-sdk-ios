@@ -25,7 +25,7 @@
 - (MSURLSessionDataTask *)getWithCompletion:(MSGraphDrivesCollectionCompletionHandler)completionHandler
 {
 
-    MSURLSessionDataTask * task = [self collectionTaskWithRequest:[self get]
+    MSURLSessionDataTask * sessionDataTask = [self collectionTaskWithRequest:[self get]
                                              odObjectWithDictionary:^(id response){
                                             return [[MSGraphDrive alloc] initWithDictionary:response];
                                          }
@@ -38,8 +38,32 @@
                                                 completionHandler(collectionResponse, nil, error);
                                             }
                                         }];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
+}
+
+
+
+- (NSMutableURLRequest *)addDrive:(MSGraphDrive*)drive
+{
+    NSData *body = [NSJSONSerialization dataWithJSONObject:[drive dictionaryFromItem]
+                                                   options:0
+                                                     error:nil];
+    return [self requestWithMethod:@"POST"
+                              body:body
+                           headers:nil];
+
+}
+
+- (MSURLSessionDataTask *)addDrive:(MSGraphDrive*)drive withCompletion:(MSGraphDriveCompletionHandler)completionHandler
+{
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self addDrive:drive]
+							     odObjectWithDictionary:^(NSDictionary *response){
+                                            return [[MSGraphDrive alloc] initWithDictionary:response];
+                                        }
+                                              completion:completionHandler];
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 

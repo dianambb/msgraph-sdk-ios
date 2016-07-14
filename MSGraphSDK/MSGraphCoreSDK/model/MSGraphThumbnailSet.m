@@ -37,11 +37,13 @@
     }
     return _large;
 }
+
 - (void) setLarge: (MSGraphThumbnail*) val
 {
     _large = val;
     self.dictionary[@"large"] = val;
 }
+
 - (MSGraphThumbnail*) medium
 {
     if(!_medium){
@@ -49,11 +51,13 @@
     }
     return _medium;
 }
+
 - (void) setMedium: (MSGraphThumbnail*) val
 {
     _medium = val;
     self.dictionary[@"medium"] = val;
 }
+
 - (MSGraphThumbnail*) small
 {
     if(!_small){
@@ -61,11 +65,13 @@
     }
     return _small;
 }
+
 - (void) setSmall: (MSGraphThumbnail*) val
 {
     _small = val;
     self.dictionary[@"small"] = val;
 }
+
 - (MSGraphThumbnail*) source
 {
     if(!_source){
@@ -73,10 +79,12 @@
     }
     return _source;
 }
+
 - (void) setSource: (MSGraphThumbnail*) val
 {
     _source = val;
     self.dictionary[@"source"] = val;
 }
+
 
 @end

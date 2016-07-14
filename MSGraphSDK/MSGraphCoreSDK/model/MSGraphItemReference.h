@@ -8,8 +8,8 @@
 
 @interface MSGraphItemReference : MSObject
 
-	@property (nonatomic, setter=setDriveId:, getter=driveId) NSString* driveId;
-		@property (nonatomic, setter=setItemReferenceId:, getter=itemReferenceId) NSString* itemReferenceId;
-		@property (nonatomic, setter=setPath:, getter=path) NSString* path;
-	
+@property (nullable, nonatomic, setter=setDriveId:, getter=driveId) NSString* driveId;
+@property (nullable, nonatomic, setter=setItemReferenceId:, getter=itemReferenceId) NSString* itemReferenceId;
+@property (nullable, nonatomic, setter=setPath:, getter=path) NSString* path;
+
 @end

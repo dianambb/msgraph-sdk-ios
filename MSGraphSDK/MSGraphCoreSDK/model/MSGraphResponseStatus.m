@@ -28,11 +28,13 @@
     }
     return _response;
 }
+
 - (void) setResponse: (MSGraphResponseType*) val
 {
     _response = val;
     self.dictionary[@"response"] = val;
 }
+
 - (NSDate*) time
 {
     if(!_time){
@@ -40,9 +42,11 @@
     }
     return _time;
 }
+
 - (void) setTime: (NSDate*) val
 {
     _time = val;
     self.dictionary[@"time"] = val;
 }
+
 @end

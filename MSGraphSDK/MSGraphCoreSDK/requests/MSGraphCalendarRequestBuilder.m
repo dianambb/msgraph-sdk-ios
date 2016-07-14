@@ -28,6 +28,28 @@
     return [[self calendarView] event:event];
 }
 
+- (MSGraphCalendarSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties
+{
+    return [[MSGraphCalendarSingleValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"singleValueExtendedProperties"]  
+                                                                                              client:self.client];
+}
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty
+{
+    return [[self singleValueExtendedProperties] singleValueLegacyExtendedProperty:singleValueLegacyExtendedProperty];
+}
+
+- (MSGraphCalendarMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties
+{
+    return [[MSGraphCalendarMultiValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"multiValueExtendedProperties"]  
+                                                                                             client:self.client];
+}
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty
+{
+    return [[self multiValueExtendedProperties] multiValueLegacyExtendedProperty:multiValueLegacyExtendedProperty];
+}
+
 
 - (MSGraphCalendarRequest *)request
 {

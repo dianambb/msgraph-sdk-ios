@@ -28,13 +28,23 @@
 {
     self.dictionary[@"@odata.type"] = val;
 }
+- (NSString*) oDataEtag
+{
+    return self.dictionary[@"@odata.etag"];
+}
+- (void) setODataEtag: (NSString*) val
+{
+    self.dictionary[@"@odata.etag"] = val;
+}
 - (NSString*) entityId
 {
     return self.dictionary[@"id"];
 }
+
 - (void) setEntityId: (NSString*) val
 {
     self.dictionary[@"id"] = val;
 }
+
 
 @end

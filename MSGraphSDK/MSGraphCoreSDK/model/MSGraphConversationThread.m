@@ -53,29 +53,35 @@
     }
     return _toRecipients;
 }
+
 - (void) setToRecipients: (NSArray*) val
 {
     _toRecipients = val;
     self.dictionary[@"toRecipients"] = val;
 }
+
 - (NSString*) topic
 {
     return self.dictionary[@"topic"];
 }
+
 - (void) setTopic: (NSString*) val
 {
     self.dictionary[@"topic"] = val;
 }
+
 - (BOOL) hasAttachments
 {
     _hasAttachments = [self.dictionary[@"hasAttachments"] boolValue];
     return _hasAttachments;
 }
+
 - (void) setHasAttachments: (BOOL) val
 {
     _hasAttachments = val;
     self.dictionary[@"hasAttachments"] = @(val);
 }
+
 - (NSDate*) lastDeliveredDateTime
 {
     if(!_lastDeliveredDateTime){
@@ -83,19 +89,23 @@
     }
     return _lastDeliveredDateTime;
 }
+
 - (void) setLastDeliveredDateTime: (NSDate*) val
 {
     _lastDeliveredDateTime = val;
     self.dictionary[@"lastDeliveredDateTime"] = val;
 }
+
 - (NSArray*) uniqueSenders
 {
     return self.dictionary[@"uniqueSenders"];
 }
+
 - (void) setUniqueSenders: (NSArray*) val
 {
     self.dictionary[@"uniqueSenders"] = val;
 }
+
 - (NSArray*) ccRecipients
 {
     if(!_ccRecipients){
@@ -114,29 +124,35 @@
     }
     return _ccRecipients;
 }
+
 - (void) setCcRecipients: (NSArray*) val
 {
     _ccRecipients = val;
     self.dictionary[@"ccRecipients"] = val;
 }
+
 - (NSString*) preview
 {
     return self.dictionary[@"preview"];
 }
+
 - (void) setPreview: (NSString*) val
 {
     self.dictionary[@"preview"] = val;
 }
+
 - (BOOL) isLocked
 {
     _isLocked = [self.dictionary[@"isLocked"] boolValue];
     return _isLocked;
 }
+
 - (void) setIsLocked: (BOOL) val
 {
     _isLocked = val;
     self.dictionary[@"isLocked"] = @(val);
 }
+
 - (NSArray*) posts
 {
     if(!_posts){
@@ -155,10 +171,12 @@
     }
     return _posts;
 }
+
 - (void) setPosts: (NSArray*) val
 {
     _posts = val;
     self.dictionary[@"posts"] = val;
 }
+
 
 @end

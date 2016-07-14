@@ -8,12 +8,10 @@
 #import "MSURLSessionDownloadTask.h"
 #import "MSURLSessionUploadTask.h"
 #import "MSURLSessionDataTask.h"
-/*#import "MSAsyncURLSessionDataTask.h"*/
 
 #import "MSGraphClient+Base.h"
 #import "MSGraphDriveItemRequestBuilder+ItemByPath.h"
 #import "MSGraphDriveSpecialCollectionRequestBuilder+KnownFolders.h"
-#import "MSGraphThumbnailSet+CustomThumbnail.h"
 #import "MSGraphUserMailFoldersCollectionRequestBuilder+KnownFolders.h"
 #import "NSDate+MSSerialization.h"
 #import "NSJSONSerialization+ResponseHelper.h"

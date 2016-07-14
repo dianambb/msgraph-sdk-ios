@@ -3,6 +3,7 @@
 
 
 @class MSURLSessionDataTask;
+@class MSGraphWorkbookRequestBuilder;
 @class MSGraphUserRequestBuilder;
 @class MSGraphPermissionRequestBuilder;
 @class MSGraphPermissionsCollectionRequestBuilder;

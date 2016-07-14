@@ -8,11 +8,11 @@
 
 @interface MSGraphPermission : MSGraphEntity
 
-  @property (nonatomic, setter=setGrantedTo:, getter=grantedTo) MSGraphIdentitySet* grantedTo;
-    @property (nonatomic, setter=setInvitation:, getter=invitation) MSGraphSharingInvitation* invitation;
-    @property (nonatomic, setter=setInheritedFrom:, getter=inheritedFrom) MSGraphItemReference* inheritedFrom;
-    @property (nonatomic, setter=setLink:, getter=link) MSGraphSharingLink* link;
-    @property (nonatomic, setter=setRoles:, getter=roles) NSArray* roles;
-    @property (nonatomic, setter=setShareId:, getter=shareId) NSString* shareId;
+  @property (nullable, nonatomic, setter=setGrantedTo:, getter=grantedTo) MSGraphIdentitySet* grantedTo;
+    @property (nullable, nonatomic, setter=setInvitation:, getter=invitation) MSGraphSharingInvitation* invitation;
+    @property (nullable, nonatomic, setter=setInheritedFrom:, getter=inheritedFrom) MSGraphItemReference* inheritedFrom;
+    @property (nullable, nonatomic, setter=setLink:, getter=link) MSGraphSharingLink* link;
+    @property (nullable, nonatomic, setter=setRoles:, getter=roles) NSArray* roles;
+    @property (nullable, nonatomic, setter=setShareId:, getter=shareId) NSString* shareId;
   
 @end

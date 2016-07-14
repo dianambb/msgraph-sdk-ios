@@ -27,9 +27,11 @@
     }
     return _emailAddress;
 }
+
 - (void) setEmailAddress: (MSGraphEmailAddress*) val
 {
     _emailAddress = val;
     self.dictionary[@"emailAddress"] = val;
 }
+
 @end

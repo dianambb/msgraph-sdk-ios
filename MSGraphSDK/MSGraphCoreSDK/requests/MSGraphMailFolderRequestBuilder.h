@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphMailFolderRequest, MSGraphMessageRequestBuilder, MSGraphMailFolderMessagesCollectionRequestBuilder, MSGraphMailFolderRequestBuilder, MSGraphMailFolderChildFoldersCollectionRequestBuilder, MSGraphMailFolderCopyRequestBuilder, MSGraphMailFolderMoveRequestBuilder;
+@class MSGraphMailFolderRequest, MSGraphMessageRequestBuilder, MSGraphMailFolderMessagesCollectionRequestBuilder, MSGraphMailFolderRequestBuilder, MSGraphMailFolderChildFoldersCollectionRequestBuilder, MSGraphUserConfigurationRequestBuilder, MSGraphMailFolderUserConfigurationsCollectionRequestBuilder, MSGraphSingleValueLegacyExtendedPropertyRequestBuilder, MSGraphMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder, MSGraphMultiValueLegacyExtendedPropertyRequestBuilder, MSGraphMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder, MSGraphMailFolderCopyRequestBuilder, MSGraphMailFolderMoveRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -19,13 +19,21 @@
 
 - (MSGraphMailFolderRequestBuilder *)childFolders:(NSString *)mailFolder;
 
+- (MSGraphMailFolderUserConfigurationsCollectionRequestBuilder *)userConfigurations;
+
+- (MSGraphUserConfigurationRequestBuilder *)userConfigurations:(NSString *)userConfiguration;
+
+- (MSGraphMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties;
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty;
+
+- (MSGraphMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties;
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty;
+
 - (MSGraphMailFolderCopyRequestBuilder *)copyWithDestinationId:(NSString *)destinationId ;
 
-
-
 - (MSGraphMailFolderMoveRequestBuilder *)moveWithDestinationId:(NSString *)destinationId ;
-
-
 
 
 - (MSGraphMailFolderRequest *) request;

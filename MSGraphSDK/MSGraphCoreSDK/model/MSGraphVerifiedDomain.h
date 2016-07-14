@@ -8,10 +8,10 @@
 
 @interface MSGraphVerifiedDomain : MSObject
 
-	@property (nonatomic, setter=setCapabilities:, getter=capabilities) NSString* capabilities;
-		@property (nonatomic, setter=setIsDefault:, getter=isDefault) BOOL isDefault;
-		@property (nonatomic, setter=setIsInitial:, getter=isInitial) BOOL isInitial;
-		@property (nonatomic, setter=setName:, getter=name) NSString* name;
-		@property (nonatomic, setter=setType:, getter=type) NSString* type;
-	
+@property (nullable, nonatomic, setter=setCapabilities:, getter=capabilities) NSString* capabilities;
+@property (nonatomic, setter=setIsDefault:, getter=isDefault) BOOL isDefault;
+@property (nonatomic, setter=setIsInitial:, getter=isInitial) BOOL isInitial;
+@property (nullable, nonatomic, setter=setName:, getter=name) NSString* name;
+@property (nullable, nonatomic, setter=setType:, getter=type) NSString* type;
+
 @end

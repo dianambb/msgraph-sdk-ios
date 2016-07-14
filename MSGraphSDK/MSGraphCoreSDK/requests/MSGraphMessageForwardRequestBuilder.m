@@ -7,6 +7,9 @@
 @interface MSGraphMessageForwardRequestBuilder()
 
 
+@property (nonatomic, getter=message) MSGraphMessage * message;
+
+
 @property (nonatomic, getter=comment) NSString * comment;
 
 
@@ -17,10 +20,11 @@
 @implementation MSGraphMessageForwardRequestBuilder
 
 
-- (instancetype)initWithComment:(NSString *)comment toRecipients:(NSArray *)toRecipients URL:(NSURL *)url client:(ODataBaseClient*)client
+- (instancetype)initWithMessage:(MSGraphMessage *)message comment:(NSString *)comment toRecipients:(NSArray *)toRecipients URL:(NSURL *)url client:(ODataBaseClient*)client
 {
     self = [super initWithURL:url client:client];
     if (self){
+        _message = message;
         _comment = comment;
         _toRecipients = toRecipients;
     }
@@ -35,7 +39,8 @@
 - (MSGraphMessageForwardRequest *)requestWithOptions:(NSArray *)options
 {
 
-    return [[MSGraphMessageForwardRequest alloc] initWithComment:self.comment
+    return [[MSGraphMessageForwardRequest alloc] initWithMessage:self.message
+                                                         comment:self.comment
                                                     toRecipients:self.toRecipients
                                                              URL:self.requestURL
                                                          options:options

@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphDriveItemRequest, MSGraphUserRequestBuilder, MSGraphCreatedByUserRequestBuilder, MSGraphLastModifiedByUserRequestBuilder, MSGraphPermissionRequestBuilder, MSGraphDriveItemPermissionsCollectionRequestBuilder, MSGraphDriveItemRequestBuilder, MSGraphDriveItemChildrenCollectionRequestBuilder, MSGraphThumbnailSetRequestBuilder, MSGraphDriveItemThumbnailsCollectionRequestBuilder, MSGraphDriveItemContentRequest, MSGraphDriveItemCreateLinkRequestBuilder, MSGraphDriveItemCopyRequestBuilder, MSGraphDriveItemSearchRequestBuilder, MSGraphDriveItemDeltaRequestBuilder;
+@class MSGraphDriveItemRequest, MSGraphWorkbookRequestBuilder, MSGraphUserRequestBuilder, MSGraphCreatedByUserRequestBuilder, MSGraphLastModifiedByUserRequestBuilder, MSGraphPermissionRequestBuilder, MSGraphDriveItemPermissionsCollectionRequestBuilder, MSGraphDriveItemRequestBuilder, MSGraphDriveItemChildrenCollectionRequestBuilder, MSGraphThumbnailSetRequestBuilder, MSGraphDriveItemThumbnailsCollectionRequestBuilder, MSGraphDriveItemContentRequest, MSGraphDriveItemCreateLinkRequestBuilder, MSGraphDriveItemInviteRequestBuilder, MSGraphDriveItemCopyRequestBuilder, MSGraphDriveItemSearchRequestBuilder, MSGraphDriveItemDeltaRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -10,6 +10,8 @@
 
 
 @interface MSGraphDriveItemRequestBuilder : MSGraphEntityRequestBuilder
+
+- (MSGraphWorkbookRequestBuilder *) workbook;
 
 - (MSGraphUserRequestBuilder *) createdByUser;
 
@@ -33,19 +35,15 @@
 
 - (MSGraphDriveItemCreateLinkRequestBuilder *)createLinkWithType:(NSString *)type scope:(NSString *)scope ;
 
-
+- (MSGraphDriveItemInviteRequestBuilder *)inviteWithRequireSignIn:(BOOL)requireSignIn roles:(NSArray *)roles sendInvitation:(BOOL)sendInvitation message:(NSString *)message recipients:(NSArray *)recipients ;
 
 - (MSGraphDriveItemCopyRequestBuilder *)copyWithName:(NSString *)name parentReference:(MSGraphItemReference *)parentReference ;
 
-
-
 - (MSGraphDriveItemSearchRequestBuilder *)searchWithQ:(NSString *)q ;
 
-
+- (MSGraphDriveItemDeltaRequestBuilder *)deltaWithToken:(NSString *)token ;
 
 - (MSGraphDriveItemDeltaRequestBuilder *)delta;
-
-
 
 
 - (MSGraphDriveItemRequest *) request;

@@ -25,7 +25,7 @@
 - (MSURLSessionDataTask *)getWithCompletion:(MSGraphOrganizationCollectionCollectionCompletionHandler)completionHandler
 {
 
-    MSURLSessionDataTask * task = [self collectionTaskWithRequest:[self get]
+    MSURLSessionDataTask * sessionDataTask = [self collectionTaskWithRequest:[self get]
                                              odObjectWithDictionary:^(id response){
                                             return [[MSGraphOrganization alloc] initWithDictionary:response];
                                          }
@@ -38,8 +38,8 @@
                                                 completionHandler(collectionResponse, nil, error);
                                             }
                                         }];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 
@@ -57,13 +57,13 @@
 
 - (MSURLSessionDataTask *)addOrganization:(MSGraphOrganization*)organization withCompletion:(MSGraphOrganizationCompletionHandler)completionHandler
 {
-    MSURLSessionDataTask *task = [self taskWithRequest:[self addOrganization:organization]
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self addOrganization:organization]
 							     odObjectWithDictionary:^(NSDictionary *response){
                                             return [[MSGraphOrganization alloc] initWithDictionary:response];
                                         }
                                               completion:completionHandler];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 

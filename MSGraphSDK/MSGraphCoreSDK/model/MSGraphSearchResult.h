@@ -8,6 +8,6 @@
 
 @interface MSGraphSearchResult : MSObject
 
-	@property (nonatomic, setter=setOnClickTelemetryUrl:, getter=onClickTelemetryUrl) NSString* onClickTelemetryUrl;
-	
+@property (nullable, nonatomic, setter=setOnClickTelemetryUrl:, getter=onClickTelemetryUrl) NSString* onClickTelemetryUrl;
+
 @end

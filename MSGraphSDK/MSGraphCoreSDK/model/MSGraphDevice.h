@@ -9,21 +9,21 @@
 @interface MSGraphDevice : MSGraphDirectoryObject
 
   @property (nonatomic, setter=setAccountEnabled:, getter=accountEnabled) BOOL accountEnabled;
-    @property (nonatomic, setter=setAlternativeSecurityIds:, getter=alternativeSecurityIds) NSArray* alternativeSecurityIds;
-    @property (nonatomic, setter=setApproximateLastSignInDateTime:, getter=approximateLastSignInDateTime) NSDate* approximateLastSignInDateTime;
-    @property (nonatomic, setter=setDeviceId:, getter=deviceId) NSString* deviceId;
-    @property (nonatomic, setter=setDeviceMetadata:, getter=deviceMetadata) NSString* deviceMetadata;
+    @property (nonnull, nonatomic, setter=setAlternativeSecurityIds:, getter=alternativeSecurityIds) NSArray* alternativeSecurityIds;
+    @property (nullable, nonatomic, setter=setApproximateLastSignInDateTime:, getter=approximateLastSignInDateTime) NSDate* approximateLastSignInDateTime;
+    @property (nullable, nonatomic, setter=setDeviceId:, getter=deviceId) NSString* deviceId;
+    @property (nullable, nonatomic, setter=setDeviceMetadata:, getter=deviceMetadata) NSString* deviceMetadata;
     @property (nonatomic, setter=setDeviceVersion:, getter=deviceVersion) int32_t deviceVersion;
-    @property (nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
+    @property (nullable, nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
     @property (nonatomic, setter=setIsCompliant:, getter=isCompliant) BOOL isCompliant;
     @property (nonatomic, setter=setIsManaged:, getter=isManaged) BOOL isManaged;
-    @property (nonatomic, setter=setOnPremisesLastSyncDateTime:, getter=onPremisesLastSyncDateTime) NSDate* onPremisesLastSyncDateTime;
+    @property (nullable, nonatomic, setter=setOnPremisesLastSyncDateTime:, getter=onPremisesLastSyncDateTime) NSDate* onPremisesLastSyncDateTime;
     @property (nonatomic, setter=setOnPremisesSyncEnabled:, getter=onPremisesSyncEnabled) BOOL onPremisesSyncEnabled;
-    @property (nonatomic, setter=setOperatingSystem:, getter=operatingSystem) NSString* operatingSystem;
-    @property (nonatomic, setter=setOperatingSystemVersion:, getter=operatingSystemVersion) NSString* operatingSystemVersion;
-    @property (nonatomic, setter=setPhysicalIds:, getter=physicalIds) NSArray* physicalIds;
-    @property (nonatomic, setter=setTrustType:, getter=trustType) NSString* trustType;
-    @property (nonatomic, setter=setRegisteredOwners:, getter=registeredOwners) NSArray* registeredOwners;
-    @property (nonatomic, setter=setRegisteredUsers:, getter=registeredUsers) NSArray* registeredUsers;
+    @property (nullable, nonatomic, setter=setOperatingSystem:, getter=operatingSystem) NSString* operatingSystem;
+    @property (nullable, nonatomic, setter=setOperatingSystemVersion:, getter=operatingSystemVersion) NSString* operatingSystemVersion;
+    @property (nonnull, nonatomic, setter=setPhysicalIds:, getter=physicalIds) NSArray* physicalIds;
+    @property (nullable, nonatomic, setter=setTrustType:, getter=trustType) NSString* trustType;
+    @property (nullable, nonatomic, setter=setRegisteredOwners:, getter=registeredOwners) NSArray* registeredOwners;
+    @property (nullable, nonatomic, setter=setRegisteredUsers:, getter=registeredUsers) NSArray* registeredUsers;
   
 @end

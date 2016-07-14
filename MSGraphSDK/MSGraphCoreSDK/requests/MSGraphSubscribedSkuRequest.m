@@ -33,19 +33,19 @@
 
 - (MSURLSessionDataTask *)getWithCompletion:(void (^)(MSGraphSubscribedSku *response, NSError *error))completionHandler
 {
-    MSURLSessionDataTask *task = [self taskWithRequest:[self get]
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self get]
                                 odObjectWithDictionary:^(NSDictionary *response){
                                             return [[MSGraphSubscribedSku alloc] initWithDictionary:response];
                                         }
                                              completion:completionHandler];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 
 
 - (NSMutableURLRequest *)update:(MSGraphSubscribedSku *)subscribedSku
-{
+{    
     NSData *body = [NSJSONSerialization dataWithJSONObject:[subscribedSku dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body
@@ -54,13 +54,13 @@
 
 - (MSURLSessionDataTask *)update:(MSGraphSubscribedSku *)subscribedSku withCompletion:(void (^)(MSGraphSubscribedSku *response, NSError *error))completionHandler
 {
-    MSURLSessionDataTask *task = [self taskWithRequest:[self update:subscribedSku]
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self update:subscribedSku]
                                 odObjectWithDictionary:^(NSDictionary *response){
                                             return [[MSGraphSubscribedSku alloc] initWithDictionary:response];
                                         }
                                               completion:completionHandler];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 
@@ -74,11 +74,11 @@
 
 - (MSURLSessionDataTask *)deleteWithCompletion:(void(^)(NSError *error))completionHandler
 {
-    MSURLSessionDataTask *task = [self taskWithRequest:[self delete] completion:^(NSDictionary *response, NSError *error){
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self delete] completion:^(NSDictionary *response, NSError *error){
                                                                     completionHandler(error);
                                                                  }];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 

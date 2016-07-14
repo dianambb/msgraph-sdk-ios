@@ -8,6 +8,6 @@
 
 @interface MSGraphSpecialFolder : MSObject
 
-	@property (nonatomic, setter=setName:, getter=name) NSString* name;
-	
+@property (nullable, nonatomic, setter=setName:, getter=name) NSString* name;
+
 @end

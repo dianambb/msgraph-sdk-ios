@@ -28,6 +28,39 @@
     return [[self childFolders] mailFolder:mailFolder];
 }
 
+- (MSGraphMailFolderUserConfigurationsCollectionRequestBuilder *)userConfigurations
+{
+    return [[MSGraphMailFolderUserConfigurationsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"userConfigurations"]  
+                                                                                     client:self.client];
+}
+
+- (MSGraphUserConfigurationRequestBuilder *)userConfigurations:(NSString *)userConfiguration
+{
+    return [[self userConfigurations] userConfiguration:userConfiguration];
+}
+
+- (MSGraphMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties
+{
+    return [[MSGraphMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"singleValueExtendedProperties"]  
+                                                                                                client:self.client];
+}
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty
+{
+    return [[self singleValueExtendedProperties] singleValueLegacyExtendedProperty:singleValueLegacyExtendedProperty];
+}
+
+- (MSGraphMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties
+{
+    return [[MSGraphMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"multiValueExtendedProperties"]  
+                                                                                               client:self.client];
+}
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty
+{
+    return [[self multiValueExtendedProperties] multiValueLegacyExtendedProperty:multiValueLegacyExtendedProperty];
+}
+
 - (MSGraphMailFolderCopyRequestBuilder *)copyWithDestinationId:(NSString *)destinationId 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.copy"];

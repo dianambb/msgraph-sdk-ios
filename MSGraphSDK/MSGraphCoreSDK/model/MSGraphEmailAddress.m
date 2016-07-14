@@ -23,18 +23,30 @@
 
 - (NSString*) name
 {
+    if([[NSNull null] isEqual:self.dictionary[@"name"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"name"];
 }
+
 - (void) setName: (NSString*) val
 {
     self.dictionary[@"name"] = val;
 }
+
 - (NSString*) address
 {
+    if([[NSNull null] isEqual:self.dictionary[@"address"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"address"];
 }
+
 - (void) setAddress: (NSString*) val
 {
     self.dictionary[@"address"] = val;
 }
+
 @end

@@ -25,7 +25,7 @@
 - (MSURLSessionDataTask *)getWithCompletion:(MSGraphDriveItemPermissionsCollectionCompletionHandler)completionHandler
 {
 
-    MSURLSessionDataTask * task = [self collectionTaskWithRequest:[self get]
+    MSURLSessionDataTask * sessionDataTask = [self collectionTaskWithRequest:[self get]
                                              odObjectWithDictionary:^(id response){
                                             return [[MSGraphPermission alloc] initWithDictionary:response];
                                          }
@@ -38,8 +38,8 @@
                                                 completionHandler(collectionResponse, nil, error);
                                             }
                                         }];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 
@@ -57,13 +57,13 @@
 
 - (MSURLSessionDataTask *)addPermission:(MSGraphPermission*)permission withCompletion:(MSGraphPermissionCompletionHandler)completionHandler
 {
-    MSURLSessionDataTask *task = [self taskWithRequest:[self addPermission:permission]
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self addPermission:permission]
 							     odObjectWithDictionary:^(NSDictionary *response){
                                             return [[MSGraphPermission alloc] initWithDictionary:response];
                                         }
                                               completion:completionHandler];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 

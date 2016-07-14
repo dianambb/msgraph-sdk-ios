@@ -25,7 +25,7 @@
 - (MSURLSessionDataTask *)getWithCompletion:(MSGraphDriveItemThumbnailsCollectionCompletionHandler)completionHandler
 {
 
-    MSURLSessionDataTask * task = [self collectionTaskWithRequest:[self get]
+    MSURLSessionDataTask * sessionDataTask = [self collectionTaskWithRequest:[self get]
                                              odObjectWithDictionary:^(id response){
                                             return [[MSGraphThumbnailSet alloc] initWithDictionary:response];
                                          }
@@ -38,8 +38,32 @@
                                                 completionHandler(collectionResponse, nil, error);
                                             }
                                         }];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
+}
+
+
+
+- (NSMutableURLRequest *)addThumbnailSet:(MSGraphThumbnailSet*)thumbnailSet
+{
+    NSData *body = [NSJSONSerialization dataWithJSONObject:[thumbnailSet dictionaryFromItem]
+                                                   options:0
+                                                     error:nil];
+    return [self requestWithMethod:@"POST"
+                              body:body
+                           headers:nil];
+
+}
+
+- (MSURLSessionDataTask *)addThumbnailSet:(MSGraphThumbnailSet*)thumbnailSet withCompletion:(MSGraphThumbnailSetCompletionHandler)completionHandler
+{
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self addThumbnailSet:thumbnailSet]
+							     odObjectWithDictionary:^(NSDictionary *response){
+                                            return [[MSGraphThumbnailSet alloc] initWithDictionary:response];
+                                        }
+                                              completion:completionHandler];
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 

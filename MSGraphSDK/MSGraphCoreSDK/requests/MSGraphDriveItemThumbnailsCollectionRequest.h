@@ -14,4 +14,7 @@ typedef void (^MSGraphDriveItemThumbnailsCollectionCompletionHandler)(MSCollecti
 @interface MSGraphDriveItemThumbnailsCollectionRequest : MSCollectionRequest
 
 - (MSURLSessionDataTask *)getWithCompletion:(MSGraphDriveItemThumbnailsCollectionCompletionHandler)completionHandler;
+
+- (MSURLSessionDataTask *)addThumbnailSet:(MSGraphThumbnailSet*)thumbnailSet withCompletion:(MSGraphThumbnailSetCompletionHandler)completionHandler;
+
 @end

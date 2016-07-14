@@ -24,26 +24,44 @@
 
 - (NSString*) capabilityStatus
 {
+    if([[NSNull null] isEqual:self.dictionary[@"capabilityStatus"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"capabilityStatus"];
 }
+
 - (void) setCapabilityStatus: (NSString*) val
 {
     self.dictionary[@"capabilityStatus"] = val;
 }
+
 - (NSString*) provisioningStatus
 {
+    if([[NSNull null] isEqual:self.dictionary[@"provisioningStatus"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"provisioningStatus"];
 }
+
 - (void) setProvisioningStatus: (NSString*) val
 {
     self.dictionary[@"provisioningStatus"] = val;
 }
+
 - (NSString*) service
 {
+    if([[NSNull null] isEqual:self.dictionary[@"service"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"service"];
 }
+
 - (void) setService: (NSString*) val
 {
     self.dictionary[@"service"] = val;
 }
+
 @end

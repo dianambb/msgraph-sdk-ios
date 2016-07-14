@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphCalendarRequest, MSGraphEventRequestBuilder, MSGraphCalendarEventsCollectionRequestBuilder, MSGraphCalendarCalendarViewCollectionRequestBuilder;
+@class MSGraphCalendarRequest, MSGraphEventRequestBuilder, MSGraphCalendarEventsCollectionRequestBuilder, MSGraphCalendarCalendarViewCollectionRequestBuilder, MSGraphSingleValueLegacyExtendedPropertyRequestBuilder, MSGraphCalendarSingleValueExtendedPropertiesCollectionRequestBuilder, MSGraphMultiValueLegacyExtendedPropertyRequestBuilder, MSGraphCalendarMultiValueExtendedPropertiesCollectionRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -18,6 +18,14 @@
 - (MSGraphCalendarCalendarViewCollectionRequestBuilder *)calendarView;
 
 - (MSGraphEventRequestBuilder *)calendarView:(NSString *)event;
+
+- (MSGraphCalendarSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties;
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty;
+
+- (MSGraphCalendarMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties;
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty;
 
 
 - (MSGraphCalendarRequest *) request;

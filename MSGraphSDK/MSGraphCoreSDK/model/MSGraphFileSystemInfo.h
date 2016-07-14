@@ -8,7 +8,7 @@
 
 @interface MSGraphFileSystemInfo : MSObject
 
-	@property (nonatomic, setter=setCreatedDateTime:, getter=createdDateTime) NSDate* createdDateTime;
-		@property (nonatomic, setter=setLastModifiedDateTime:, getter=lastModifiedDateTime) NSDate* lastModifiedDateTime;
-	
+@property (nullable, nonatomic, setter=setCreatedDateTime:, getter=createdDateTime) NSDate* createdDateTime;
+@property (nullable, nonatomic, setter=setLastModifiedDateTime:, getter=lastModifiedDateTime) NSDate* lastModifiedDateTime;
+
 @end

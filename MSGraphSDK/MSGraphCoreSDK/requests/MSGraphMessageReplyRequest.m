@@ -24,6 +24,9 @@
 @interface MSGraphMessageReplyRequest()
 
 
+@property (nonatomic, getter=message) MSGraphMessage * message;
+
+
 @property (nonatomic, getter=comment) NSString * comment;
 
 @end
@@ -31,10 +34,11 @@
 @implementation MSGraphMessageReplyRequest
 
 
-- (instancetype)initWithComment:(NSString *)comment URL:(NSURL *)url options:(NSArray *)options client:(ODataBaseClient*)client
+- (instancetype)initWithMessage:(MSGraphMessage *)message comment:(NSString *)comment URL:(NSURL *)url options:(NSArray *)options client:(ODataBaseClient*)client
 {
     self = [super initWithURL:url options:options client:client];
     if (self){
+        _message = message;
         _comment = comment;
     }
     return self;
@@ -42,7 +46,7 @@
 
 - (NSMutableURLRequest *)mutableRequest
 {
-    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:[MSObject getNSJsonSerializationCompatibleValue:_comment],@"Comment",nil];
+    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:[MSObject getNSJsonSerializationCompatibleValue:_message],@"Message",[MSObject getNSJsonSerializationCompatibleValue:_comment],@"Comment",nil];
 
 
     NSData *body = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];

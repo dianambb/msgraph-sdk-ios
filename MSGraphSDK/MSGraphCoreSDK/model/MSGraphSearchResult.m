@@ -22,10 +22,16 @@
 
 - (NSString*) onClickTelemetryUrl
 {
+    if([[NSNull null] isEqual:self.dictionary[@"onClickTelemetryUrl"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"onClickTelemetryUrl"];
 }
+
 - (void) setOnClickTelemetryUrl: (NSString*) val
 {
     self.dictionary[@"onClickTelemetryUrl"] = val;
 }
+
 @end

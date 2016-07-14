@@ -34,12 +34,18 @@
 }
 - (NSString*) driveType
 {
+    if([[NSNull null] isEqual:self.dictionary[@"driveType"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"driveType"];
 }
+
 - (void) setDriveType: (NSString*) val
 {
     self.dictionary[@"driveType"] = val;
 }
+
 - (MSGraphIdentitySet*) owner
 {
     if(!_owner){
@@ -47,11 +53,13 @@
     }
     return _owner;
 }
+
 - (void) setOwner: (MSGraphIdentitySet*) val
 {
     _owner = val;
     self.dictionary[@"owner"] = val;
 }
+
 - (MSGraphQuota*) quota
 {
     if(!_quota){
@@ -59,11 +67,13 @@
     }
     return _quota;
 }
+
 - (void) setQuota: (MSGraphQuota*) val
 {
     _quota = val;
     self.dictionary[@"quota"] = val;
 }
+
 - (NSArray*) items
 {
     if(!_items){
@@ -82,11 +92,13 @@
     }
     return _items;
 }
+
 - (void) setItems: (NSArray*) val
 {
     _items = val;
     self.dictionary[@"items"] = val;
 }
+
 - (NSArray*) special
 {
     if(!_special){
@@ -105,11 +117,13 @@
     }
     return _special;
 }
+
 - (void) setSpecial: (NSArray*) val
 {
     _special = val;
     self.dictionary[@"special"] = val;
 }
+
 - (MSGraphDriveItem*) root
 {
     if(!_root){
@@ -117,10 +131,12 @@
     }
     return _root;
 }
+
 - (void) setRoot: (MSGraphDriveItem*) val
 {
     _root = val;
     self.dictionary[@"root"] = val;
 }
+
 
 @end

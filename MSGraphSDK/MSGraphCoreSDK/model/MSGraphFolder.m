@@ -25,9 +25,11 @@
     _childCount = [self.dictionary[@"childCount"] intValue];
     return _childCount;
 }
+
 - (void) setChildCount: (int32_t) val
 {
     _childCount = val;
     self.dictionary[@"childCount"] = @(val);
 }
+
 @end

@@ -33,11 +33,13 @@
     }
     return _file;
 }
+
 - (void) setFile: (MSGraphFile*) val
 {
     _file = val;
     self.dictionary[@"file"] = val;
 }
+
 - (MSGraphFileSystemInfo*) fileSystemInfo
 {
     if(!_fileSystemInfo){
@@ -45,11 +47,13 @@
     }
     return _fileSystemInfo;
 }
+
 - (void) setFileSystemInfo: (MSGraphFileSystemInfo*) val
 {
     _fileSystemInfo = val;
     self.dictionary[@"fileSystemInfo"] = val;
 }
+
 - (MSGraphFolder*) folder
 {
     if(!_folder){
@@ -57,27 +61,41 @@
     }
     return _folder;
 }
+
 - (void) setFolder: (MSGraphFolder*) val
 {
     _folder = val;
     self.dictionary[@"folder"] = val;
 }
+
 - (NSString*) remoteItemId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"id"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"id"];
 }
+
 - (void) setRemoteItemId: (NSString*) val
 {
     self.dictionary[@"id"] = val;
 }
+
 - (NSString*) name
 {
+    if([[NSNull null] isEqual:self.dictionary[@"name"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"name"];
 }
+
 - (void) setName: (NSString*) val
 {
     self.dictionary[@"name"] = val;
 }
+
 - (MSGraphItemReference*) parentReference
 {
     if(!_parentReference){
@@ -85,19 +103,23 @@
     }
     return _parentReference;
 }
+
 - (void) setParentReference: (MSGraphItemReference*) val
 {
     _parentReference = val;
     self.dictionary[@"parentReference"] = val;
 }
+
 - (int64_t) size
 {
     _size = [self.dictionary[@"size"] longLongValue];
     return _size;
 }
+
 - (void) setSize: (int64_t) val
 {
     _size = val;
     self.dictionary[@"size"] = @(val);
 }
+
 @end

@@ -39,11 +39,13 @@
     }
     return _grantedTo;
 }
+
 - (void) setGrantedTo: (MSGraphIdentitySet*) val
 {
     _grantedTo = val;
     self.dictionary[@"grantedTo"] = val;
 }
+
 - (MSGraphSharingInvitation*) invitation
 {
     if(!_invitation){
@@ -51,11 +53,13 @@
     }
     return _invitation;
 }
+
 - (void) setInvitation: (MSGraphSharingInvitation*) val
 {
     _invitation = val;
     self.dictionary[@"invitation"] = val;
 }
+
 - (MSGraphItemReference*) inheritedFrom
 {
     if(!_inheritedFrom){
@@ -63,11 +67,13 @@
     }
     return _inheritedFrom;
 }
+
 - (void) setInheritedFrom: (MSGraphItemReference*) val
 {
     _inheritedFrom = val;
     self.dictionary[@"inheritedFrom"] = val;
 }
+
 - (MSGraphSharingLink*) link
 {
     if(!_link){
@@ -75,26 +81,40 @@
     }
     return _link;
 }
+
 - (void) setLink: (MSGraphSharingLink*) val
 {
     _link = val;
     self.dictionary[@"link"] = val;
 }
+
 - (NSArray*) roles
 {
+    if([[NSNull null] isEqual:self.dictionary[@"roles"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"roles"];
 }
+
 - (void) setRoles: (NSArray*) val
 {
     self.dictionary[@"roles"] = val;
 }
+
 - (NSString*) shareId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"shareId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"shareId"];
 }
+
 - (void) setShareId: (NSString*) val
 {
     self.dictionary[@"shareId"] = val;
 }
+
 
 @end

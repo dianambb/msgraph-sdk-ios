@@ -40,6 +40,7 @@
     MSGraphSpecialFolder* _specialFolder;
     MSGraphVideo* _video;
     MSGraphPackage* _package;
+    MSGraphWorkbook* _workbook;
     MSGraphUser* _createdByUser;
     MSGraphUser* _lastModifiedByUser;
     NSArray* _permissions;
@@ -64,11 +65,13 @@
     }
     return _createdBy;
 }
+
 - (void) setCreatedBy: (MSGraphIdentitySet*) val
 {
     _createdBy = val;
     self.dictionary[@"createdBy"] = val;
 }
+
 - (NSDate*) createdDateTime
 {
     if(!_createdDateTime){
@@ -76,35 +79,55 @@
     }
     return _createdDateTime;
 }
+
 - (void) setCreatedDateTime: (NSDate*) val
 {
     _createdDateTime = val;
     self.dictionary[@"createdDateTime"] = val;
 }
+
 - (NSString*) cTag
 {
+    if([[NSNull null] isEqual:self.dictionary[@"cTag"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"cTag"];
 }
+
 - (void) setCTag: (NSString*) val
 {
     self.dictionary[@"cTag"] = val;
 }
+
 - (NSString*) driveItemDescription
 {
+    if([[NSNull null] isEqual:self.dictionary[@"description"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"description"];
 }
+
 - (void) setDriveItemDescription: (NSString*) val
 {
     self.dictionary[@"description"] = val;
 }
+
 - (NSString*) eTag
 {
+    if([[NSNull null] isEqual:self.dictionary[@"eTag"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"eTag"];
 }
+
 - (void) setETag: (NSString*) val
 {
     self.dictionary[@"eTag"] = val;
 }
+
 - (MSGraphIdentitySet*) lastModifiedBy
 {
     if(!_lastModifiedBy){
@@ -112,11 +135,13 @@
     }
     return _lastModifiedBy;
 }
+
 - (void) setLastModifiedBy: (MSGraphIdentitySet*) val
 {
     _lastModifiedBy = val;
     self.dictionary[@"lastModifiedBy"] = val;
 }
+
 - (NSDate*) lastModifiedDateTime
 {
     if(!_lastModifiedDateTime){
@@ -124,19 +149,27 @@
     }
     return _lastModifiedDateTime;
 }
+
 - (void) setLastModifiedDateTime: (NSDate*) val
 {
     _lastModifiedDateTime = val;
     self.dictionary[@"lastModifiedDateTime"] = val;
 }
+
 - (NSString*) name
 {
+    if([[NSNull null] isEqual:self.dictionary[@"name"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"name"];
 }
+
 - (void) setName: (NSString*) val
 {
     self.dictionary[@"name"] = val;
 }
+
 - (MSGraphItemReference*) parentReference
 {
     if(!_parentReference){
@@ -144,37 +177,53 @@
     }
     return _parentReference;
 }
+
 - (void) setParentReference: (MSGraphItemReference*) val
 {
     _parentReference = val;
     self.dictionary[@"parentReference"] = val;
 }
+
 - (int64_t) size
 {
     _size = [self.dictionary[@"size"] longLongValue];
     return _size;
 }
+
 - (void) setSize: (int64_t) val
 {
     _size = val;
     self.dictionary[@"size"] = @(val);
 }
+
 - (NSString*) webDavUrl
 {
+    if([[NSNull null] isEqual:self.dictionary[@"webDavUrl"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"webDavUrl"];
 }
+
 - (void) setWebDavUrl: (NSString*) val
 {
     self.dictionary[@"webDavUrl"] = val;
 }
+
 - (NSString*) webUrl
 {
+    if([[NSNull null] isEqual:self.dictionary[@"webUrl"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"webUrl"];
 }
+
 - (void) setWebUrl: (NSString*) val
 {
     self.dictionary[@"webUrl"] = val;
 }
+
 - (MSGraphAudio*) audio
 {
     if(!_audio){
@@ -182,11 +231,13 @@
     }
     return _audio;
 }
+
 - (void) setAudio: (MSGraphAudio*) val
 {
     _audio = val;
     self.dictionary[@"audio"] = val;
 }
+
 - (MSGraphDeleted*) deleted
 {
     if(!_deleted){
@@ -194,11 +245,13 @@
     }
     return _deleted;
 }
+
 - (void) setDeleted: (MSGraphDeleted*) val
 {
     _deleted = val;
     self.dictionary[@"deleted"] = val;
 }
+
 - (MSGraphFile*) file
 {
     if(!_file){
@@ -206,11 +259,13 @@
     }
     return _file;
 }
+
 - (void) setFile: (MSGraphFile*) val
 {
     _file = val;
     self.dictionary[@"file"] = val;
 }
+
 - (MSGraphFileSystemInfo*) fileSystemInfo
 {
     if(!_fileSystemInfo){
@@ -218,11 +273,13 @@
     }
     return _fileSystemInfo;
 }
+
 - (void) setFileSystemInfo: (MSGraphFileSystemInfo*) val
 {
     _fileSystemInfo = val;
     self.dictionary[@"fileSystemInfo"] = val;
 }
+
 - (MSGraphFolder*) folder
 {
     if(!_folder){
@@ -230,11 +287,13 @@
     }
     return _folder;
 }
+
 - (void) setFolder: (MSGraphFolder*) val
 {
     _folder = val;
     self.dictionary[@"folder"] = val;
 }
+
 - (MSGraphImage*) image
 {
     if(!_image){
@@ -242,11 +301,13 @@
     }
     return _image;
 }
+
 - (void) setImage: (MSGraphImage*) val
 {
     _image = val;
     self.dictionary[@"image"] = val;
 }
+
 - (MSGraphGeoCoordinates*) location
 {
     if(!_location){
@@ -254,11 +315,13 @@
     }
     return _location;
 }
+
 - (void) setLocation: (MSGraphGeoCoordinates*) val
 {
     _location = val;
     self.dictionary[@"location"] = val;
 }
+
 - (MSGraphPhoto*) photo
 {
     if(!_photo){
@@ -266,11 +329,13 @@
     }
     return _photo;
 }
+
 - (void) setPhoto: (MSGraphPhoto*) val
 {
     _photo = val;
     self.dictionary[@"photo"] = val;
 }
+
 - (MSGraphRemoteItem*) remoteItem
 {
     if(!_remoteItem){
@@ -278,11 +343,13 @@
     }
     return _remoteItem;
 }
+
 - (void) setRemoteItem: (MSGraphRemoteItem*) val
 {
     _remoteItem = val;
     self.dictionary[@"remoteItem"] = val;
 }
+
 - (MSGraphSearchResult*) searchResult
 {
     if(!_searchResult){
@@ -290,11 +357,13 @@
     }
     return _searchResult;
 }
+
 - (void) setSearchResult: (MSGraphSearchResult*) val
 {
     _searchResult = val;
     self.dictionary[@"searchResult"] = val;
 }
+
 - (MSGraphShared*) shared
 {
     if(!_shared){
@@ -302,11 +371,13 @@
     }
     return _shared;
 }
+
 - (void) setShared: (MSGraphShared*) val
 {
     _shared = val;
     self.dictionary[@"shared"] = val;
 }
+
 - (MSGraphSpecialFolder*) specialFolder
 {
     if(!_specialFolder){
@@ -314,11 +385,13 @@
     }
     return _specialFolder;
 }
+
 - (void) setSpecialFolder: (MSGraphSpecialFolder*) val
 {
     _specialFolder = val;
     self.dictionary[@"specialFolder"] = val;
 }
+
 - (MSGraphVideo*) video
 {
     if(!_video){
@@ -326,11 +399,13 @@
     }
     return _video;
 }
+
 - (void) setVideo: (MSGraphVideo*) val
 {
     _video = val;
     self.dictionary[@"video"] = val;
 }
+
 - (MSGraphPackage*) package
 {
     if(!_package){
@@ -338,11 +413,27 @@
     }
     return _package;
 }
+
 - (void) setPackage: (MSGraphPackage*) val
 {
     _package = val;
     self.dictionary[@"package"] = val;
 }
+
+- (MSGraphWorkbook*) workbook
+{
+    if(!_workbook){
+        _workbook = [[MSGraphWorkbook alloc] initWithDictionary: self.dictionary[@"workbook"]];
+    }
+    return _workbook;
+}
+
+- (void) setWorkbook: (MSGraphWorkbook*) val
+{
+    _workbook = val;
+    self.dictionary[@"workbook"] = val;
+}
+
 - (MSGraphUser*) createdByUser
 {
     if(!_createdByUser){
@@ -350,11 +441,13 @@
     }
     return _createdByUser;
 }
+
 - (void) setCreatedByUser: (MSGraphUser*) val
 {
     _createdByUser = val;
     self.dictionary[@"createdByUser"] = val;
 }
+
 - (MSGraphUser*) lastModifiedByUser
 {
     if(!_lastModifiedByUser){
@@ -362,11 +455,13 @@
     }
     return _lastModifiedByUser;
 }
+
 - (void) setLastModifiedByUser: (MSGraphUser*) val
 {
     _lastModifiedByUser = val;
     self.dictionary[@"lastModifiedByUser"] = val;
 }
+
 - (NSArray*) permissions
 {
     if(!_permissions){
@@ -385,11 +480,13 @@
     }
     return _permissions;
 }
+
 - (void) setPermissions: (NSArray*) val
 {
     _permissions = val;
     self.dictionary[@"permissions"] = val;
 }
+
 - (NSArray*) children
 {
     if(!_children){
@@ -408,11 +505,13 @@
     }
     return _children;
 }
+
 - (void) setChildren: (NSArray*) val
 {
     _children = val;
     self.dictionary[@"children"] = val;
 }
+
 - (NSArray*) thumbnails
 {
     if(!_thumbnails){
@@ -431,10 +530,12 @@
     }
     return _thumbnails;
 }
+
 - (void) setThumbnails: (NSArray*) val
 {
     _thumbnails = val;
     self.dictionary[@"thumbnails"] = val;
 }
+
 
 @end

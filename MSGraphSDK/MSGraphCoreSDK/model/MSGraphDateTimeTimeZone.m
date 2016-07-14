@@ -25,16 +25,24 @@
 {
     return self.dictionary[@"dateTime"];
 }
+
 - (void) setDateTime: (NSString*) val
 {
     self.dictionary[@"dateTime"] = val;
 }
+
 - (NSString*) timeZone
 {
+    if([[NSNull null] isEqual:self.dictionary[@"timeZone"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"timeZone"];
 }
+
 - (void) setTimeZone: (NSString*) val
 {
     self.dictionary[@"timeZone"] = val;
 }
+
 @end

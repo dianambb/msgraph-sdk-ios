@@ -2,14 +2,17 @@
 
 
 
-@class MSGraphPhysicalAddress; 
+@class MSGraphPhysicalAddress, MSGraphOutlookGeoCoordinates; 
 
 
 #import "MSObject.h"
 
 @interface MSGraphLocation : MSObject
 
-	@property (nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
-		@property (nonatomic, setter=setAddress:, getter=address) MSGraphPhysicalAddress* address;
-	
+@property (nullable, nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
+@property (nullable, nonatomic, setter=setLocationEmailAddress:, getter=locationEmailAddress) NSString* locationEmailAddress;
+@property (nullable, nonatomic, setter=setAddress:, getter=address) MSGraphPhysicalAddress* address;
+@property (nullable, nonatomic, setter=setCoordinates:, getter=coordinates) MSGraphOutlookGeoCoordinates* coordinates;
+@property (nullable, nonatomic, setter=setLocationUri:, getter=locationUri) NSString* locationUri;
+
 @end

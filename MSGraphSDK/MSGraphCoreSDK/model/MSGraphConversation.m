@@ -36,20 +36,24 @@
 {
     return self.dictionary[@"topic"];
 }
+
 - (void) setTopic: (NSString*) val
 {
     self.dictionary[@"topic"] = val;
 }
+
 - (BOOL) hasAttachments
 {
     _hasAttachments = [self.dictionary[@"hasAttachments"] boolValue];
     return _hasAttachments;
 }
+
 - (void) setHasAttachments: (BOOL) val
 {
     _hasAttachments = val;
     self.dictionary[@"hasAttachments"] = @(val);
 }
+
 - (NSDate*) lastDeliveredDateTime
 {
     if(!_lastDeliveredDateTime){
@@ -57,27 +61,33 @@
     }
     return _lastDeliveredDateTime;
 }
+
 - (void) setLastDeliveredDateTime: (NSDate*) val
 {
     _lastDeliveredDateTime = val;
     self.dictionary[@"lastDeliveredDateTime"] = val;
 }
+
 - (NSArray*) uniqueSenders
 {
     return self.dictionary[@"uniqueSenders"];
 }
+
 - (void) setUniqueSenders: (NSArray*) val
 {
     self.dictionary[@"uniqueSenders"] = val;
 }
+
 - (NSString*) preview
 {
     return self.dictionary[@"preview"];
 }
+
 - (void) setPreview: (NSString*) val
 {
     self.dictionary[@"preview"] = val;
 }
+
 - (NSArray*) threads
 {
     if(!_threads){
@@ -96,10 +106,12 @@
     }
     return _threads;
 }
+
 - (void) setThreads: (NSArray*) val
 {
     _threads = val;
     self.dictionary[@"threads"] = val;
 }
+
 
 @end

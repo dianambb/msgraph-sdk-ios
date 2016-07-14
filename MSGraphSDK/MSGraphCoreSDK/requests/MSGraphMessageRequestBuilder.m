@@ -6,6 +6,17 @@
 
 @implementation MSGraphMessageRequestBuilder
 
+- (MSGraphMessageExtensionsCollectionRequestBuilder *)extensions
+{
+    return [[MSGraphMessageExtensionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"extensions"]  
+                                                                          client:self.client];
+}
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension
+{
+    return [[self extensions] extension:extension];
+}
+
 - (MSGraphMessageAttachmentsCollectionRequestBuilder *)attachments
 {
     return [[MSGraphMessageAttachmentsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"attachments"]  
@@ -15,6 +26,28 @@
 - (MSGraphAttachmentRequestBuilder *)attachments:(NSString *)attachment
 {
     return [[self attachments] attachment:attachment];
+}
+
+- (MSGraphMessageSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties
+{
+    return [[MSGraphMessageSingleValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"singleValueExtendedProperties"]  
+                                                                                             client:self.client];
+}
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty
+{
+    return [[self singleValueExtendedProperties] singleValueLegacyExtendedProperty:singleValueLegacyExtendedProperty];
+}
+
+- (MSGraphMessageMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties
+{
+    return [[MSGraphMessageMultiValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"multiValueExtendedProperties"]  
+                                                                                            client:self.client];
+}
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty
+{
+    return [[self multiValueExtendedProperties] multiValueLegacyExtendedProperty:multiValueLegacyExtendedProperty];
 }
 
 - (MSGraphMessageCopyRequestBuilder *)copyWithDestinationId:(NSString *)destinationId 
@@ -37,45 +70,67 @@
 
 }
 
-- (MSGraphMessageCreateReplyRequestBuilder *)createReply
+- (MSGraphMessageCreateReplyRequestBuilder *)createReplyWithMessage:(MSGraphMessage *)message comment:(NSString *)comment 
 {
-    return [[MSGraphMessageCreateReplyRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.createReply"] client:self.client];
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.createReply"];
+    return [[MSGraphMessageCreateReplyRequestBuilder alloc] initWithMessage:message
+                                                                    comment:comment
+                                                                        URL:actionURL
+                                                                     client:self.client];
+
+
 }
 
-- (MSGraphMessageCreateReplyAllRequestBuilder *)createReplyAll
+- (MSGraphMessageCreateReplyAllRequestBuilder *)createReplyAllWithMessage:(MSGraphMessage *)message comment:(NSString *)comment 
 {
-    return [[MSGraphMessageCreateReplyAllRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.createReplyAll"] client:self.client];
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.createReplyAll"];
+    return [[MSGraphMessageCreateReplyAllRequestBuilder alloc] initWithMessage:message
+                                                                       comment:comment
+                                                                           URL:actionURL
+                                                                        client:self.client];
+
+
 }
 
-- (MSGraphMessageCreateForwardRequestBuilder *)createForward
+- (MSGraphMessageCreateForwardRequestBuilder *)createForwardWithMessage:(MSGraphMessage *)message comment:(NSString *)comment toRecipients:(NSArray *)toRecipients 
 {
-    return [[MSGraphMessageCreateForwardRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.createForward"] client:self.client];
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.createForward"];
+    return [[MSGraphMessageCreateForwardRequestBuilder alloc] initWithMessage:message
+                                                                      comment:comment
+                                                                 toRecipients:toRecipients
+                                                                          URL:actionURL
+                                                                       client:self.client];
+
+
 }
 
-- (MSGraphMessageReplyRequestBuilder *)replyWithComment:(NSString *)comment 
+- (MSGraphMessageReplyRequestBuilder *)replyWithMessage:(MSGraphMessage *)message comment:(NSString *)comment 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.reply"];
-    return [[MSGraphMessageReplyRequestBuilder alloc] initWithComment:comment
+    return [[MSGraphMessageReplyRequestBuilder alloc] initWithMessage:message
+                                                              comment:comment
                                                                   URL:actionURL
                                                                client:self.client];
 
 
 }
 
-- (MSGraphMessageReplyAllRequestBuilder *)replyAllWithComment:(NSString *)comment 
+- (MSGraphMessageReplyAllRequestBuilder *)replyAllWithMessage:(MSGraphMessage *)message comment:(NSString *)comment 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.replyAll"];
-    return [[MSGraphMessageReplyAllRequestBuilder alloc] initWithComment:comment
+    return [[MSGraphMessageReplyAllRequestBuilder alloc] initWithMessage:message
+                                                                 comment:comment
                                                                      URL:actionURL
                                                                   client:self.client];
 
 
 }
 
-- (MSGraphMessageForwardRequestBuilder *)forwardWithComment:(NSString *)comment toRecipients:(NSArray *)toRecipients 
+- (MSGraphMessageForwardRequestBuilder *)forwardWithMessage:(MSGraphMessage *)message comment:(NSString *)comment toRecipients:(NSArray *)toRecipients 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.forward"];
-    return [[MSGraphMessageForwardRequestBuilder alloc] initWithComment:comment
+    return [[MSGraphMessageForwardRequestBuilder alloc] initWithMessage:message
+                                                                comment:comment
                                                            toRecipients:toRecipients
                                                                     URL:actionURL
                                                                  client:self.client];
@@ -86,6 +141,11 @@
 - (MSGraphMessageSendRequestBuilder *)send
 {
     return [[MSGraphMessageSendRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.send"] client:self.client];
+}
+
+- (MSGraphMessageUnsubscribeRequestBuilder *)unsubscribe
+{
+    return [[MSGraphMessageUnsubscribeRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.unsubscribe"] client:self.client];
 }
 
 

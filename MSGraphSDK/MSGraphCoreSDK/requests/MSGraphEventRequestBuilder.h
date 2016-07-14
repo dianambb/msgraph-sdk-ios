@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphEventRequest, MSGraphCalendarRequestBuilder, MSGraphEventRequestBuilder, MSGraphEventInstancesCollectionRequestBuilder, MSGraphAttachmentRequestBuilder, MSGraphEventAttachmentsCollectionRequestBuilder, MSGraphEventAcceptRequestBuilder, MSGraphEventDeclineRequestBuilder, MSGraphEventTentativelyAcceptRequestBuilder, MSGraphEventSnoozeReminderRequestBuilder, MSGraphEventDismissReminderRequestBuilder;
+@class MSGraphEventRequest, MSGraphCalendarRequestBuilder, MSGraphEventRequestBuilder, MSGraphEventInstancesCollectionRequestBuilder, MSGraphExtensionRequestBuilder, MSGraphEventExtensionsCollectionRequestBuilder, MSGraphAttachmentRequestBuilder, MSGraphEventAttachmentsCollectionRequestBuilder, MSGraphSingleValueLegacyExtendedPropertyRequestBuilder, MSGraphEventSingleValueExtendedPropertiesCollectionRequestBuilder, MSGraphMultiValueLegacyExtendedPropertyRequestBuilder, MSGraphEventMultiValueExtendedPropertiesCollectionRequestBuilder, MSGraphEventAcceptRequestBuilder, MSGraphEventDeclineRequestBuilder, MSGraphEventTentativelyAcceptRequestBuilder, MSGraphEventSnoozeReminderRequestBuilder, MSGraphEventDismissReminderRequestBuilder, MSGraphEventCancelRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -17,29 +17,33 @@
 
 - (MSGraphEventRequestBuilder *)instances:(NSString *)event;
 
+- (MSGraphEventExtensionsCollectionRequestBuilder *)extensions;
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension;
+
 - (MSGraphEventAttachmentsCollectionRequestBuilder *)attachments;
 
 - (MSGraphAttachmentRequestBuilder *)attachments:(NSString *)attachment;
 
+- (MSGraphEventSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties;
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty;
+
+- (MSGraphEventMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties;
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty;
+
 - (MSGraphEventAcceptRequestBuilder *)acceptWithComment:(NSString *)comment sendResponse:(BOOL)sendResponse ;
-
-
 
 - (MSGraphEventDeclineRequestBuilder *)declineWithComment:(NSString *)comment sendResponse:(BOOL)sendResponse ;
 
-
-
 - (MSGraphEventTentativelyAcceptRequestBuilder *)tentativelyAcceptWithComment:(NSString *)comment sendResponse:(BOOL)sendResponse ;
-
-
 
 - (MSGraphEventSnoozeReminderRequestBuilder *)snoozeReminderWithNewReminderTime:(MSGraphDateTimeTimeZone *)newReminderTime ;
 
-
-
 - (MSGraphEventDismissReminderRequestBuilder *)dismissReminder;
 
-
+- (MSGraphEventCancelRequestBuilder *)cancelWithComment:(NSString *)comment ;
 
 
 - (MSGraphEventRequest *) request;

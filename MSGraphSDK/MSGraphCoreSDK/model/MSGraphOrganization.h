@@ -8,23 +8,23 @@
 
 @interface MSGraphOrganization : MSGraphDirectoryObject
 
-  @property (nonatomic, setter=setAssignedPlans:, getter=assignedPlans) NSArray* assignedPlans;
-    @property (nonatomic, setter=setBusinessPhones:, getter=businessPhones) NSArray* businessPhones;
-    @property (nonatomic, setter=setCity:, getter=city) NSString* city;
-    @property (nonatomic, setter=setCountry:, getter=country) NSString* country;
-    @property (nonatomic, setter=setCountryLetterCode:, getter=countryLetterCode) NSString* countryLetterCode;
-    @property (nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
-    @property (nonatomic, setter=setMarketingNotificationEmails:, getter=marketingNotificationEmails) NSArray* marketingNotificationEmails;
-    @property (nonatomic, setter=setOnPremisesLastSyncDateTime:, getter=onPremisesLastSyncDateTime) NSDate* onPremisesLastSyncDateTime;
+  @property (nonnull, nonatomic, setter=setAssignedPlans:, getter=assignedPlans) NSArray* assignedPlans;
+    @property (nonnull, nonatomic, setter=setBusinessPhones:, getter=businessPhones) NSArray* businessPhones;
+    @property (nullable, nonatomic, setter=setCity:, getter=city) NSString* city;
+    @property (nullable, nonatomic, setter=setCountry:, getter=country) NSString* country;
+    @property (nullable, nonatomic, setter=setCountryLetterCode:, getter=countryLetterCode) NSString* countryLetterCode;
+    @property (nullable, nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
+    @property (nonnull, nonatomic, setter=setMarketingNotificationEmails:, getter=marketingNotificationEmails) NSArray* marketingNotificationEmails;
+    @property (nullable, nonatomic, setter=setOnPremisesLastSyncDateTime:, getter=onPremisesLastSyncDateTime) NSDate* onPremisesLastSyncDateTime;
     @property (nonatomic, setter=setOnPremisesSyncEnabled:, getter=onPremisesSyncEnabled) BOOL onPremisesSyncEnabled;
-    @property (nonatomic, setter=setPostalCode:, getter=postalCode) NSString* postalCode;
-    @property (nonatomic, setter=setPreferredLanguage:, getter=preferredLanguage) NSString* preferredLanguage;
-    @property (nonatomic, setter=setProvisionedPlans:, getter=provisionedPlans) NSArray* provisionedPlans;
-    @property (nonatomic, setter=setSecurityComplianceNotificationMails:, getter=securityComplianceNotificationMails) NSArray* securityComplianceNotificationMails;
-    @property (nonatomic, setter=setSecurityComplianceNotificationPhones:, getter=securityComplianceNotificationPhones) NSArray* securityComplianceNotificationPhones;
-    @property (nonatomic, setter=setState:, getter=state) NSString* state;
-    @property (nonatomic, setter=setStreet:, getter=street) NSString* street;
-    @property (nonatomic, setter=setTechnicalNotificationMails:, getter=technicalNotificationMails) NSArray* technicalNotificationMails;
-    @property (nonatomic, setter=setVerifiedDomains:, getter=verifiedDomains) NSArray* verifiedDomains;
+    @property (nullable, nonatomic, setter=setPostalCode:, getter=postalCode) NSString* postalCode;
+    @property (nullable, nonatomic, setter=setPreferredLanguage:, getter=preferredLanguage) NSString* preferredLanguage;
+    @property (nonnull, nonatomic, setter=setProvisionedPlans:, getter=provisionedPlans) NSArray* provisionedPlans;
+    @property (nonnull, nonatomic, setter=setSecurityComplianceNotificationMails:, getter=securityComplianceNotificationMails) NSArray* securityComplianceNotificationMails;
+    @property (nonnull, nonatomic, setter=setSecurityComplianceNotificationPhones:, getter=securityComplianceNotificationPhones) NSArray* securityComplianceNotificationPhones;
+    @property (nullable, nonatomic, setter=setState:, getter=state) NSString* state;
+    @property (nullable, nonatomic, setter=setStreet:, getter=street) NSString* street;
+    @property (nonnull, nonatomic, setter=setTechnicalNotificationMails:, getter=technicalNotificationMails) NSArray* technicalNotificationMails;
+    @property (nonnull, nonatomic, setter=setVerifiedDomains:, getter=verifiedDomains) NSArray* verifiedDomains;
   
 @end

@@ -15,7 +15,6 @@
 @interface MSGraphAttendee()
 {
     MSGraphResponseStatus* _status;
-    MSGraphAttendeeType* _type;
 }
 @end
 
@@ -28,21 +27,11 @@
     }
     return _status;
 }
+
 - (void) setStatus: (MSGraphResponseStatus*) val
 {
     _status = val;
     self.dictionary[@"status"] = val;
 }
-- (MSGraphAttendeeType*) type
-{
-    if(!_type){
-        _type = [self.dictionary[@"type"] toMSGraphAttendeeType];
-    }
-    return _type;
-}
-- (void) setType: (MSGraphAttendeeType*) val
-{
-    _type = val;
-    self.dictionary[@"type"] = val;
-}
+
 @end

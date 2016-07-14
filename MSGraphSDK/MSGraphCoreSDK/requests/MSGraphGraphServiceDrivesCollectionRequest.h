@@ -14,4 +14,7 @@ typedef void (^MSGraphDrivesCollectionCompletionHandler)(MSCollection *response,
 @interface MSGraphDrivesCollectionRequest : MSCollectionRequest
 
 - (MSURLSessionDataTask *)getWithCompletion:(MSGraphDrivesCollectionCompletionHandler)completionHandler;
+
+- (MSURLSessionDataTask *)addDrive:(MSGraphDrive*)drive withCompletion:(MSGraphDriveCompletionHandler)completionHandler;
+
 @end

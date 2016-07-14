@@ -9,6 +9,6 @@
 
 @interface MSGraphRecipient : MSObject
 
-	@property (nonatomic, setter=setEmailAddress:, getter=emailAddress) MSGraphEmailAddress* emailAddress;
-	
+@property (nullable, nonatomic, setter=setEmailAddress:, getter=emailAddress) MSGraphEmailAddress* emailAddress;
+
 @end

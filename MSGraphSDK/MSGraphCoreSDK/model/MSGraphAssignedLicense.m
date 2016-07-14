@@ -25,16 +25,24 @@
 {
     return self.dictionary[@"disabledPlans"];
 }
+
 - (void) setDisabledPlans: (NSArray*) val
 {
     self.dictionary[@"disabledPlans"] = val;
 }
+
 - (NSString*) skuId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"skuId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"skuId"];
 }
+
 - (void) setSkuId: (NSString*) val
 {
     self.dictionary[@"skuId"] = val;
 }
+
 @end

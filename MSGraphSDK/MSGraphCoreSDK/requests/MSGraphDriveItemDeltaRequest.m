@@ -22,12 +22,30 @@
 
 @end
 
+@interface MSGraphDriveItemDeltaRequest()
+
+
+@property (nonatomic, getter=token) NSString * token;
+
+@end
 
 @implementation MSGraphDriveItemDeltaRequest
 
 
+- (instancetype)initWithToken:(NSString *)token URL:(NSURL *)url options:(NSArray *)options client:(ODataBaseClient*)client
+{
+    self = [super initWithURL:url options:options client:client];
+    if (self){
+        _token = token;
+    }
+    return self;
+}
+
 - (NSMutableURLRequest *)mutableRequest
 {
+    [self.options addObject:[[MSFunctionParameters alloc] initWithKey:@"token"
+                                                                value:[MSObject getNSJsonSerializationCompatibleValue:_token]]];
+
     return [self requestWithMethod:@"GET" body:nil headers:nil];
 }
 

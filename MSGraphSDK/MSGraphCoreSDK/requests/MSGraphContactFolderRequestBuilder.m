@@ -28,6 +28,28 @@
     return [[self childFolders] contactFolder:contactFolder];
 }
 
+- (MSGraphContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties
+{
+    return [[MSGraphContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"singleValueExtendedProperties"]  
+                                                                                                   client:self.client];
+}
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty
+{
+    return [[self singleValueExtendedProperties] singleValueLegacyExtendedProperty:singleValueLegacyExtendedProperty];
+}
+
+- (MSGraphContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties
+{
+    return [[MSGraphContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"multiValueExtendedProperties"]  
+                                                                                                  client:self.client];
+}
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty
+{
+    return [[self multiValueExtendedProperties] multiValueLegacyExtendedProperty:multiValueLegacyExtendedProperty];
+}
+
 
 - (MSGraphContactFolderRequest *)request
 {

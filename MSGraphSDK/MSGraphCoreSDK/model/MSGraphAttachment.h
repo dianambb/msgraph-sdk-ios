@@ -7,9 +7,9 @@
 
 @interface MSGraphAttachment : MSGraphEntity
 
-  @property (nonatomic, setter=setLastModifiedDateTime:, getter=lastModifiedDateTime) NSDate* lastModifiedDateTime;
-    @property (nonatomic, setter=setName:, getter=name) NSString* name;
-    @property (nonatomic, setter=setContentType:, getter=contentType) NSString* contentType;
+  @property (nullable, nonatomic, setter=setLastModifiedDateTime:, getter=lastModifiedDateTime) NSDate* lastModifiedDateTime;
+    @property (nullable, nonatomic, setter=setName:, getter=name) NSString* name;
+    @property (nullable, nonatomic, setter=setContentType:, getter=contentType) NSString* contentType;
     @property (nonatomic, setter=setSize:, getter=size) int32_t size;
     @property (nonatomic, setter=setIsInline:, getter=isInline) BOOL isInline;
   

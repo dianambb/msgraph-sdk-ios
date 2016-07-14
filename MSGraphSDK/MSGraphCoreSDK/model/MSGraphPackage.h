@@ -8,6 +8,6 @@
 
 @interface MSGraphPackage : MSObject
 
-	@property (nonatomic, setter=setType:, getter=type) NSString* type;
-	
+@property (nullable, nonatomic, setter=setType:, getter=type) NSString* type;
+
 @end

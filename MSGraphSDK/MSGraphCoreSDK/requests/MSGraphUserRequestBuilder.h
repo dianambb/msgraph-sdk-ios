@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphUserRequest, MSGraphDirectoryObjectRequestBuilder, MSGraphUserOwnedDevicesCollectionWithReferencesRequestBuilder, MSGraphUserRegisteredDevicesCollectionWithReferencesRequestBuilder, MSGraphManagerRequestBuilder, MSGraphUserDirectReportsCollectionWithReferencesRequestBuilder, MSGraphUserMemberOfCollectionWithReferencesRequestBuilder, MSGraphUserCreatedObjectsCollectionWithReferencesRequestBuilder, MSGraphUserOwnedObjectsCollectionWithReferencesRequestBuilder, MSGraphMessageRequestBuilder, MSGraphUserMessagesCollectionRequestBuilder, MSGraphMailFolderRequestBuilder, MSGraphUserMailFoldersCollectionRequestBuilder, MSGraphCalendarRequestBuilder, MSGraphUserCalendarsCollectionRequestBuilder, MSGraphCalendarGroupRequestBuilder, MSGraphUserCalendarGroupsCollectionRequestBuilder, MSGraphEventRequestBuilder, MSGraphUserCalendarViewCollectionRequestBuilder, MSGraphUserEventsCollectionRequestBuilder, MSGraphContactRequestBuilder, MSGraphUserContactsCollectionRequestBuilder, MSGraphContactFolderRequestBuilder, MSGraphUserContactFoldersCollectionRequestBuilder, MSGraphProfilePhotoRequestBuilder, MSGraphPhotoRequestBuilder, MSGraphDriveRequestBuilder, MSGraphProfilePhotoStreamRequest, MSGraphUserAssignLicenseRequestBuilder, MSGraphUserChangePasswordRequestBuilder, MSGraphUserSendMailRequestBuilder, MSGraphUserReminderViewRequestBuilder;
+@class MSGraphUserRequest, MSGraphDirectoryObjectRequestBuilder, MSGraphUserOwnedDevicesCollectionWithReferencesRequestBuilder, MSGraphUserRegisteredDevicesCollectionWithReferencesRequestBuilder, MSGraphManagerRequestBuilder, MSGraphUserDirectReportsCollectionWithReferencesRequestBuilder, MSGraphUserMemberOfCollectionWithReferencesRequestBuilder, MSGraphUserCreatedObjectsCollectionWithReferencesRequestBuilder, MSGraphUserOwnedObjectsCollectionWithReferencesRequestBuilder, MSGraphMessageRequestBuilder, MSGraphUserMessagesCollectionRequestBuilder, MSGraphGroupRequestBuilder, MSGraphUserJoinedGroupsCollectionRequestBuilder, MSGraphMailFolderRequestBuilder, MSGraphUserMailFoldersCollectionRequestBuilder, MSGraphCalendarRequestBuilder, MSGraphUserCalendarsCollectionRequestBuilder, MSGraphCalendarGroupRequestBuilder, MSGraphUserCalendarGroupsCollectionRequestBuilder, MSGraphEventRequestBuilder, MSGraphUserCalendarViewCollectionRequestBuilder, MSGraphUserEventsCollectionRequestBuilder, MSGraphPersonRequestBuilder, MSGraphUserPeopleCollectionRequestBuilder, MSGraphContactRequestBuilder, MSGraphUserContactsCollectionRequestBuilder, MSGraphContactFolderRequestBuilder, MSGraphUserContactFoldersCollectionRequestBuilder, MSGraphInferenceClassificationRequestBuilder, MSGraphProfilePhotoRequestBuilder, MSGraphPhotoRequestBuilder, MSGraphUserPhotosCollectionRequestBuilder, MSGraphDriveRequestBuilder, MSGraphOfficeGraphInsightsRequestBuilder, MSGraphInsightsRequestBuilder, MSGraphDriveItemRequestBuilder, MSGraphUserTrendingAroundCollectionRequestBuilder, MSGraphUserRequestBuilder, MSGraphUserWorkingWithCollectionRequestBuilder, MSGraphTaskRequestBuilder, MSGraphUserTasksCollectionWithReferencesRequestBuilder, MSGraphPlanRequestBuilder, MSGraphUserPlansCollectionWithReferencesRequestBuilder, MSGraphNotesRequestBuilder, MSGraphProfilePhotoStreamRequest, MSGraphUserAssignLicenseRequestBuilder, MSGraphUserChangePasswordRequestBuilder, MSGraphUserSendMailRequestBuilder, MSGraphUserFindMeetingTimesRequestBuilder, MSGraphUserReminderViewRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -41,6 +41,10 @@
 
 - (MSGraphMessageRequestBuilder *)messages:(NSString *)message;
 
+- (MSGraphUserJoinedGroupsCollectionRequestBuilder *)joinedGroups;
+
+- (MSGraphGroupRequestBuilder *)joinedGroups:(NSString *)group;
+
 - (MSGraphUserMailFoldersCollectionRequestBuilder *)mailFolders;
 
 - (MSGraphMailFolderRequestBuilder *)mailFolders:(NSString *)mailFolder;
@@ -63,6 +67,10 @@
 
 - (MSGraphEventRequestBuilder *)events:(NSString *)event;
 
+- (MSGraphUserPeopleCollectionRequestBuilder *)people;
+
+- (MSGraphPersonRequestBuilder *)people:(NSString *)person;
+
 - (MSGraphUserContactsCollectionRequestBuilder *)contacts;
 
 - (MSGraphContactRequestBuilder *)contacts:(NSString *)contact;
@@ -71,29 +79,53 @@
 
 - (MSGraphContactFolderRequestBuilder *)contactFolders:(NSString *)contactFolder;
 
+- (MSGraphInferenceClassificationRequestBuilder *) inferenceClassification;
+
 - (MSGraphProfilePhotoRequestBuilder *) photo;
 
+- (MSGraphUserPhotosCollectionRequestBuilder *)photos;
+
+- (MSGraphProfilePhotoRequestBuilder *)photos:(NSString *)profilePhoto;
+
 - (MSGraphDriveRequestBuilder *) drive;
+
+- (MSGraphOfficeGraphInsightsRequestBuilder *) insights;
+
+- (MSGraphUserTrendingAroundCollectionRequestBuilder *)trendingAround;
+
+- (MSGraphDriveItemRequestBuilder *)trendingAround:(NSString *)driveItem;
+
+- (MSGraphUserWorkingWithCollectionRequestBuilder *)workingWith;
+
+- (MSGraphUserRequestBuilder *)workingWith:(NSString *)user;
+
+- (MSGraphUserTasksCollectionWithReferencesRequestBuilder *)tasks;
+
+- (MSGraphTaskRequestBuilder *)tasks:(NSString *)task;
+
+- (MSGraphUserPlansCollectionWithReferencesRequestBuilder *)plans;
+
+- (MSGraphPlanRequestBuilder *)plans:(NSString *)plan;
+
+- (MSGraphNotesRequestBuilder *) notes;
 
 - (MSGraphProfilePhotoStreamRequest *) photoValueWithOptions:(NSArray *)options;
 
 - (MSGraphProfilePhotoStreamRequest *) photoValue;
 
+- (MSGraphProfilePhotoStreamRequest *) photosValueWithOptions:(NSArray *)options;
+
+- (MSGraphProfilePhotoStreamRequest *) photosValue;
+
 - (MSGraphUserAssignLicenseRequestBuilder *)assignLicenseWithAddLicenses:(NSArray *)addLicenses removeLicenses:(NSArray *)removeLicenses ;
-
-
 
 - (MSGraphUserChangePasswordRequestBuilder *)changePasswordWithCurrentPassword:(NSString *)currentPassword newPassword:(NSString *)newPassword ;
 
-
-
 - (MSGraphUserSendMailRequestBuilder *)sendMailWithMessage:(MSGraphMessage *)message saveToSentItems:(BOOL)saveToSentItems ;
 
-
+- (MSGraphUserFindMeetingTimesRequestBuilder *)findMeetingTimesWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionHints:(BOOL)returnSuggestionHints ;
 
 - (MSGraphUserReminderViewRequestBuilder *)reminderViewWithStartDateTime:(NSString *)startDateTime endDateTime:(NSString *)endDateTime ;
-
-
 
 
 - (MSGraphUserRequest *) request;

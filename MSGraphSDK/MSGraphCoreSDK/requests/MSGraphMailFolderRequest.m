@@ -33,19 +33,19 @@
 
 - (MSURLSessionDataTask *)getWithCompletion:(void (^)(MSGraphMailFolder *response, NSError *error))completionHandler
 {
-    MSURLSessionDataTask *task = [self taskWithRequest:[self get]
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self get]
                                 odObjectWithDictionary:^(NSDictionary *response){
                                             return [[MSGraphMailFolder alloc] initWithDictionary:response];
                                         }
                                              completion:completionHandler];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 
 
 - (NSMutableURLRequest *)update:(MSGraphMailFolder *)mailFolder
-{
+{    
     NSData *body = [NSJSONSerialization dataWithJSONObject:[mailFolder dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body
@@ -54,13 +54,13 @@
 
 - (MSURLSessionDataTask *)update:(MSGraphMailFolder *)mailFolder withCompletion:(void (^)(MSGraphMailFolder *response, NSError *error))completionHandler
 {
-    MSURLSessionDataTask *task = [self taskWithRequest:[self update:mailFolder]
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self update:mailFolder]
                                 odObjectWithDictionary:^(NSDictionary *response){
                                             return [[MSGraphMailFolder alloc] initWithDictionary:response];
                                         }
                                               completion:completionHandler];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 
@@ -74,11 +74,11 @@
 
 - (MSURLSessionDataTask *)deleteWithCompletion:(void(^)(NSError *error))completionHandler
 {
-    MSURLSessionDataTask *task = [self taskWithRequest:[self delete] completion:^(NSDictionary *response, NSError *error){
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self delete] completion:^(NSDictionary *response, NSError *error){
                                                                     completionHandler(error);
                                                                  }];
-    [task execute];
-    return task;
+    [sessionDataTask execute];
+    return sessionDataTask;
 }
 
 

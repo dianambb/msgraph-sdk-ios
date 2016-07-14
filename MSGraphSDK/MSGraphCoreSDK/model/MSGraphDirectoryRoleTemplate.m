@@ -30,19 +30,31 @@
 }
 - (NSString*) directoryRoleTemplateDescription
 {
+    if([[NSNull null] isEqual:self.dictionary[@"description"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"description"];
 }
+
 - (void) setDirectoryRoleTemplateDescription: (NSString*) val
 {
     self.dictionary[@"description"] = val;
 }
+
 - (NSString*) displayName
 {
+    if([[NSNull null] isEqual:self.dictionary[@"displayName"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"displayName"];
 }
+
 - (void) setDisplayName: (NSString*) val
 {
     self.dictionary[@"displayName"] = val;
 }
+
 
 @end

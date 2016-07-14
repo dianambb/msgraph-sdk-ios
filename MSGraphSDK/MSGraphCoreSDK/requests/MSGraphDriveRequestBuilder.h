@@ -23,11 +23,7 @@
 
 - (MSGraphDriveRecentRequestBuilder *)recent;
 
-
-
 - (MSGraphDriveSharedWithMeRequestBuilder *)sharedWithMe;
-
-
 
 
 - (MSGraphDriveRequest *) request;

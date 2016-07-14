@@ -33,41 +33,49 @@
     }
     return _type;
 }
+
 - (void) setType: (MSGraphRecurrencePatternType*) val
 {
     _type = val;
     self.dictionary[@"type"] = val;
 }
+
 - (int32_t) interval
 {
     _interval = [self.dictionary[@"interval"] intValue];
     return _interval;
 }
+
 - (void) setInterval: (int32_t) val
 {
     _interval = val;
     self.dictionary[@"interval"] = @(val);
 }
+
 - (int32_t) month
 {
     _month = [self.dictionary[@"month"] intValue];
     return _month;
 }
+
 - (void) setMonth: (int32_t) val
 {
     _month = val;
     self.dictionary[@"month"] = @(val);
 }
+
 - (int32_t) dayOfMonth
 {
     _dayOfMonth = [self.dictionary[@"dayOfMonth"] intValue];
     return _dayOfMonth;
 }
+
 - (void) setDayOfMonth: (int32_t) val
 {
     _dayOfMonth = val;
     self.dictionary[@"dayOfMonth"] = @(val);
 }
+
 - (NSArray*) daysOfWeek
 {
     if(!_daysOfWeek){
@@ -86,11 +94,13 @@
     }
     return _daysOfWeek;
 }
+
 - (void) setDaysOfWeek: (NSArray*) val
 {
     _daysOfWeek = val;
     self.dictionary[@"daysOfWeek"] = val;
 }
+
 - (MSGraphDayOfWeek*) firstDayOfWeek
 {
     if(!_firstDayOfWeek){
@@ -98,11 +108,13 @@
     }
     return _firstDayOfWeek;
 }
+
 - (void) setFirstDayOfWeek: (MSGraphDayOfWeek*) val
 {
     _firstDayOfWeek = val;
     self.dictionary[@"firstDayOfWeek"] = val;
 }
+
 - (MSGraphWeekIndex*) index
 {
     if(!_index){
@@ -110,9 +122,11 @@
     }
     return _index;
 }
+
 - (void) setIndex: (MSGraphWeekIndex*) val
 {
     _index = val;
     self.dictionary[@"index"] = val;
 }
+
 @end

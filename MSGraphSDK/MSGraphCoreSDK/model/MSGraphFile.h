@@ -9,7 +9,7 @@
 
 @interface MSGraphFile : MSObject
 
-	@property (nonatomic, setter=setHashes:, getter=hashes) MSGraphHashes* hashes;
-		@property (nonatomic, setter=setMimeType:, getter=mimeType) NSString* mimeType;
-	
+@property (nullable, nonatomic, setter=setHashes:, getter=hashes) MSGraphHashes* hashes;
+@property (nullable, nonatomic, setter=setMimeType:, getter=mimeType) NSString* mimeType;
+
 @end

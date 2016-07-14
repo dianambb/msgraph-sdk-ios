@@ -8,6 +8,6 @@
 
 @interface MSGraphDeleted : MSObject
 
-	@property (nonatomic, setter=setState:, getter=state) NSString* state;
-	
+@property (nullable, nonatomic, setter=setState:, getter=state) NSString* state;
+
 @end

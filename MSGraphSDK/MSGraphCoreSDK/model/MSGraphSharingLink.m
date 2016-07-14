@@ -29,25 +29,39 @@
     }
     return _application;
 }
+
 - (void) setApplication: (MSGraphIdentity*) val
 {
     _application = val;
     self.dictionary[@"application"] = val;
 }
+
 - (NSString*) type
 {
+    if([[NSNull null] isEqual:self.dictionary[@"type"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"type"];
 }
+
 - (void) setType: (NSString*) val
 {
     self.dictionary[@"type"] = val;
 }
+
 - (NSString*) webUrl
 {
+    if([[NSNull null] isEqual:self.dictionary[@"webUrl"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"webUrl"];
 }
+
 - (void) setWebUrl: (NSString*) val
 {
     self.dictionary[@"webUrl"] = val;
 }
+
 @end

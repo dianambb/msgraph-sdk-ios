@@ -29,11 +29,13 @@
     }
     return _application;
 }
+
 - (void) setApplication: (MSGraphIdentity*) val
 {
     _application = val;
     self.dictionary[@"application"] = val;
 }
+
 - (MSGraphIdentity*) device
 {
     if(!_device){
@@ -41,11 +43,13 @@
     }
     return _device;
 }
+
 - (void) setDevice: (MSGraphIdentity*) val
 {
     _device = val;
     self.dictionary[@"device"] = val;
 }
+
 - (MSGraphIdentity*) user
 {
     if(!_user){
@@ -53,9 +57,11 @@
     }
     return _user;
 }
+
 - (void) setUser: (MSGraphIdentity*) val
 {
     _user = val;
     self.dictionary[@"user"] = val;
 }
+
 @end

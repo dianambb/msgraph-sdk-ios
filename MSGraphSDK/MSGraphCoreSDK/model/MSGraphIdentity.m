@@ -23,18 +23,30 @@
 
 - (NSString*) displayName
 {
+    if([[NSNull null] isEqual:self.dictionary[@"displayName"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"displayName"];
 }
+
 - (void) setDisplayName: (NSString*) val
 {
     self.dictionary[@"displayName"] = val;
 }
+
 - (NSString*) identityId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"id"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"id"];
 }
+
 - (void) setIdentityId: (NSString*) val
 {
     self.dictionary[@"id"] = val;
 }
+
 @end

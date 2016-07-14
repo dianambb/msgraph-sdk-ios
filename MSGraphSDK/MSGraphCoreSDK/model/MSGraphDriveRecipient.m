@@ -24,26 +24,44 @@
 
 - (NSString*) email
 {
+    if([[NSNull null] isEqual:self.dictionary[@"email"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"email"];
 }
+
 - (void) setEmail: (NSString*) val
 {
     self.dictionary[@"email"] = val;
 }
+
 - (NSString*) alias
 {
+    if([[NSNull null] isEqual:self.dictionary[@"alias"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"alias"];
 }
+
 - (void) setAlias: (NSString*) val
 {
     self.dictionary[@"alias"] = val;
 }
+
 - (NSString*) objectId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"objectId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"objectId"];
 }
+
 - (void) setObjectId: (NSString*) val
 {
     self.dictionary[@"objectId"] = val;
 }
+
 @end

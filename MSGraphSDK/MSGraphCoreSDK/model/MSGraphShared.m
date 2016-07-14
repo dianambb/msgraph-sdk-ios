@@ -28,17 +28,25 @@
     }
     return _owner;
 }
+
 - (void) setOwner: (MSGraphIdentitySet*) val
 {
     _owner = val;
     self.dictionary[@"owner"] = val;
 }
+
 - (NSString*) scope
 {
+    if([[NSNull null] isEqual:self.dictionary[@"scope"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"scope"];
 }
+
 - (void) setScope: (NSString*) val
 {
     self.dictionary[@"scope"] = val;
 }
+
 @end

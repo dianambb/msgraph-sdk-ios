@@ -6,6 +6,10 @@
 @class MSGraphEventRequestBuilder;
 @class MSGraphEventsCollectionRequestBuilder;
 @class MSGraphCalendarViewCollectionRequestBuilder;
+@class MSGraphSingleValueLegacyExtendedPropertyRequestBuilder;
+@class MSGraphSingleValueExtendedPropertiesCollectionRequestBuilder;
+@class MSGraphMultiValueLegacyExtendedPropertyRequestBuilder;
+@class MSGraphMultiValueExtendedPropertiesCollectionRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

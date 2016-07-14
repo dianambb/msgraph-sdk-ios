@@ -9,8 +9,8 @@
 
 @interface MSGraphSharingLink : MSObject
 
-	@property (nonatomic, setter=setApplication:, getter=application) MSGraphIdentity* application;
-		@property (nonatomic, setter=setType:, getter=type) NSString* type;
-		@property (nonatomic, setter=setWebUrl:, getter=webUrl) NSString* webUrl;
-	
+@property (nullable, nonatomic, setter=setApplication:, getter=application) MSGraphIdentity* application;
+@property (nullable, nonatomic, setter=setType:, getter=type) NSString* type;
+@property (nullable, nonatomic, setter=setWebUrl:, getter=webUrl) NSString* webUrl;
+
 @end

@@ -22,10 +22,16 @@
 
 - (NSString*) state
 {
+    if([[NSNull null] isEqual:self.dictionary[@"state"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"state"];
 }
+
 - (void) setState: (NSString*) val
 {
     self.dictionary[@"state"] = val;
 }
+
 @end

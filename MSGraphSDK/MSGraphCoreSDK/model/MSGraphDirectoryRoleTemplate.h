@@ -7,7 +7,7 @@
 
 @interface MSGraphDirectoryRoleTemplate : MSGraphDirectoryObject
 
-  @property (nonatomic, setter=setDirectoryRoleTemplateDescription:, getter=directoryRoleTemplateDescription) NSString* directoryRoleTemplateDescription;
-    @property (nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
+  @property (nullable, nonatomic, setter=setDirectoryRoleTemplateDescription:, getter=directoryRoleTemplateDescription) NSString* directoryRoleTemplateDescription;
+    @property (nullable, nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
   
 @end

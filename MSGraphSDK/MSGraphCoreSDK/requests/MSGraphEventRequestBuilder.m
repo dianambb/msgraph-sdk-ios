@@ -23,6 +23,17 @@
     return [[self instances] event:event];
 }
 
+- (MSGraphEventExtensionsCollectionRequestBuilder *)extensions
+{
+    return [[MSGraphEventExtensionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"extensions"]  
+                                                                        client:self.client];
+}
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension
+{
+    return [[self extensions] extension:extension];
+}
+
 - (MSGraphEventAttachmentsCollectionRequestBuilder *)attachments
 {
     return [[MSGraphEventAttachmentsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"attachments"]  
@@ -32,6 +43,28 @@
 - (MSGraphAttachmentRequestBuilder *)attachments:(NSString *)attachment
 {
     return [[self attachments] attachment:attachment];
+}
+
+- (MSGraphEventSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties
+{
+    return [[MSGraphEventSingleValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"singleValueExtendedProperties"]  
+                                                                                           client:self.client];
+}
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty
+{
+    return [[self singleValueExtendedProperties] singleValueLegacyExtendedProperty:singleValueLegacyExtendedProperty];
+}
+
+- (MSGraphEventMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties
+{
+    return [[MSGraphEventMultiValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"multiValueExtendedProperties"]  
+                                                                                          client:self.client];
+}
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty
+{
+    return [[self multiValueExtendedProperties] multiValueLegacyExtendedProperty:multiValueLegacyExtendedProperty];
 }
 
 - (MSGraphEventAcceptRequestBuilder *)acceptWithComment:(NSString *)comment sendResponse:(BOOL)sendResponse 
@@ -80,6 +113,16 @@
 - (MSGraphEventDismissReminderRequestBuilder *)dismissReminder
 {
     return [[MSGraphEventDismissReminderRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.dismissReminder"] client:self.client];
+}
+
+- (MSGraphEventCancelRequestBuilder *)cancelWithComment:(NSString *)comment 
+{
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.cancel"];
+    return [[MSGraphEventCancelRequestBuilder alloc] initWithComment:comment
+                                                                 URL:actionURL
+                                                              client:self.client];
+
+
 }
 
 

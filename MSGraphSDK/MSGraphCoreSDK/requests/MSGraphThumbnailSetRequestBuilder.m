@@ -6,30 +6,6 @@
 
 @implementation MSGraphThumbnailSetRequestBuilder
 
--(MSGraphThumbnailRequestBuilder *)large
-{
-    return [[MSGraphThumbnailRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"large"] client:self.client];
-
-}
-
--(MSGraphThumbnailRequestBuilder *)medium
-{
-    return [[MSGraphThumbnailRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"medium"] client:self.client];
-
-}
-
--(MSGraphThumbnailRequestBuilder *)small
-{
-    return [[MSGraphThumbnailRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"small"] client:self.client];
-
-}
-
--(MSGraphThumbnailRequestBuilder *)source
-{
-    return [[MSGraphThumbnailRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"source"] client:self.client];
-
-}
-
 
 - (MSGraphThumbnailSetRequest *)request
 {

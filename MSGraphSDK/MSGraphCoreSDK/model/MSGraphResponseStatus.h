@@ -9,7 +9,7 @@
 
 @interface MSGraphResponseStatus : MSObject
 
-	@property (nonatomic, setter=setResponse:, getter=response) MSGraphResponseType* response;
-		@property (nonatomic, setter=setTime:, getter=time) NSDate* time;
-	
+@property (nullable, nonatomic, setter=setResponse:, getter=response) MSGraphResponseType* response;
+@property (nullable, nonatomic, setter=setTime:, getter=time) NSDate* time;
+
 @end

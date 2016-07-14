@@ -48,14 +48,14 @@
     });
     return _meetingAccepted;
 }
-+ (MSGraphMeetingMessageType*) meetingTenativelyAccepted {
-    static MSGraphMeetingMessageType *_meetingTenativelyAccepted;
++ (MSGraphMeetingMessageType*) meetingTentativelyAccepted {
+    static MSGraphMeetingMessageType *_meetingTentativelyAccepted;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _meetingTenativelyAccepted = [[MSGraphMeetingMessageType alloc] init];
-        _meetingTenativelyAccepted.enumValue = MSGraphMeetingMessageTypeMeetingTenativelyAccepted;
+        _meetingTentativelyAccepted = [[MSGraphMeetingMessageType alloc] init];
+        _meetingTentativelyAccepted.enumValue = MSGraphMeetingMessageTypeMeetingTentativelyAccepted;
     });
-    return _meetingTenativelyAccepted;
+    return _meetingTentativelyAccepted;
 }
 + (MSGraphMeetingMessageType*) meetingDeclined {
     static MSGraphMeetingMessageType *_meetingDeclined;
@@ -90,8 +90,8 @@
             return [MSGraphMeetingMessageType meetingCancelled];
         case MSGraphMeetingMessageTypeMeetingAccepted:
             return [MSGraphMeetingMessageType meetingAccepted];
-        case MSGraphMeetingMessageTypeMeetingTenativelyAccepted:
-            return [MSGraphMeetingMessageType meetingTenativelyAccepted];
+        case MSGraphMeetingMessageTypeMeetingTentativelyAccepted:
+            return [MSGraphMeetingMessageType meetingTentativelyAccepted];
         case MSGraphMeetingMessageTypeMeetingDeclined:
             return [MSGraphMeetingMessageType meetingDeclined];
         case MSGraphMeetingMessageTypeEndOfEnum:
@@ -114,8 +114,8 @@
             return @"meetingCancelled";
         case MSGraphMeetingMessageTypeMeetingAccepted:
             return @"meetingAccepted";
-        case MSGraphMeetingMessageTypeMeetingTenativelyAccepted:
-            return @"meetingTenativelyAccepted";
+        case MSGraphMeetingMessageTypeMeetingTentativelyAccepted:
+            return @"meetingTentativelyAccepted";
         case MSGraphMeetingMessageTypeMeetingDeclined:
             return @"meetingDeclined";
         case MSGraphMeetingMessageTypeEndOfEnum:
@@ -152,9 +152,9 @@
     {
           return [MSGraphMeetingMessageType meetingAccepted];
     }
-    else if([self isEqualToString:@"meetingTenativelyAccepted"])
+    else if([self isEqualToString:@"meetingTentativelyAccepted"])
     {
-          return [MSGraphMeetingMessageType meetingTenativelyAccepted];
+          return [MSGraphMeetingMessageType meetingTentativelyAccepted];
     }
     else if([self isEqualToString:@"meetingDeclined"])
     {

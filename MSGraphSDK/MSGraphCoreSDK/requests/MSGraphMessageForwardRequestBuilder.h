@@ -10,7 +10,7 @@
 
 @interface MSGraphMessageForwardRequestBuilder : MSRequestBuilder
 
-- (instancetype)initWithComment:(NSString *)comment toRecipients:(NSArray *)toRecipients URL:(NSURL *)url client:(ODataBaseClient*)client;
+- (instancetype)initWithMessage:(MSGraphMessage *)message comment:(NSString *)comment toRecipients:(NSArray *)toRecipients URL:(NSURL *)url client:(ODataBaseClient*)client;
 
 - (MSGraphMessageForwardRequest *)request;
 

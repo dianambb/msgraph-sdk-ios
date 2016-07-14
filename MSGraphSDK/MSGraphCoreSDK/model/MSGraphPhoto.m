@@ -29,60 +29,80 @@
 
 - (NSString*) cameraMake
 {
+    if([[NSNull null] isEqual:self.dictionary[@"cameraMake"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"cameraMake"];
 }
+
 - (void) setCameraMake: (NSString*) val
 {
     self.dictionary[@"cameraMake"] = val;
 }
+
 - (NSString*) cameraModel
 {
+    if([[NSNull null] isEqual:self.dictionary[@"cameraModel"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"cameraModel"];
 }
+
 - (void) setCameraModel: (NSString*) val
 {
     self.dictionary[@"cameraModel"] = val;
 }
+
 - (CGFloat) exposureDenominator
 {
     _exposureDenominator = [self.dictionary[@"exposureDenominator"] floatValue];
     return _exposureDenominator;
 }
+
 - (void) setExposureDenominator: (CGFloat) val
 {
     _exposureDenominator = val;
     self.dictionary[@"exposureDenominator"] = @(val);
 }
+
 - (CGFloat) exposureNumerator
 {
     _exposureNumerator = [self.dictionary[@"exposureNumerator"] floatValue];
     return _exposureNumerator;
 }
+
 - (void) setExposureNumerator: (CGFloat) val
 {
     _exposureNumerator = val;
     self.dictionary[@"exposureNumerator"] = @(val);
 }
+
 - (CGFloat) focalLength
 {
     _focalLength = [self.dictionary[@"focalLength"] floatValue];
     return _focalLength;
 }
+
 - (void) setFocalLength: (CGFloat) val
 {
     _focalLength = val;
     self.dictionary[@"focalLength"] = @(val);
 }
+
 - (CGFloat) fNumber
 {
     _fNumber = [self.dictionary[@"fNumber"] floatValue];
     return _fNumber;
 }
+
 - (void) setFNumber: (CGFloat) val
 {
     _fNumber = val;
     self.dictionary[@"fNumber"] = @(val);
 }
+
 - (NSDate*) takenDateTime
 {
     if(!_takenDateTime){
@@ -90,19 +110,23 @@
     }
     return _takenDateTime;
 }
+
 - (void) setTakenDateTime: (NSDate*) val
 {
     _takenDateTime = val;
     self.dictionary[@"takenDateTime"] = val;
 }
+
 - (int32_t) iso
 {
     _iso = [self.dictionary[@"iso"] intValue];
     return _iso;
 }
+
 - (void) setIso: (int32_t) val
 {
     _iso = val;
     self.dictionary[@"iso"] = @(val);
 }
+
 @end

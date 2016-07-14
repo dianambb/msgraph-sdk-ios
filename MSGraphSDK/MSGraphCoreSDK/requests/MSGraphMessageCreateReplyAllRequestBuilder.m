@@ -4,8 +4,28 @@
 
 #import "MSGraphODataEntities.h"
 
+@interface MSGraphMessageCreateReplyAllRequestBuilder()
+
+
+@property (nonatomic, getter=message) MSGraphMessage * message;
+
+
+@property (nonatomic, getter=comment) NSString * comment;
+
+@end
 
 @implementation MSGraphMessageCreateReplyAllRequestBuilder
+
+
+- (instancetype)initWithMessage:(MSGraphMessage *)message comment:(NSString *)comment URL:(NSURL *)url client:(ODataBaseClient*)client
+{
+    self = [super initWithURL:url client:client];
+    if (self){
+        _message = message;
+        _comment = comment;
+    }
+    return self;
+}
 
 - (MSGraphMessageCreateReplyAllRequest *)request
 {
@@ -14,7 +34,13 @@
 
 - (MSGraphMessageCreateReplyAllRequest *)requestWithOptions:(NSArray *)options
 {
-    return [[MSGraphMessageCreateReplyAllRequest alloc] initWithURL:self.requestURL client:self.client];
+
+    return [[MSGraphMessageCreateReplyAllRequest alloc] initWithMessage:self.message
+                                                                comment:self.comment
+                                                                    URL:self.requestURL
+                                                                options:options
+                                                                 client:self.client];
+
 }
 
 @end

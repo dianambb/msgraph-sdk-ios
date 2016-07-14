@@ -24,26 +24,44 @@
 
 - (NSString*) driveId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"driveId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"driveId"];
 }
+
 - (void) setDriveId: (NSString*) val
 {
     self.dictionary[@"driveId"] = val;
 }
+
 - (NSString*) itemReferenceId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"id"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"id"];
 }
+
 - (void) setItemReferenceId: (NSString*) val
 {
     self.dictionary[@"id"] = val;
 }
+
 - (NSString*) path
 {
+    if([[NSNull null] isEqual:self.dictionary[@"path"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"path"];
 }
+
 - (void) setPath: (NSString*) val
 {
     self.dictionary[@"path"] = val;
 }
+
 @end

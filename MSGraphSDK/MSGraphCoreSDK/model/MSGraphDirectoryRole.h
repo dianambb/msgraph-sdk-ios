@@ -8,9 +8,9 @@
 
 @interface MSGraphDirectoryRole : MSGraphDirectoryObject
 
-  @property (nonatomic, setter=setDirectoryRoleDescription:, getter=directoryRoleDescription) NSString* directoryRoleDescription;
-    @property (nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
-    @property (nonatomic, setter=setRoleTemplateId:, getter=roleTemplateId) NSString* roleTemplateId;
-    @property (nonatomic, setter=setMembers:, getter=members) NSArray* members;
+  @property (nullable, nonatomic, setter=setDirectoryRoleDescription:, getter=directoryRoleDescription) NSString* directoryRoleDescription;
+    @property (nullable, nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
+    @property (nullable, nonatomic, setter=setRoleTemplateId:, getter=roleTemplateId) NSString* roleTemplateId;
+    @property (nullable, nonatomic, setter=setMembers:, getter=members) NSArray* members;
   
 @end

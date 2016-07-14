@@ -8,8 +8,8 @@
 
 @interface MSGraphDriveRecipient : MSObject
 
-	@property (nonatomic, setter=setEmail:, getter=email) NSString* email;
-		@property (nonatomic, setter=setAlias:, getter=alias) NSString* alias;
-		@property (nonatomic, setter=setObjectId:, getter=objectId) NSString* objectId;
-	
+@property (nullable, nonatomic, setter=setEmail:, getter=email) NSString* email;
+@property (nullable, nonatomic, setter=setAlias:, getter=alias) NSString* alias;
+@property (nullable, nonatomic, setter=setObjectId:, getter=objectId) NSString* objectId;
+
 @end

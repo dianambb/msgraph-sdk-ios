@@ -7,6 +7,12 @@
 @class MSGraphMessagesCollectionRequestBuilder;
 @class MSGraphMailFolderRequestBuilder;
 @class MSGraphChildFoldersCollectionRequestBuilder;
+@class MSGraphUserConfigurationRequestBuilder;
+@class MSGraphUserConfigurationsCollectionRequestBuilder;
+@class MSGraphSingleValueLegacyExtendedPropertyRequestBuilder;
+@class MSGraphSingleValueExtendedPropertiesCollectionRequestBuilder;
+@class MSGraphMultiValueLegacyExtendedPropertyRequestBuilder;
+@class MSGraphMultiValueExtendedPropertiesCollectionRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

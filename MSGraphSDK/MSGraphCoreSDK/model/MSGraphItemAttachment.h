@@ -8,6 +8,6 @@
 
 @interface MSGraphItemAttachment : MSGraphAttachment
 
-  @property (nonatomic, setter=setItem:, getter=item) MSGraphOutlookItem* item;
+  @property (nullable, nonatomic, setter=setItem:, getter=item) MSGraphOutlookItem* item;
   
 @end

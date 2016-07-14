@@ -6,6 +6,12 @@
 
 @implementation MSGraphDriveItemRequestBuilder
 
+-(MSGraphWorkbookRequestBuilder *)workbook
+{
+    return [[MSGraphWorkbookRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"workbook"] client:self.client];
+
+}
+
 -(MSGraphUserRequestBuilder *)createdByUser
 {
     return [[MSGraphUserRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"createdByUser"] client:self.client];
@@ -73,6 +79,20 @@
 
 }
 
+- (MSGraphDriveItemInviteRequestBuilder *)inviteWithRequireSignIn:(BOOL)requireSignIn roles:(NSArray *)roles sendInvitation:(BOOL)sendInvitation message:(NSString *)message recipients:(NSArray *)recipients 
+{
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.invite"];
+    return [[MSGraphDriveItemInviteRequestBuilder alloc] initWithRequireSignIn:requireSignIn
+                                                                         roles:roles
+                                                                sendInvitation:sendInvitation
+                                                                       message:message
+                                                                    recipients:recipients
+                                                                           URL:actionURL
+                                                                        client:self.client];
+
+
+}
+
 - (MSGraphDriveItemCopyRequestBuilder *)copyWithName:(NSString *)name parentReference:(MSGraphItemReference *)parentReference 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.copy"];
@@ -90,6 +110,16 @@
     return [[MSGraphDriveItemSearchRequestBuilder alloc] initWithQ:q
                                                                URL:actionURL
                                                             client:self.client];
+
+
+}
+
+- (MSGraphDriveItemDeltaRequestBuilder *)deltaWithToken:(NSString *)token 
+{
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.delta"];
+    return [[MSGraphDriveItemDeltaRequestBuilder alloc] initWithToken:token
+                                                                  URL:actionURL
+                                                               client:self.client];
 
 
 }

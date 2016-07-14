@@ -27,29 +27,35 @@
     _enabled = [self.dictionary[@"enabled"] intValue];
     return _enabled;
 }
+
 - (void) setEnabled: (int32_t) val
 {
     _enabled = val;
     self.dictionary[@"enabled"] = @(val);
 }
+
 - (int32_t) suspended
 {
     _suspended = [self.dictionary[@"suspended"] intValue];
     return _suspended;
 }
+
 - (void) setSuspended: (int32_t) val
 {
     _suspended = val;
     self.dictionary[@"suspended"] = @(val);
 }
+
 - (int32_t) warning
 {
     _warning = [self.dictionary[@"warning"] intValue];
     return _warning;
 }
+
 - (void) setWarning: (int32_t) val
 {
     _warning = val;
     self.dictionary[@"warning"] = @(val);
 }
+
 @end

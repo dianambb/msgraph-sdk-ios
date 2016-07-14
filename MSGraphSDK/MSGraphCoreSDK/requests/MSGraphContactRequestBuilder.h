@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphContactRequest, MSGraphProfilePhotoRequestBuilder, MSGraphPhotoRequestBuilder, MSGraphProfilePhotoStreamRequest;
+@class MSGraphContactRequest, MSGraphExtensionRequestBuilder, MSGraphContactExtensionsCollectionRequestBuilder, MSGraphSingleValueLegacyExtendedPropertyRequestBuilder, MSGraphContactSingleValueExtendedPropertiesCollectionRequestBuilder, MSGraphMultiValueLegacyExtendedPropertyRequestBuilder, MSGraphContactMultiValueExtendedPropertiesCollectionRequestBuilder, MSGraphProfilePhotoRequestBuilder, MSGraphPhotoRequestBuilder, MSGraphProfilePhotoStreamRequest;
 
 
 #import "MSGraphModels.h"
@@ -10,6 +10,18 @@
 
 
 @interface MSGraphContactRequestBuilder : MSGraphOutlookItemRequestBuilder
+
+- (MSGraphContactExtensionsCollectionRequestBuilder *)extensions;
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension;
+
+- (MSGraphContactSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties;
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty;
+
+- (MSGraphContactMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties;
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty;
 
 - (MSGraphProfilePhotoRequestBuilder *) photo;
 

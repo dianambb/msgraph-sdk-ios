@@ -8,6 +8,6 @@
 
 @interface MSGraphFolder : MSObject
 
-	@property (nonatomic, setter=setChildCount:, getter=childCount) int32_t childCount;
-	
+@property (nonatomic, setter=setChildCount:, getter=childCount) int32_t childCount;
+
 @end

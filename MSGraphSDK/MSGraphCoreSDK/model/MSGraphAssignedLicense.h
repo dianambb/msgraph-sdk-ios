@@ -8,7 +8,7 @@
 
 @interface MSGraphAssignedLicense : MSObject
 
-	@property (nonatomic, setter=setDisabledPlans:, getter=disabledPlans) NSArray* disabledPlans;
-		@property (nonatomic, setter=setSkuId:, getter=skuId) NSString* skuId;
-	
+@property (nonnull, nonatomic, setter=setDisabledPlans:, getter=disabledPlans) NSArray* disabledPlans;
+@property (nullable, nonatomic, setter=setSkuId:, getter=skuId) NSString* skuId;
+
 @end

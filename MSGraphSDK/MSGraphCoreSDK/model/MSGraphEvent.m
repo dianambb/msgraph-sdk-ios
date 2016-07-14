@@ -41,9 +41,13 @@
     NSArray* _attendees;
     MSGraphRecipient* _organizer;
     NSString* _webLink;
+    NSString* _onlineMeetingUrl;
     MSGraphCalendar* _calendar;
     NSArray* _instances;
+    NSArray* _extensions;
     NSArray* _attachments;
+    NSArray* _singleValueExtendedProperties;
+    NSArray* _multiValueExtendedProperties;
 }
 @end
 
@@ -58,20 +62,32 @@
 }
 - (NSString*) originalStartTimeZone
 {
+    if([[NSNull null] isEqual:self.dictionary[@"originalStartTimeZone"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"originalStartTimeZone"];
 }
+
 - (void) setOriginalStartTimeZone: (NSString*) val
 {
     self.dictionary[@"originalStartTimeZone"] = val;
 }
+
 - (NSString*) originalEndTimeZone
 {
+    if([[NSNull null] isEqual:self.dictionary[@"originalEndTimeZone"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"originalEndTimeZone"];
 }
+
 - (void) setOriginalEndTimeZone: (NSString*) val
 {
     self.dictionary[@"originalEndTimeZone"] = val;
 }
+
 - (MSGraphResponseStatus*) responseStatus
 {
     if(!_responseStatus){
@@ -79,57 +95,77 @@
     }
     return _responseStatus;
 }
+
 - (void) setResponseStatus: (MSGraphResponseStatus*) val
 {
     _responseStatus = val;
     self.dictionary[@"responseStatus"] = val;
 }
+
 - (NSString*) iCalUId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"iCalUId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"iCalUId"];
 }
+
 - (void) setICalUId: (NSString*) val
 {
     self.dictionary[@"iCalUId"] = val;
 }
+
 - (int32_t) reminderMinutesBeforeStart
 {
     _reminderMinutesBeforeStart = [self.dictionary[@"reminderMinutesBeforeStart"] intValue];
     return _reminderMinutesBeforeStart;
 }
+
 - (void) setReminderMinutesBeforeStart: (int32_t) val
 {
     _reminderMinutesBeforeStart = val;
     self.dictionary[@"reminderMinutesBeforeStart"] = @(val);
 }
+
 - (BOOL) isReminderOn
 {
     _isReminderOn = [self.dictionary[@"isReminderOn"] boolValue];
     return _isReminderOn;
 }
+
 - (void) setIsReminderOn: (BOOL) val
 {
     _isReminderOn = val;
     self.dictionary[@"isReminderOn"] = @(val);
 }
+
 - (BOOL) hasAttachments
 {
     _hasAttachments = [self.dictionary[@"hasAttachments"] boolValue];
     return _hasAttachments;
 }
+
 - (void) setHasAttachments: (BOOL) val
 {
     _hasAttachments = val;
     self.dictionary[@"hasAttachments"] = @(val);
 }
+
 - (NSString*) subject
 {
+    if([[NSNull null] isEqual:self.dictionary[@"subject"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"subject"];
 }
+
 - (void) setSubject: (NSString*) val
 {
     self.dictionary[@"subject"] = val;
 }
+
 - (MSGraphItemBody*) body
 {
     if(!_body){
@@ -137,19 +173,27 @@
     }
     return _body;
 }
+
 - (void) setBody: (MSGraphItemBody*) val
 {
     _body = val;
     self.dictionary[@"body"] = val;
 }
+
 - (NSString*) bodyPreview
 {
+    if([[NSNull null] isEqual:self.dictionary[@"bodyPreview"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"bodyPreview"];
 }
+
 - (void) setBodyPreview: (NSString*) val
 {
     self.dictionary[@"bodyPreview"] = val;
 }
+
 - (MSGraphImportance*) importance
 {
     if(!_importance){
@@ -157,11 +201,13 @@
     }
     return _importance;
 }
+
 - (void) setImportance: (MSGraphImportance*) val
 {
     _importance = val;
     self.dictionary[@"importance"] = val;
 }
+
 - (MSGraphSensitivity*) sensitivity
 {
     if(!_sensitivity){
@@ -169,11 +215,13 @@
     }
     return _sensitivity;
 }
+
 - (void) setSensitivity: (MSGraphSensitivity*) val
 {
     _sensitivity = val;
     self.dictionary[@"sensitivity"] = val;
 }
+
 - (MSGraphDateTimeTimeZone*) start
 {
     if(!_start){
@@ -181,11 +229,13 @@
     }
     return _start;
 }
+
 - (void) setStart: (MSGraphDateTimeTimeZone*) val
 {
     _start = val;
     self.dictionary[@"start"] = val;
 }
+
 - (NSDate*) originalStart
 {
     if(!_originalStart){
@@ -193,11 +243,13 @@
     }
     return _originalStart;
 }
+
 - (void) setOriginalStart: (NSDate*) val
 {
     _originalStart = val;
     self.dictionary[@"originalStart"] = val;
 }
+
 - (MSGraphDateTimeTimeZone*) end
 {
     if(!_end){
@@ -205,11 +257,13 @@
     }
     return _end;
 }
+
 - (void) setEnd: (MSGraphDateTimeTimeZone*) val
 {
     _end = val;
     self.dictionary[@"end"] = val;
 }
+
 - (MSGraphLocation*) location
 {
     if(!_location){
@@ -217,41 +271,49 @@
     }
     return _location;
 }
+
 - (void) setLocation: (MSGraphLocation*) val
 {
     _location = val;
     self.dictionary[@"location"] = val;
 }
+
 - (BOOL) isAllDay
 {
     _isAllDay = [self.dictionary[@"isAllDay"] boolValue];
     return _isAllDay;
 }
+
 - (void) setIsAllDay: (BOOL) val
 {
     _isAllDay = val;
     self.dictionary[@"isAllDay"] = @(val);
 }
+
 - (BOOL) isCancelled
 {
     _isCancelled = [self.dictionary[@"isCancelled"] boolValue];
     return _isCancelled;
 }
+
 - (void) setIsCancelled: (BOOL) val
 {
     _isCancelled = val;
     self.dictionary[@"isCancelled"] = @(val);
 }
+
 - (BOOL) isOrganizer
 {
     _isOrganizer = [self.dictionary[@"isOrganizer"] boolValue];
     return _isOrganizer;
 }
+
 - (void) setIsOrganizer: (BOOL) val
 {
     _isOrganizer = val;
     self.dictionary[@"isOrganizer"] = @(val);
 }
+
 - (MSGraphPatternedRecurrence*) recurrence
 {
     if(!_recurrence){
@@ -259,29 +321,39 @@
     }
     return _recurrence;
 }
+
 - (void) setRecurrence: (MSGraphPatternedRecurrence*) val
 {
     _recurrence = val;
     self.dictionary[@"recurrence"] = val;
 }
+
 - (BOOL) responseRequested
 {
     _responseRequested = [self.dictionary[@"responseRequested"] boolValue];
     return _responseRequested;
 }
+
 - (void) setResponseRequested: (BOOL) val
 {
     _responseRequested = val;
     self.dictionary[@"responseRequested"] = @(val);
 }
+
 - (NSString*) seriesMasterId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"seriesMasterId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"seriesMasterId"];
 }
+
 - (void) setSeriesMasterId: (NSString*) val
 {
     self.dictionary[@"seriesMasterId"] = val;
 }
+
 - (MSGraphFreeBusyStatus*) showAs
 {
     if(!_showAs){
@@ -289,11 +361,13 @@
     }
     return _showAs;
 }
+
 - (void) setShowAs: (MSGraphFreeBusyStatus*) val
 {
     _showAs = val;
     self.dictionary[@"showAs"] = val;
 }
+
 - (MSGraphEventType*) type
 {
     if(!_type){
@@ -301,11 +375,13 @@
     }
     return _type;
 }
+
 - (void) setType: (MSGraphEventType*) val
 {
     _type = val;
     self.dictionary[@"type"] = val;
 }
+
 - (NSArray*) attendees
 {
     if(!_attendees){
@@ -324,11 +400,13 @@
     }
     return _attendees;
 }
+
 - (void) setAttendees: (NSArray*) val
 {
     _attendees = val;
     self.dictionary[@"attendees"] = val;
 }
+
 - (MSGraphRecipient*) organizer
 {
     if(!_organizer){
@@ -336,19 +414,41 @@
     }
     return _organizer;
 }
+
 - (void) setOrganizer: (MSGraphRecipient*) val
 {
     _organizer = val;
     self.dictionary[@"organizer"] = val;
 }
+
 - (NSString*) webLink
 {
+    if([[NSNull null] isEqual:self.dictionary[@"webLink"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"webLink"];
 }
+
 - (void) setWebLink: (NSString*) val
 {
     self.dictionary[@"webLink"] = val;
 }
+
+- (NSString*) onlineMeetingUrl
+{
+    if([[NSNull null] isEqual:self.dictionary[@"onlineMeetingUrl"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"onlineMeetingUrl"];
+}
+
+- (void) setOnlineMeetingUrl: (NSString*) val
+{
+    self.dictionary[@"onlineMeetingUrl"] = val;
+}
+
 - (MSGraphCalendar*) calendar
 {
     if(!_calendar){
@@ -356,11 +456,13 @@
     }
     return _calendar;
 }
+
 - (void) setCalendar: (MSGraphCalendar*) val
 {
     _calendar = val;
     self.dictionary[@"calendar"] = val;
 }
+
 - (NSArray*) instances
 {
     if(!_instances){
@@ -379,11 +481,38 @@
     }
     return _instances;
 }
+
 - (void) setInstances: (NSArray*) val
 {
     _instances = val;
     self.dictionary[@"instances"] = val;
 }
+
+- (NSArray*) extensions
+{
+    if(!_extensions){
+        
+    NSMutableArray *extensionsResult = [NSMutableArray array];
+    NSArray *extensions = self.dictionary[@"extensions"];
+
+    if ([extensions isKindOfClass:[NSArray class]]){
+        for (id extension in extensions){
+            [extensionsResult addObject:[[MSGraphExtension alloc] initWithDictionary: extension]];
+        }
+    }
+
+    _extensions = extensionsResult;
+        
+    }
+    return _extensions;
+}
+
+- (void) setExtensions: (NSArray*) val
+{
+    _extensions = val;
+    self.dictionary[@"extensions"] = val;
+}
+
 - (NSArray*) attachments
 {
     if(!_attachments){
@@ -402,10 +531,62 @@
     }
     return _attachments;
 }
+
 - (void) setAttachments: (NSArray*) val
 {
     _attachments = val;
     self.dictionary[@"attachments"] = val;
 }
+
+- (NSArray*) singleValueExtendedProperties
+{
+    if(!_singleValueExtendedProperties){
+        
+    NSMutableArray *singleValueExtendedPropertiesResult = [NSMutableArray array];
+    NSArray *singleValueExtendedProperties = self.dictionary[@"singleValueExtendedProperties"];
+
+    if ([singleValueExtendedProperties isKindOfClass:[NSArray class]]){
+        for (id singleValueLegacyExtendedProperty in singleValueExtendedProperties){
+            [singleValueExtendedPropertiesResult addObject:[[MSGraphSingleValueLegacyExtendedProperty alloc] initWithDictionary: singleValueLegacyExtendedProperty]];
+        }
+    }
+
+    _singleValueExtendedProperties = singleValueExtendedPropertiesResult;
+        
+    }
+    return _singleValueExtendedProperties;
+}
+
+- (void) setSingleValueExtendedProperties: (NSArray*) val
+{
+    _singleValueExtendedProperties = val;
+    self.dictionary[@"singleValueExtendedProperties"] = val;
+}
+
+- (NSArray*) multiValueExtendedProperties
+{
+    if(!_multiValueExtendedProperties){
+        
+    NSMutableArray *multiValueExtendedPropertiesResult = [NSMutableArray array];
+    NSArray *multiValueExtendedProperties = self.dictionary[@"multiValueExtendedProperties"];
+
+    if ([multiValueExtendedProperties isKindOfClass:[NSArray class]]){
+        for (id multiValueLegacyExtendedProperty in multiValueExtendedProperties){
+            [multiValueExtendedPropertiesResult addObject:[[MSGraphMultiValueLegacyExtendedProperty alloc] initWithDictionary: multiValueLegacyExtendedProperty]];
+        }
+    }
+
+    _multiValueExtendedProperties = multiValueExtendedPropertiesResult;
+        
+    }
+    return _multiValueExtendedProperties;
+}
+
+- (void) setMultiValueExtendedProperties: (NSArray*) val
+{
+    _multiValueExtendedProperties = val;
+    self.dictionary[@"multiValueExtendedProperties"] = val;
+}
+
 
 @end

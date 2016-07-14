@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphGroupRequest, MSGraphDirectoryObjectRequestBuilder, MSGraphGroupMembersCollectionWithReferencesRequestBuilder, MSGraphGroupMemberOfCollectionWithReferencesRequestBuilder, MSGraphCreatedOnBehalfOfRequestBuilder, MSGraphGroupOwnersCollectionWithReferencesRequestBuilder, MSGraphConversationThreadRequestBuilder, MSGraphGroupThreadsCollectionRequestBuilder, MSGraphCalendarRequestBuilder, MSGraphEventRequestBuilder, MSGraphGroupCalendarViewCollectionRequestBuilder, MSGraphGroupEventsCollectionRequestBuilder, MSGraphConversationRequestBuilder, MSGraphGroupConversationsCollectionRequestBuilder, MSGraphProfilePhotoRequestBuilder, MSGraphPhotoRequestBuilder, MSGraphGroupAcceptedSendersCollectionRequestBuilder, MSGraphGroupRejectedSendersCollectionRequestBuilder, MSGraphDriveRequestBuilder, MSGraphProfilePhotoStreamRequest, MSGraphGroupSubscribeByMailRequestBuilder, MSGraphGroupUnsubscribeByMailRequestBuilder, MSGraphGroupAddFavoriteRequestBuilder, MSGraphGroupRemoveFavoriteRequestBuilder, MSGraphGroupResetUnseenCountRequestBuilder;
+@class MSGraphGroupRequest, MSGraphDirectoryObjectRequestBuilder, MSGraphGroupMembersCollectionWithReferencesRequestBuilder, MSGraphGroupMemberOfCollectionWithReferencesRequestBuilder, MSGraphCreatedOnBehalfOfRequestBuilder, MSGraphGroupOwnersCollectionWithReferencesRequestBuilder, MSGraphDirectorySettingRequestBuilder, MSGraphGroupSettingsCollectionRequestBuilder, MSGraphConversationThreadRequestBuilder, MSGraphGroupThreadsCollectionRequestBuilder, MSGraphCalendarRequestBuilder, MSGraphEventRequestBuilder, MSGraphGroupCalendarViewCollectionRequestBuilder, MSGraphGroupEventsCollectionRequestBuilder, MSGraphConversationRequestBuilder, MSGraphGroupConversationsCollectionRequestBuilder, MSGraphProfilePhotoRequestBuilder, MSGraphPhotoRequestBuilder, MSGraphGroupPhotosCollectionRequestBuilder, MSGraphGroupAcceptedSendersCollectionRequestBuilder, MSGraphGroupRejectedSendersCollectionRequestBuilder, MSGraphDriveRequestBuilder, MSGraphPlanRequestBuilder, MSGraphGroupPlansCollectionWithReferencesRequestBuilder, MSGraphNotesRequestBuilder, MSGraphProfilePhotoStreamRequest, MSGraphGroupSubscribeByMailRequestBuilder, MSGraphGroupUnsubscribeByMailRequestBuilder, MSGraphGroupAddFavoriteRequestBuilder, MSGraphGroupRemoveFavoriteRequestBuilder, MSGraphGroupResetUnseenCountRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -25,6 +25,10 @@
 
 - (MSGraphDirectoryObjectRequestBuilder *)owners:(NSString *)directoryObject;
 
+- (MSGraphGroupSettingsCollectionRequestBuilder *)settings;
+
+- (MSGraphDirectorySettingRequestBuilder *)settings:(NSString *)directorySetting;
+
 - (MSGraphGroupThreadsCollectionRequestBuilder *)threads;
 
 - (MSGraphConversationThreadRequestBuilder *)threads:(NSString *)conversationThread;
@@ -45,6 +49,10 @@
 
 - (MSGraphProfilePhotoRequestBuilder *) photo;
 
+- (MSGraphGroupPhotosCollectionRequestBuilder *)photos;
+
+- (MSGraphProfilePhotoRequestBuilder *)photos:(NSString *)profilePhoto;
+
 - (MSGraphGroupAcceptedSendersCollectionRequestBuilder *)acceptedSenders;
 
 - (MSGraphDirectoryObjectRequestBuilder *)acceptedSenders:(NSString *)directoryObject;
@@ -55,29 +63,29 @@
 
 - (MSGraphDriveRequestBuilder *) drive;
 
+- (MSGraphGroupPlansCollectionWithReferencesRequestBuilder *)plans;
+
+- (MSGraphPlanRequestBuilder *)plans:(NSString *)plan;
+
+- (MSGraphNotesRequestBuilder *) notes;
+
 - (MSGraphProfilePhotoStreamRequest *) photoValueWithOptions:(NSArray *)options;
 
 - (MSGraphProfilePhotoStreamRequest *) photoValue;
 
+- (MSGraphProfilePhotoStreamRequest *) photosValueWithOptions:(NSArray *)options;
+
+- (MSGraphProfilePhotoStreamRequest *) photosValue;
+
 - (MSGraphGroupSubscribeByMailRequestBuilder *)subscribeByMail;
-
-
 
 - (MSGraphGroupUnsubscribeByMailRequestBuilder *)unsubscribeByMail;
 
-
-
 - (MSGraphGroupAddFavoriteRequestBuilder *)addFavorite;
-
-
 
 - (MSGraphGroupRemoveFavoriteRequestBuilder *)removeFavorite;
 
-
-
 - (MSGraphGroupResetUnseenCountRequestBuilder *)resetUnseenCount;
-
-
 
 
 - (MSGraphGroupRequest *) request;

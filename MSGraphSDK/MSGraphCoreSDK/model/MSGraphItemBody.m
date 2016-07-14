@@ -28,17 +28,25 @@
     }
     return _contentType;
 }
+
 - (void) setContentType: (MSGraphBodyType*) val
 {
     _contentType = val;
     self.dictionary[@"contentType"] = val;
 }
+
 - (NSString*) content
 {
+    if([[NSNull null] isEqual:self.dictionary[@"content"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"content"];
 }
+
 - (void) setContent: (NSString*) val
 {
     self.dictionary[@"content"] = val;
 }
+
 @end

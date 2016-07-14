@@ -32,28 +32,46 @@
 }
 - (NSString*) directoryRoleDescription
 {
+    if([[NSNull null] isEqual:self.dictionary[@"description"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"description"];
 }
+
 - (void) setDirectoryRoleDescription: (NSString*) val
 {
     self.dictionary[@"description"] = val;
 }
+
 - (NSString*) displayName
 {
+    if([[NSNull null] isEqual:self.dictionary[@"displayName"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"displayName"];
 }
+
 - (void) setDisplayName: (NSString*) val
 {
     self.dictionary[@"displayName"] = val;
 }
+
 - (NSString*) roleTemplateId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"roleTemplateId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"roleTemplateId"];
 }
+
 - (void) setRoleTemplateId: (NSString*) val
 {
     self.dictionary[@"roleTemplateId"] = val;
 }
+
 - (NSArray*) members
 {
     if(!_members){
@@ -72,10 +90,12 @@
     }
     return _members;
 }
+
 - (void) setMembers: (NSArray*) val
 {
     _members = val;
     self.dictionary[@"members"] = val;
 }
+
 
 @end

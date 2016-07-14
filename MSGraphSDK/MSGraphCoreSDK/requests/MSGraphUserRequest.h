@@ -12,6 +12,8 @@
 @class MSGraphOwnedObjectsCollectionRequestBuilder;
 @class MSGraphMessageRequestBuilder;
 @class MSGraphMessagesCollectionRequestBuilder;
+@class MSGraphGroupRequestBuilder;
+@class MSGraphJoinedGroupsCollectionRequestBuilder;
 @class MSGraphMailFolderRequestBuilder;
 @class MSGraphMailFoldersCollectionRequestBuilder;
 @class MSGraphCalendarRequestBuilder;
@@ -21,12 +23,26 @@
 @class MSGraphEventRequestBuilder;
 @class MSGraphCalendarViewCollectionRequestBuilder;
 @class MSGraphEventsCollectionRequestBuilder;
+@class MSGraphPersonRequestBuilder;
+@class MSGraphPeopleCollectionRequestBuilder;
 @class MSGraphContactRequestBuilder;
 @class MSGraphContactsCollectionRequestBuilder;
 @class MSGraphContactFolderRequestBuilder;
 @class MSGraphContactFoldersCollectionRequestBuilder;
+@class MSGraphInferenceClassificationRequestBuilder;
 @class MSGraphProfilePhotoRequestBuilder;
+@class MSGraphPhotosCollectionRequestBuilder;
 @class MSGraphDriveRequestBuilder;
+@class MSGraphOfficeGraphInsightsRequestBuilder;
+@class MSGraphDriveItemRequestBuilder;
+@class MSGraphTrendingAroundCollectionRequestBuilder;
+@class MSGraphUserRequestBuilder;
+@class MSGraphWorkingWithCollectionRequestBuilder;
+@class MSGraphTaskRequestBuilder;
+@class MSGraphTasksCollectionRequestBuilder;
+@class MSGraphPlanRequestBuilder;
+@class MSGraphPlansCollectionRequestBuilder;
+@class MSGraphNotesRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

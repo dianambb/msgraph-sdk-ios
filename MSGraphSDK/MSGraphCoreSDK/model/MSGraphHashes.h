@@ -8,7 +8,7 @@
 
 @interface MSGraphHashes : MSObject
 
-	@property (nonatomic, setter=setCrc32Hash:, getter=crc32Hash) NSString* crc32Hash;
-		@property (nonatomic, setter=setSha1Hash:, getter=sha1Hash) NSString* sha1Hash;
-	
+@property (nullable, nonatomic, setter=setCrc32Hash:, getter=crc32Hash) NSString* crc32Hash;
+@property (nullable, nonatomic, setter=setSha1Hash:, getter=sha1Hash) NSString* sha1Hash;
+
 @end

@@ -48,11 +48,13 @@
     _accountEnabled = [self.dictionary[@"accountEnabled"] boolValue];
     return _accountEnabled;
 }
+
 - (void) setAccountEnabled: (BOOL) val
 {
     _accountEnabled = val;
     self.dictionary[@"accountEnabled"] = @(val);
 }
+
 - (NSArray*) alternativeSecurityIds
 {
     if(!_alternativeSecurityIds){
@@ -71,11 +73,13 @@
     }
     return _alternativeSecurityIds;
 }
+
 - (void) setAlternativeSecurityIds: (NSArray*) val
 {
     _alternativeSecurityIds = val;
     self.dictionary[@"alternativeSecurityIds"] = val;
 }
+
 - (NSDate*) approximateLastSignInDateTime
 {
     if(!_approximateLastSignInDateTime){
@@ -83,65 +87,91 @@
     }
     return _approximateLastSignInDateTime;
 }
+
 - (void) setApproximateLastSignInDateTime: (NSDate*) val
 {
     _approximateLastSignInDateTime = val;
     self.dictionary[@"approximateLastSignInDateTime"] = val;
 }
+
 - (NSString*) deviceId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"deviceId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"deviceId"];
 }
+
 - (void) setDeviceId: (NSString*) val
 {
     self.dictionary[@"deviceId"] = val;
 }
+
 - (NSString*) deviceMetadata
 {
+    if([[NSNull null] isEqual:self.dictionary[@"deviceMetadata"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"deviceMetadata"];
 }
+
 - (void) setDeviceMetadata: (NSString*) val
 {
     self.dictionary[@"deviceMetadata"] = val;
 }
+
 - (int32_t) deviceVersion
 {
     _deviceVersion = [self.dictionary[@"deviceVersion"] intValue];
     return _deviceVersion;
 }
+
 - (void) setDeviceVersion: (int32_t) val
 {
     _deviceVersion = val;
     self.dictionary[@"deviceVersion"] = @(val);
 }
+
 - (NSString*) displayName
 {
+    if([[NSNull null] isEqual:self.dictionary[@"displayName"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"displayName"];
 }
+
 - (void) setDisplayName: (NSString*) val
 {
     self.dictionary[@"displayName"] = val;
 }
+
 - (BOOL) isCompliant
 {
     _isCompliant = [self.dictionary[@"isCompliant"] boolValue];
     return _isCompliant;
 }
+
 - (void) setIsCompliant: (BOOL) val
 {
     _isCompliant = val;
     self.dictionary[@"isCompliant"] = @(val);
 }
+
 - (BOOL) isManaged
 {
     _isManaged = [self.dictionary[@"isManaged"] boolValue];
     return _isManaged;
 }
+
 - (void) setIsManaged: (BOOL) val
 {
     _isManaged = val;
     self.dictionary[@"isManaged"] = @(val);
 }
+
 - (NSDate*) onPremisesLastSyncDateTime
 {
     if(!_onPremisesLastSyncDateTime){
@@ -149,53 +179,77 @@
     }
     return _onPremisesLastSyncDateTime;
 }
+
 - (void) setOnPremisesLastSyncDateTime: (NSDate*) val
 {
     _onPremisesLastSyncDateTime = val;
     self.dictionary[@"onPremisesLastSyncDateTime"] = val;
 }
+
 - (BOOL) onPremisesSyncEnabled
 {
     _onPremisesSyncEnabled = [self.dictionary[@"onPremisesSyncEnabled"] boolValue];
     return _onPremisesSyncEnabled;
 }
+
 - (void) setOnPremisesSyncEnabled: (BOOL) val
 {
     _onPremisesSyncEnabled = val;
     self.dictionary[@"onPremisesSyncEnabled"] = @(val);
 }
+
 - (NSString*) operatingSystem
 {
+    if([[NSNull null] isEqual:self.dictionary[@"operatingSystem"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"operatingSystem"];
 }
+
 - (void) setOperatingSystem: (NSString*) val
 {
     self.dictionary[@"operatingSystem"] = val;
 }
+
 - (NSString*) operatingSystemVersion
 {
+    if([[NSNull null] isEqual:self.dictionary[@"operatingSystemVersion"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"operatingSystemVersion"];
 }
+
 - (void) setOperatingSystemVersion: (NSString*) val
 {
     self.dictionary[@"operatingSystemVersion"] = val;
 }
+
 - (NSArray*) physicalIds
 {
     return self.dictionary[@"physicalIds"];
 }
+
 - (void) setPhysicalIds: (NSArray*) val
 {
     self.dictionary[@"physicalIds"] = val;
 }
+
 - (NSString*) trustType
 {
+    if([[NSNull null] isEqual:self.dictionary[@"trustType"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"trustType"];
 }
+
 - (void) setTrustType: (NSString*) val
 {
     self.dictionary[@"trustType"] = val;
 }
+
 - (NSArray*) registeredOwners
 {
     if(!_registeredOwners){
@@ -214,11 +268,13 @@
     }
     return _registeredOwners;
 }
+
 - (void) setRegisteredOwners: (NSArray*) val
 {
     _registeredOwners = val;
     self.dictionary[@"registeredOwners"] = val;
 }
+
 - (NSArray*) registeredUsers
 {
     if(!_registeredUsers){
@@ -237,10 +293,12 @@
     }
     return _registeredUsers;
 }
+
 - (void) setRegisteredUsers: (NSArray*) val
 {
     _registeredUsers = val;
     self.dictionary[@"registeredUsers"] = val;
 }
+
 
 @end

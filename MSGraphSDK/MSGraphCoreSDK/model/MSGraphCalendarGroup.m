@@ -32,28 +32,46 @@
 }
 - (NSString*) name
 {
+    if([[NSNull null] isEqual:self.dictionary[@"name"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"name"];
 }
+
 - (void) setName: (NSString*) val
 {
     self.dictionary[@"name"] = val;
 }
+
 - (NSString*) classId
 {
+    if([[NSNull null] isEqual:self.dictionary[@"classId"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"classId"];
 }
+
 - (void) setClassId: (NSString*) val
 {
     self.dictionary[@"classId"] = val;
 }
+
 - (NSString*) changeKey
 {
+    if([[NSNull null] isEqual:self.dictionary[@"changeKey"]])
+    {
+        return nil;
+    }   
     return self.dictionary[@"changeKey"];
 }
+
 - (void) setChangeKey: (NSString*) val
 {
     self.dictionary[@"changeKey"] = val;
 }
+
 - (NSArray*) calendars
 {
     if(!_calendars){
@@ -72,10 +90,12 @@
     }
     return _calendars;
 }
+
 - (void) setCalendars: (NSArray*) val
 {
     _calendars = val;
     self.dictionary[@"calendars"] = val;
 }
+
 
 @end
