@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphBinding *)binding
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[binding dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

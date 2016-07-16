@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphProfilePhoto *)profilePhoto
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[profilePhoto dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

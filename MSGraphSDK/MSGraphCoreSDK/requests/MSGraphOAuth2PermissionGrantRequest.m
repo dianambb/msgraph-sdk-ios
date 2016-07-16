@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphOAuth2PermissionGrant *)oAuth2PermissionGrant
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[oAuth2PermissionGrant dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

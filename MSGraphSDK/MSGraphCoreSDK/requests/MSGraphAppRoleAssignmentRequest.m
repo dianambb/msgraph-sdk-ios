@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphAppRoleAssignment *)appRoleAssignment
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[appRoleAssignment dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

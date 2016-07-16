@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphDirectorySettingTemplate *)directorySettingTemplate
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[directorySettingTemplate dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

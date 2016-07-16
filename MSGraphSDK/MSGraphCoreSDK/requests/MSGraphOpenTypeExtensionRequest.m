@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphOpenTypeExtension *)openTypeExtension
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[openTypeExtension dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

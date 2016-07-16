@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphExcelApplication *)excelApplication
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[excelApplication dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

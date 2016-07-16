@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphExtensionProperty *)extensionProperty
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[extensionProperty dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphUserConfiguration *)userConfiguration
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[userConfiguration dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

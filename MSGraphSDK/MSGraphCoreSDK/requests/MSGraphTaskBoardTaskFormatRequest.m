@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphTaskBoardTaskFormat *)taskBoardTaskFormat
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[taskBoardTaskFormat dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

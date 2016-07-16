@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphDirectoryRoleTemplate *)directoryRoleTemplate
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[directoryRoleTemplate dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

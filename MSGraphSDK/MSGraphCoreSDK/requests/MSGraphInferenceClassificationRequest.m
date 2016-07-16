@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphInferenceClassification *)inferenceClassification
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[inferenceClassification dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

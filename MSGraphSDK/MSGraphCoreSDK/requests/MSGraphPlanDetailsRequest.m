@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphPlanDetails *)planDetails
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[planDetails dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

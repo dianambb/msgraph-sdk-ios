@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphPermission *)permission
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[permission dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

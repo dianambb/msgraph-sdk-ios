@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphOrgContact *)orgContact
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[orgContact dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

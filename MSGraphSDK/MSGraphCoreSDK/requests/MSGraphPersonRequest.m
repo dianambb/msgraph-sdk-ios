@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphPerson *)person
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[person dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

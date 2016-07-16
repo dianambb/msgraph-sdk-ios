@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphLeakedCredentialsRiskEvent *)leakedCredentialsRiskEvent
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[leakedCredentialsRiskEvent dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphOrganization *)organization
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[organization dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

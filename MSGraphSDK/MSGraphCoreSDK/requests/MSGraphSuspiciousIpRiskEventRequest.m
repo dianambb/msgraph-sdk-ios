@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphSuspiciousIpRiskEvent *)suspiciousIpRiskEvent
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[suspiciousIpRiskEvent dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

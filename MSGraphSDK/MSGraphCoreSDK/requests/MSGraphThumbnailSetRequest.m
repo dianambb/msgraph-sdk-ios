@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphThumbnailSet *)thumbnailSet
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[thumbnailSet dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

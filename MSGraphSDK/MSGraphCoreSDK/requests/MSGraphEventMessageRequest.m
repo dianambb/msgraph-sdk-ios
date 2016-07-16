@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphEventMessage *)eventMessage
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[eventMessage dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

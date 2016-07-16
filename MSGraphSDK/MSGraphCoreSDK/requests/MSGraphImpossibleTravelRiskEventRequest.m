@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphImpossibleTravelRiskEvent *)impossibleTravelRiskEvent
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[impossibleTravelRiskEvent dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

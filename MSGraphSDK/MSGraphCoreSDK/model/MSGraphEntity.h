@@ -7,8 +7,8 @@
 
 @interface MSGraphEntity : MSObject
 
-  @property (nullable, setter=setODataType:, getter=oDataType) NSString *oDataType;
-  @property (nullable, setter=setODataEtag:, getter=oDataEtag) NSString *oDataEtag;
+  @property (nullable, nonatomic, setter=setODataType:, getter=oDataType) NSString *oDataType;
+  @property (nullable, nonatomic, setter=setODataEtag:, getter=oDataEtag) NSString *oDataEtag;
   @property (nonnull, nonatomic, setter=setEntityId:, getter=entityId) NSString* entityId;
   
 @end

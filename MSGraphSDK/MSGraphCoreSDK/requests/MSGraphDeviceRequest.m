@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphDevice *)device
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[device dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphBucket *)bucket
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[bucket dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphSectionGroup *)sectionGroup
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[sectionGroup dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

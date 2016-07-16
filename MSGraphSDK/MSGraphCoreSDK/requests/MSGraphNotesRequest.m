@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphNotes *)notes
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[notes dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

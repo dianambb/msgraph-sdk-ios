@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphCalendar *)calendar
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[calendar dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

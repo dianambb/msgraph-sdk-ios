@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphDriveItem *)driveItem
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[driveItem dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

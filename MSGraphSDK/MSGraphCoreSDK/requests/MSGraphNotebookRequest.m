@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphNotebook *)notebook
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[notebook dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

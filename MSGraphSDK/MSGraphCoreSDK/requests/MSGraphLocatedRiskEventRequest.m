@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphLocatedRiskEvent *)locatedRiskEvent
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[locatedRiskEvent dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body

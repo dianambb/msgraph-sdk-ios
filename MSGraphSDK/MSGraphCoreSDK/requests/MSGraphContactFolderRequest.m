@@ -45,7 +45,7 @@
 
 
 - (NSMutableURLRequest *)update:(MSGraphContactFolder *)contactFolder
-{    
+{
     NSData *body = [NSJSONSerialization dataWithJSONObject:[contactFolder dictionaryFromItem] options:0 error:nil];
     return [self requestWithMethod:@"PATCH"
                               body:body
