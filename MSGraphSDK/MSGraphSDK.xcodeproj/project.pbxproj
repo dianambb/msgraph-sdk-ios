@@ -874,8 +874,6 @@
 		7C70EDF61C8E1D26008A0C07 /* MSGraphCoreSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C70EDF51C8E1D26008A0C07 /* MSGraphCoreSDK.h */; };
 		7C70EE4E1C90DE73008A0C07 /* MSBlockAuthenticationProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C70EE4C1C90DE73008A0C07 /* MSBlockAuthenticationProvider.h */; };
 		7C70EE4F1C90DE73008A0C07 /* MSBlockAuthenticationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C70EE4D1C90DE73008A0C07 /* MSBlockAuthenticationProvider.m */; };
-		BAEB16F41D372BA600C5852A /* MSTimeOfDay.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEB16F21D372BA600C5852A /* MSTimeOfDay.h */; };
-		BAEB16F51D372BA600C5852A /* MSTimeOfDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEB16F31D372BA600C5852A /* MSTimeOfDay.m */; };
 		BAEB16FA1D372C8000C5852A /* MSGraphActivityDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEB16F61D372C8000C5852A /* MSGraphActivityDomain.h */; };
 		BAEB16FB1D372C8000C5852A /* MSGraphActivityDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEB16F71D372C8000C5852A /* MSGraphActivityDomain.m */; };
 		BAEB16FC1D372C8000C5852A /* MSGraphAddIn.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEB16F81D372C8000C5852A /* MSGraphAddIn.h */; };
@@ -1730,6 +1728,8 @@
 		BAEB1D9F1D372D0E00C5852A /* MSGraphWorkbookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEB1B291D372D0A00C5852A /* MSGraphWorkbookRequest.m */; };
 		BAEB1DA01D372D0E00C5852A /* MSGraphWorkbookRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEB1B2A1D372D0A00C5852A /* MSGraphWorkbookRequestBuilder.h */; };
 		BAEB1DA11D372D0E00C5852A /* MSGraphWorkbookRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEB1B2B1D372D0A00C5852A /* MSGraphWorkbookRequestBuilder.m */; };
+		BA23B91A1D6251E000CB0C55 /* MSTimeOfDay.h in Headers */ = {isa = PBXBuildFile; fileRef = BA23B9181D6251E000CB0C55 /* MSTimeOfDay.h */; };
+		BA23B91B1D6251E000CB0C55 /* MSTimeOfDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BA23B9191D6251E000CB0C55 /* MSTimeOfDay.m */; };
 		ED791DECEFED68832BD1C1B1 /* libPods-MSGraphSDKTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0858B0D0686548DE368A8 /* libPods-MSGraphSDKTests.a */; };
 /* End PBXBuildFile section */
 
@@ -2617,8 +2617,6 @@
 		7C70EDF51C8E1D26008A0C07 /* MSGraphCoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGraphCoreSDK.h; sourceTree = "<group>"; };
 		7C70EE4C1C90DE73008A0C07 /* MSBlockAuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBlockAuthenticationProvider.h; sourceTree = "<group>"; };
 		7C70EE4D1C90DE73008A0C07 /* MSBlockAuthenticationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBlockAuthenticationProvider.m; sourceTree = "<group>"; };
-		BAEB16F21D372BA600C5852A /* MSTimeOfDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeOfDay.h; sourceTree = "<group>"; };
-		BAEB16F31D372BA600C5852A /* MSTimeOfDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeOfDay.m; sourceTree = "<group>"; };
 		BAEB16F61D372C8000C5852A /* MSGraphActivityDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGraphActivityDomain.h; sourceTree = "<group>"; };
 		BAEB16F71D372C8000C5852A /* MSGraphActivityDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGraphActivityDomain.m; sourceTree = "<group>"; };
 		BAEB16F81D372C8000C5852A /* MSGraphAddIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGraphAddIn.h; sourceTree = "<group>"; };
@@ -3473,6 +3471,8 @@
 		BAEB1B291D372D0A00C5852A /* MSGraphWorkbookRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGraphWorkbookRequest.m; sourceTree = "<group>"; };
 		BAEB1B2A1D372D0A00C5852A /* MSGraphWorkbookRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGraphWorkbookRequestBuilder.h; sourceTree = "<group>"; };
 		BAEB1B2B1D372D0A00C5852A /* MSGraphWorkbookRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGraphWorkbookRequestBuilder.m; sourceTree = "<group>"; };
+		BA23B9181D6251E000CB0C55 /* MSTimeOfDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeOfDay.h; sourceTree = "<group>"; };
+		BA23B9191D6251E000CB0C55 /* MSTimeOfDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeOfDay.m; sourceTree = "<group>"; };
 		BE924E32305F80BA7A065278 /* Pods-MSGraphSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSGraphSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSGraphSDKTests/Pods-MSGraphSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1D0858B0D0686548DE368A8 /* libPods-MSGraphSDKTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSGraphSDKTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89BAF5C44735D6683338221 /* Pods-MSGraphSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSGraphSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSGraphSDKTests/Pods-MSGraphSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -3792,8 +3792,8 @@
 		7C70E8611C877855008A0C07 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BAEB16F21D372BA600C5852A /* MSTimeOfDay.h */,
-				BAEB16F31D372BA600C5852A /* MSTimeOfDay.m */,
+				BA23B9181D6251E000CB0C55 /* MSTimeOfDay.h */,
+				BA23B9191D6251E000CB0C55 /* MSTimeOfDay.m */,
 				7C4C19891CAAF1E000FBDFFD /* MSGraphClientConfiguration.h */,
 				7C4C198A1CAAF1E000FBDFFD /* MSGraphClientConfiguration.m */,
 				7C70E8621C877855008A0C07 /* MSCollection.h */,
@@ -5590,9 +5590,9 @@
 				7C6F5C4E1CB33B8B00EDF1C9 /* MSGraphUserRegisteredDevicesCollectionWithReferencesRequestBuilder.h in Headers */,
 				BAEB1D7C1D372D0E00C5852A /* MSGraphUserPlansCollectionReferencesRequestBuilder.h in Headers */,
 				BAEB18081D372CCE00C5852A /* MSGraphExternalLink.h in Headers */,
-				BAEB16F41D372BA600C5852A /* MSTimeOfDay.h in Headers */,
 				BAEB1CBA1D372D0C00C5852A /* MSGraphPersonRequest.h in Headers */,
 				BAEB18641D372CCE00C5852A /* MSGraphPhone.h in Headers */,
+				BA23B91A1D6251E000CB0C55 /* MSTimeOfDay.h in Headers */,
 				7C6F57731CB33B8100EDF1C9 /* MSGraphConversationThread.h in Headers */,
 				7C4C19B01CAAF90300FBDFFD /* MSGraphClient+DefaultConfiguration.h in Headers */,
 				BAEB1B781D372D0B00C5852A /* MSGraphDirectorySettingRequestBuilder.h in Headers */,
@@ -6930,7 +6930,7 @@
 				BAEB1C111D372D0B00C5852A /* MSGraphIdentityRiskEventRequestBuilder.m in Sources */,
 				BAEB183F1D372CCE00C5852A /* MSGraphNotes.m in Sources */,
 				7C6F5A421CB33B8B00EDF1C9 /* MSGraphCalendarGroupCalendarsCollectionRequestBuilder.m in Sources */,
-				BAEB16F51D372BA600C5852A /* MSTimeOfDay.m in Sources */,
+				BA23B91B1D6251E000CB0C55 /* MSTimeOfDay.m in Sources */,
 				7C6F5B041CB33B8B00EDF1C9 /* MSGraphEventSnoozeReminderRequest.m in Sources */,
 				BAEB1D351D372D0D00C5852A /* MSGraphServicePrincipalOwnedObjectsCollectionReferencesRequestBuilder.m in Sources */,
 				7C6F5C451CB33B8B00EDF1C9 /* MSGraphUserReferenceRequest.m in Sources */,
