@@ -15,8 +15,10 @@
 @interface MSGraphPlan()
 {
     NSString* _createdBy;
+    NSDate* _createdDateTime;
     NSString* _owner;
     NSString* _title;
+    BOOL _isVisibleInPlannerWebClient;
     NSArray* _tasks;
     NSArray* _buckets;
     MSGraphPlanDetails* _details;
@@ -49,6 +51,20 @@
     self.dictionary[@"createdBy"] = val;
 }
 
+- (NSDate*) createdDateTime
+{
+    if(!_createdDateTime){
+        _createdDateTime = [NSDate ms_dateFromString: self.dictionary[@"createdDateTime"]];
+    }
+    return _createdDateTime;
+}
+
+- (void) setCreatedDateTime: (NSDate*) val
+{
+    _createdDateTime = val;
+    self.dictionary[@"createdDateTime"] = val;
+}
+
 - (NSString*) owner
 {
     if([[NSNull null] isEqual:self.dictionary[@"owner"]])
@@ -71,6 +87,18 @@
 - (void) setTitle: (NSString*) val
 {
     self.dictionary[@"title"] = val;
+}
+
+- (BOOL) isVisibleInPlannerWebClient
+{
+    _isVisibleInPlannerWebClient = [self.dictionary[@"isVisibleInPlannerWebClient"] boolValue];
+    return _isVisibleInPlannerWebClient;
+}
+
+- (void) setIsVisibleInPlannerWebClient: (BOOL) val
+{
+    _isVisibleInPlannerWebClient = val;
+    self.dictionary[@"isVisibleInPlannerWebClient"] = @(val);
 }
 
 - (NSArray*) tasks

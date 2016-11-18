@@ -9,8 +9,10 @@
 @interface MSGraphPlan : MSGraphEntity
 
   @property (nullable, nonatomic, setter=setCreatedBy:, getter=createdBy) NSString* createdBy;
+    @property (nullable, nonatomic, setter=setCreatedDateTime:, getter=createdDateTime) NSDate* createdDateTime;
     @property (nullable, nonatomic, setter=setOwner:, getter=owner) NSString* owner;
     @property (nonnull, nonatomic, setter=setTitle:, getter=title) NSString* title;
+    @property (nonatomic, setter=setIsVisibleInPlannerWebClient:, getter=isVisibleInPlannerWebClient) BOOL isVisibleInPlannerWebClient;
     @property (nullable, nonatomic, setter=setTasks:, getter=tasks) NSArray* tasks;
     @property (nullable, nonatomic, setter=setBuckets:, getter=buckets) NSArray* buckets;
     @property (nullable, nonatomic, setter=setDetails:, getter=details) MSGraphPlanDetails* details;
