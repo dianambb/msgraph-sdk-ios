@@ -37,7 +37,6 @@
     MSGraphRoot* _root;
     MSGraphSearchResult* _searchResult;
     MSGraphShared* _shared;
-    MSGraphSharepointIds* _sharepointIds;
     int64_t _size;
     MSGraphSpecialFolder* _specialFolder;
     MSGraphVideo* _video;
@@ -380,20 +379,6 @@
 {
     _shared = val;
     self.dictionary[@"shared"] = val;
-}
-
-- (MSGraphSharepointIds*) sharepointIds
-{
-    if(!_sharepointIds){
-        _sharepointIds = [[MSGraphSharepointIds alloc] initWithDictionary: self.dictionary[@"sharepointIds"]];
-    }
-    return _sharepointIds;
-}
-
-- (void) setSharepointIds: (MSGraphSharepointIds*) val
-{
-    _sharepointIds = val;
-    self.dictionary[@"sharepointIds"] = val;
 }
 
 - (int64_t) size

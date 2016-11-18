@@ -4,7 +4,6 @@
 
 @class MSURLSessionDataTask;
 @class MSGraphWorkbookChartFillRequestBuilder;
-@class MSGraphWorkbookChartFontRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

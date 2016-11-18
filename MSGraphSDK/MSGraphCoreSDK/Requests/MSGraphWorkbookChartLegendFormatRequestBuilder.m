@@ -12,12 +12,6 @@
 
 }
 
--(MSGraphWorkbookChartFontRequestBuilder *)font
-{
-    return [[MSGraphWorkbookChartFontRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"font"] client:self.client];
-
-}
-
 
 - (MSGraphWorkbookChartLegendFormatRequest *)request
 {

@@ -14,9 +14,6 @@
 
 @interface MSGraphPrivilegedRoleSettings()
 {
-    Duration* _minElevationDuration;
-    Duration* _maxElavationDuration;
-    Duration* _elevationDuration;
     BOOL _notificationToUserOnElevation;
     BOOL _ticketingInfoOnElevation;
     BOOL _mfaOnElevation;
@@ -34,48 +31,6 @@
     }
     return self;
 }
-- (Duration*) minElevationDuration
-{
-    if(!_minElevationDuration){
-        _minElevationDuration = [self.dictionary[@"minElevationDuration"] ];
-    }
-    return _minElevationDuration;
-}
-
-- (void) setMinElevationDuration: (Duration*) val
-{
-    _minElevationDuration = val;
-    self.dictionary[@"minElevationDuration"] = val;
-}
-
-- (Duration*) maxElavationDuration
-{
-    if(!_maxElavationDuration){
-        _maxElavationDuration = [self.dictionary[@"maxElavationDuration"] ];
-    }
-    return _maxElavationDuration;
-}
-
-- (void) setMaxElavationDuration: (Duration*) val
-{
-    _maxElavationDuration = val;
-    self.dictionary[@"maxElavationDuration"] = val;
-}
-
-- (Duration*) elevationDuration
-{
-    if(!_elevationDuration){
-        _elevationDuration = [self.dictionary[@"elevationDuration"] ];
-    }
-    return _elevationDuration;
-}
-
-- (void) setElevationDuration: (Duration*) val
-{
-    _elevationDuration = val;
-    self.dictionary[@"elevationDuration"] = val;
-}
-
 - (BOOL) notificationToUserOnElevation
 {
     _notificationToUserOnElevation = [self.dictionary[@"notificationToUserOnElevation"] boolValue];

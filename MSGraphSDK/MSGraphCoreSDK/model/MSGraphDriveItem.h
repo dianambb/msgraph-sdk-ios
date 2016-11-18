@@ -31,7 +31,6 @@
     @property (nullable, nonatomic, setter=setRoot:, getter=root) MSGraphRoot* root;
     @property (nullable, nonatomic, setter=setSearchResult:, getter=searchResult) MSGraphSearchResult* searchResult;
     @property (nullable, nonatomic, setter=setShared:, getter=shared) MSGraphShared* shared;
-    @property (nullable, nonatomic, setter=setSharepointIds:, getter=sharepointIds) MSGraphSharepointIds* sharepointIds;
     @property (nonatomic, setter=setSize:, getter=size) int64_t size;
     @property (nullable, nonatomic, setter=setSpecialFolder:, getter=specialFolder) MSGraphSpecialFolder* specialFolder;
     @property (nullable, nonatomic, setter=setVideo:, getter=video) MSGraphVideo* video;

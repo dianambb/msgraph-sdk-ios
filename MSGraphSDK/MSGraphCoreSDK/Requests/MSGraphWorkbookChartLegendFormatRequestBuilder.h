@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphWorkbookChartLegendFormatRequest, MSGraphWorkbookChartFillRequestBuilder, MSGraphFillRequestBuilder, MSGraphWorkbookChartFontRequestBuilder, MSGraphFontRequestBuilder;
+@class MSGraphWorkbookChartLegendFormatRequest, MSGraphWorkbookChartFillRequestBuilder, MSGraphFillRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -12,8 +12,6 @@
 @interface MSGraphWorkbookChartLegendFormatRequestBuilder : MSGraphEntityRequestBuilder
 
 - (MSGraphWorkbookChartFillRequestBuilder *) fill;
-
-- (MSGraphWorkbookChartFontRequestBuilder *) font;
 
 
 - (MSGraphWorkbookChartLegendFormatRequest *) request;

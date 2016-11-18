@@ -15,7 +15,6 @@
 @interface MSGraphWorkbookChartLegendFormat()
 {
     MSGraphWorkbookChartFill* _fill;
-    MSGraphWorkbookChartFont* _font;
 }
 @end
 
@@ -40,20 +39,6 @@
 {
     _fill = val;
     self.dictionary[@"fill"] = val;
-}
-
-- (MSGraphWorkbookChartFont*) font
-{
-    if(!_font){
-        _font = [[MSGraphWorkbookChartFont alloc] initWithDictionary: self.dictionary[@"font"]];
-    }
-    return _font;
-}
-
-- (void) setFont: (MSGraphWorkbookChartFont*) val
-{
-    _font = val;
-    self.dictionary[@"font"] = val;
 }
 
 
