@@ -3,7 +3,6 @@
 
 
 @class MSURLSessionDataTask;
-@class MSGraphWorkbookChartPointFormatRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

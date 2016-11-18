@@ -49,7 +49,6 @@
     @property (nullable, nonatomic, setter=setAcceptedSenders:, getter=acceptedSenders) NSArray* acceptedSenders;
     @property (nullable, nonatomic, setter=setRejectedSenders:, getter=rejectedSenders) NSArray* rejectedSenders;
     @property (nullable, nonatomic, setter=setDrive:, getter=drive) MSGraphDrive* drive;
-    @property (nullable, nonatomic, setter=setSharepoint:, getter=sharepoint) MSGraphSharePoint* sharepoint;
     @property (nullable, nonatomic, setter=setPlans:, getter=plans) NSArray* plans;
     @property (nullable, nonatomic, setter=setNotes:, getter=notes) MSGraphNotes* notes;
   

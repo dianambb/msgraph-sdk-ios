@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphWorkbookChartPointRequest, MSGraphWorkbookChartPointFormatRequestBuilder, MSGraphFormatRequestBuilder, MSGraphWorkbookChartPointItemAtRequestBuilder, MSGraphWorkbookChartPointCountRequestBuilder;
+@class MSGraphWorkbookChartPointRequest, MSGraphWorkbookChartPointItemAtRequestBuilder, MSGraphWorkbookChartPointCountRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -10,8 +10,6 @@
 
 
 @interface MSGraphWorkbookChartPointRequestBuilder : MSGraphEntityRequestBuilder
-
-- (MSGraphWorkbookChartPointFormatRequestBuilder *) format;
 
 - (MSGraphWorkbookChartPointItemAtRequestBuilder *)itemAtWithIndex:(int32_t)index ;
 

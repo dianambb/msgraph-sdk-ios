@@ -15,7 +15,6 @@
 @interface MSGraphWorkbookChartPoint()
 {
     MSGraphJson* _value;
-    MSGraphWorkbookChartPointFormat* _format;
 }
 @end
 
@@ -40,20 +39,6 @@
 {
     _value = val;
     self.dictionary[@"value"] = val;
-}
-
-- (MSGraphWorkbookChartPointFormat*) format
-{
-    if(!_format){
-        _format = [[MSGraphWorkbookChartPointFormat alloc] initWithDictionary: self.dictionary[@"format"]];
-    }
-    return _format;
-}
-
-- (void) setFormat: (MSGraphWorkbookChartPointFormat*) val
-{
-    _format = val;
-    self.dictionary[@"format"] = val;
 }
 
 

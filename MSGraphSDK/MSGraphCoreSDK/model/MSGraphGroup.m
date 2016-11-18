@@ -54,7 +54,6 @@
     NSArray* _acceptedSenders;
     NSArray* _rejectedSenders;
     MSGraphDrive* _drive;
-    MSGraphSharePoint* _sharepoint;
     NSArray* _plans;
     MSGraphNotes* _notes;
 }
@@ -724,20 +723,6 @@
 {
     _drive = val;
     self.dictionary[@"drive"] = val;
-}
-
-- (MSGraphSharePoint*) sharepoint
-{
-    if(!_sharepoint){
-        _sharepoint = [[MSGraphSharePoint alloc] initWithDictionary: self.dictionary[@"sharepoint"]];
-    }
-    return _sharepoint;
-}
-
-- (void) setSharepoint: (MSGraphSharePoint*) val
-{
-    _sharepoint = val;
-    self.dictionary[@"sharepoint"] = val;
 }
 
 - (NSArray*) plans

@@ -151,12 +151,6 @@
 
 }
 
--(MSGraphSharePointRequestBuilder *)sharepoint
-{
-    return [[MSGraphSharePointRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"sharepoint"] client:self.client];
-
-}
-
 - (MSGraphGroupPlansCollectionWithReferencesRequestBuilder *)plans
 {
     return [[MSGraphGroupPlansCollectionWithReferencesRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"plans"]  

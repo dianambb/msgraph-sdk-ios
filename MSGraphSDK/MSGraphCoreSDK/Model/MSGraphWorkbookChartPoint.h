@@ -9,6 +9,5 @@
 @interface MSGraphWorkbookChartPoint : MSGraphEntity
 
   @property (nullable, nonatomic, setter=setValue:, getter=value) MSGraphJson* value;
-    @property (nullable, nonatomic, setter=setFormat:, getter=format) MSGraphWorkbookChartPointFormat* format;
   
 @end

@@ -6,12 +6,6 @@
 
 @implementation MSGraphWorkbookChartPointRequestBuilder
 
--(MSGraphWorkbookChartPointFormatRequestBuilder *)format
-{
-    return [[MSGraphWorkbookChartPointFormatRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"format"] client:self.client];
-
-}
-
 - (MSGraphWorkbookChartPointItemAtRequestBuilder *)itemAtWithIndex:(int32_t)index 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.itemAt"];
