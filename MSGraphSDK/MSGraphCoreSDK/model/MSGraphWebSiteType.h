@@ -4,32 +4,36 @@
 
 #include <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, MSGraphWebSiteTypeValue){
+typedef NS_ENUM(NSInteger, MSGraphWebsiteTypeValue){
 
-	MSGraphWebSiteTypeUnknown = 0,
-	MSGraphWebSiteTypePersonalHomePage = 1,
-	MSGraphWebSiteTypeBusinessHomePage = 2,
-    MSGraphWebSiteTypeEndOfEnum
+	MSGraphWebsiteTypeOther = 0,
+	MSGraphWebsiteTypeHome = 1,
+	MSGraphWebsiteTypeWork = 2,
+	MSGraphWebsiteTypeBlog = 3,
+	MSGraphWebsiteTypeProfile = 4,
+    MSGraphWebsiteTypeEndOfEnum
 };
 
-@interface MSGraphWebSiteType : NSObject
+@interface MSGraphWebsiteType : NSObject
 
-+(MSGraphWebSiteType*) unknown;
-+(MSGraphWebSiteType*) personalHomePage;
-+(MSGraphWebSiteType*) businessHomePage;
++(MSGraphWebsiteType*) other;
++(MSGraphWebsiteType*) home;
++(MSGraphWebsiteType*) work;
++(MSGraphWebsiteType*) blog;
++(MSGraphWebsiteType*) profile;
 
-+(MSGraphWebSiteType*) UnknownEnumValue;
++(MSGraphWebsiteType*) UnknownEnumValue;
 
-+(MSGraphWebSiteType*) webSiteTypeWithEnumValue:(MSGraphWebSiteTypeValue)val;
++(MSGraphWebsiteType*) websiteTypeWithEnumValue:(MSGraphWebsiteTypeValue)val;
 -(NSString*) ms_toString;
 
-@property (nonatomic, readonly) MSGraphWebSiteTypeValue enumValue;
+@property (nonatomic, readonly) MSGraphWebsiteTypeValue enumValue;
 
 @end
 
 
-@interface NSString (MSGraphWebSiteType)
+@interface NSString (MSGraphWebsiteType)
 
-- (MSGraphWebSiteType*) toMSGraphWebSiteType;
+- (MSGraphWebsiteType*) toMSGraphWebsiteType;
 
 @end

@@ -22,6 +22,7 @@
 @class MSGraphAcceptedSendersCollectionRequestBuilder;
 @class MSGraphRejectedSendersCollectionRequestBuilder;
 @class MSGraphDriveRequestBuilder;
+@class MSGraphSharePointRequestBuilder;
 @class MSGraphPlanRequestBuilder;
 @class MSGraphPlansCollectionRequestBuilder;
 @class MSGraphNotesRequestBuilder;

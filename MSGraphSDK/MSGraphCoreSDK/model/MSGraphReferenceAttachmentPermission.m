@@ -39,6 +39,42 @@
     });
     return _edit;
 }
++ (MSGraphReferenceAttachmentPermission*) anonymousView {
+    static MSGraphReferenceAttachmentPermission *_anonymousView;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _anonymousView = [[MSGraphReferenceAttachmentPermission alloc] init];
+        _anonymousView.enumValue = MSGraphReferenceAttachmentPermissionAnonymousView;
+    });
+    return _anonymousView;
+}
++ (MSGraphReferenceAttachmentPermission*) anonymousEdit {
+    static MSGraphReferenceAttachmentPermission *_anonymousEdit;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _anonymousEdit = [[MSGraphReferenceAttachmentPermission alloc] init];
+        _anonymousEdit.enumValue = MSGraphReferenceAttachmentPermissionAnonymousEdit;
+    });
+    return _anonymousEdit;
+}
++ (MSGraphReferenceAttachmentPermission*) organizationView {
+    static MSGraphReferenceAttachmentPermission *_organizationView;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _organizationView = [[MSGraphReferenceAttachmentPermission alloc] init];
+        _organizationView.enumValue = MSGraphReferenceAttachmentPermissionOrganizationView;
+    });
+    return _organizationView;
+}
++ (MSGraphReferenceAttachmentPermission*) organizationEdit {
+    static MSGraphReferenceAttachmentPermission *_organizationEdit;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _organizationEdit = [[MSGraphReferenceAttachmentPermission alloc] init];
+        _organizationEdit.enumValue = MSGraphReferenceAttachmentPermissionOrganizationEdit;
+    });
+    return _organizationEdit;
+}
 
 + (MSGraphReferenceAttachmentPermission*) UnknownEnumValue {
     static MSGraphReferenceAttachmentPermission *_unknownValue;
@@ -61,6 +97,14 @@
             return [MSGraphReferenceAttachmentPermission view];
         case MSGraphReferenceAttachmentPermissionEdit:
             return [MSGraphReferenceAttachmentPermission edit];
+        case MSGraphReferenceAttachmentPermissionAnonymousView:
+            return [MSGraphReferenceAttachmentPermission anonymousView];
+        case MSGraphReferenceAttachmentPermissionAnonymousEdit:
+            return [MSGraphReferenceAttachmentPermission anonymousEdit];
+        case MSGraphReferenceAttachmentPermissionOrganizationView:
+            return [MSGraphReferenceAttachmentPermission organizationView];
+        case MSGraphReferenceAttachmentPermissionOrganizationEdit:
+            return [MSGraphReferenceAttachmentPermission organizationEdit];
         case MSGraphReferenceAttachmentPermissionEndOfEnum:
         default:
             return [MSGraphReferenceAttachmentPermission UnknownEnumValue];
@@ -79,6 +123,14 @@
             return @"view";
         case MSGraphReferenceAttachmentPermissionEdit:
             return @"edit";
+        case MSGraphReferenceAttachmentPermissionAnonymousView:
+            return @"anonymousView";
+        case MSGraphReferenceAttachmentPermissionAnonymousEdit:
+            return @"anonymousEdit";
+        case MSGraphReferenceAttachmentPermissionOrganizationView:
+            return @"organizationView";
+        case MSGraphReferenceAttachmentPermissionOrganizationEdit:
+            return @"organizationEdit";
         case MSGraphReferenceAttachmentPermissionEndOfEnum:
         default:
             return nil;
@@ -108,6 +160,22 @@
     else if([self isEqualToString:@"edit"])
     {
           return [MSGraphReferenceAttachmentPermission edit];
+    }
+    else if([self isEqualToString:@"anonymousView"])
+    {
+          return [MSGraphReferenceAttachmentPermission anonymousView];
+    }
+    else if([self isEqualToString:@"anonymousEdit"])
+    {
+          return [MSGraphReferenceAttachmentPermission anonymousEdit];
+    }
+    else if([self isEqualToString:@"organizationView"])
+    {
+          return [MSGraphReferenceAttachmentPermission organizationView];
+    }
+    else if([self isEqualToString:@"organizationEdit"])
+    {
+          return [MSGraphReferenceAttachmentPermission organizationEdit];
     }
     else {
         return [MSGraphReferenceAttachmentPermission UnknownEnumValue];

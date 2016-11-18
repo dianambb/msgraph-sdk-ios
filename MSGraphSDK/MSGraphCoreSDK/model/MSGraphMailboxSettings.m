@@ -16,6 +16,7 @@
 {
     MSGraphAutomaticRepliesSetting* _automaticRepliesSetting;
     NSString* _timeZone;
+    MSGraphLocaleInfo* _language;
 }
 @end
 
@@ -47,6 +48,20 @@
 - (void) setTimeZone: (NSString*) val
 {
     self.dictionary[@"timeZone"] = val;
+}
+
+- (MSGraphLocaleInfo*) language
+{
+    if(!_language){
+        _language = [[MSGraphLocaleInfo alloc] initWithDictionary: self.dictionary[@"language"]];
+    }
+    return _language;
+}
+
+- (void) setLanguage: (MSGraphLocaleInfo*) val
+{
+    _language = val;
+    self.dictionary[@"language"] = val;
 }
 
 @end

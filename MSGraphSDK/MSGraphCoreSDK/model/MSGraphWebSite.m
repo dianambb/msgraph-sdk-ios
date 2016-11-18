@@ -12,41 +12,56 @@
 
 @end
 
-@interface MSGraphWebSite()
+@interface MSGraphWebsite()
 {
-    MSGraphWebSiteType* _type;
-    NSString* _url;
+    MSGraphWebsiteType* _type;
+    NSString* _address;
+    NSString* _displayName;
 }
 @end
 
-@implementation MSGraphWebSite
+@implementation MSGraphWebsite
 
-- (MSGraphWebSiteType*) type
+- (MSGraphWebsiteType*) type
 {
     if(!_type){
-        _type = [self.dictionary[@"type"] toMSGraphWebSiteType];
+        _type = [self.dictionary[@"type"] toMSGraphWebsiteType];
     }
     return _type;
 }
 
-- (void) setType: (MSGraphWebSiteType*) val
+- (void) setType: (MSGraphWebsiteType*) val
 {
     _type = val;
     self.dictionary[@"type"] = val;
 }
 
-- (NSString*) url
+- (NSString*) address
 {
-    if([[NSNull null] isEqual:self.dictionary[@"url"]])
+    if([[NSNull null] isEqual:self.dictionary[@"address"]])
     {
         return nil;
     }   
-    return self.dictionary[@"url"];
+    return self.dictionary[@"address"];
 }
 
-- (void) setUrl: (NSString*) val
+- (void) setAddress: (NSString*) val
 {
-    self.dictionary[@"url"] = val;
+    self.dictionary[@"address"] = val;
+}
+
+- (NSString*) displayName
+{
+    if([[NSNull null] isEqual:self.dictionary[@"displayName"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"displayName"];
+}
+
+- (void) setDisplayName: (NSString*) val
+{
+    self.dictionary[@"displayName"] = val;
 }
 
 @end

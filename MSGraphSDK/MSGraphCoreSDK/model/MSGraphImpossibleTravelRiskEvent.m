@@ -18,7 +18,7 @@
     NSString* _deviceInformation;
     BOOL _isAtypicalLocation;
     NSDate* _previousSigninDateTime;
-    NSString* _previousLocation;
+    MSGraphSignInLocation* _previousLocation;
     NSString* _previousIpAddress;
 }
 @end
@@ -86,17 +86,17 @@
     self.dictionary[@"previousSigninDateTime"] = val;
 }
 
-- (NSString*) previousLocation
+- (MSGraphSignInLocation*) previousLocation
 {
-    if([[NSNull null] isEqual:self.dictionary[@"previousLocation"]])
-    {
-        return nil;
-    }   
-    return self.dictionary[@"previousLocation"];
+    if(!_previousLocation){
+        _previousLocation = [[MSGraphSignInLocation alloc] initWithDictionary: self.dictionary[@"previousLocation"]];
+    }
+    return _previousLocation;
 }
 
-- (void) setPreviousLocation: (NSString*) val
+- (void) setPreviousLocation: (MSGraphSignInLocation*) val
 {
+    _previousLocation = val;
     self.dictionary[@"previousLocation"] = val;
 }
 

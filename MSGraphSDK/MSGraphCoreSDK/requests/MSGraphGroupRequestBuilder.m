@@ -151,6 +151,12 @@
 
 }
 
+-(MSGraphSharePointRequestBuilder *)sharepoint
+{
+    return [[MSGraphSharePointRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"sharepoint"] client:self.client];
+
+}
+
 - (MSGraphGroupPlansCollectionWithReferencesRequestBuilder *)plans
 {
     return [[MSGraphGroupPlansCollectionWithReferencesRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"plans"]  
@@ -188,6 +194,11 @@
 - (MSGraphProfilePhotoStreamRequest *) photosValue
 {
     return [self photosValueWithOptions:nil];
+}
+
+- (MSGraphGroupRenewRequestBuilder *)renew
+{
+    return [[MSGraphGroupRenewRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.renew"] client:self.client];
 }
 
 - (MSGraphGroupSubscribeByMailRequestBuilder *)subscribeByMail

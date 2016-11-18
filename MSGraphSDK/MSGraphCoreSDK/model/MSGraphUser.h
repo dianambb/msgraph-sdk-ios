@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 
 
-@class MSGraphAssignedLicense, MSGraphAssignedPlan, MSGraphPasswordProfile, MSGraphProvisionedPlan, MSGraphMailboxSettings, MSGraphDirectoryObject, MSGraphMessage, MSGraphGroup, MSGraphMailFolder, MSGraphCalendar, MSGraphCalendarGroup, MSGraphEvent, MSGraphPerson, MSGraphContact, MSGraphContactFolder, MSGraphInferenceClassification, MSGraphProfilePhoto, MSGraphDrive, MSGraphOfficeGraphInsights, MSGraphDriveItem, MSGraphTask, MSGraphPlan, MSGraphNotes; 
+@class MSGraphAssignedLicense, MSGraphAssignedPlan, MSGraphPasswordProfile, MSGraphProvisionedPlan, MSGraphMailboxSettings, MSGraphDirectoryObject, MSGraphScopedRoleMembership, MSGraphMessage, MSGraphGroup, MSGraphMailFolder, MSGraphCalendar, MSGraphCalendarGroup, MSGraphEvent, MSGraphPerson, MSGraphContact, MSGraphContactFolder, MSGraphInferenceClassification, MSGraphProfilePhoto, MSGraphDrive, MSGraphOfficeGraphInsights, MSGraphDriveItem, MSGraphTask, MSGraphPlan, MSGraphNotes; 
 
 
 #import "MSGraphDirectoryObject.h"
@@ -33,6 +33,8 @@
     @property (nullable, nonatomic, setter=setPreferredLanguage:, getter=preferredLanguage) NSString* preferredLanguage;
     @property (nonnull, nonatomic, setter=setProvisionedPlans:, getter=provisionedPlans) NSArray* provisionedPlans;
     @property (nonnull, nonatomic, setter=setProxyAddresses:, getter=proxyAddresses) NSArray* proxyAddresses;
+    @property (nullable, nonatomic, setter=setRefreshTokensValidFromDateTime:, getter=refreshTokensValidFromDateTime) NSDate* refreshTokensValidFromDateTime;
+    @property (nonatomic, setter=setShowInAddressList:, getter=showInAddressList) BOOL showInAddressList;
     @property (nullable, nonatomic, setter=setState:, getter=state) NSString* state;
     @property (nullable, nonatomic, setter=setStreetAddress:, getter=streetAddress) NSString* streetAddress;
     @property (nullable, nonatomic, setter=setSurname:, getter=surname) NSString* surname;
@@ -57,6 +59,7 @@
     @property (nullable, nonatomic, setter=setMemberOf:, getter=memberOf) NSArray* memberOf;
     @property (nullable, nonatomic, setter=setCreatedObjects:, getter=createdObjects) NSArray* createdObjects;
     @property (nullable, nonatomic, setter=setOwnedObjects:, getter=ownedObjects) NSArray* ownedObjects;
+    @property (nullable, nonatomic, setter=setScopedAdministratorOf:, getter=scopedAdministratorOf) NSArray* scopedAdministratorOf;
     @property (nullable, nonatomic, setter=setMessages:, getter=messages) NSArray* messages;
     @property (nullable, nonatomic, setter=setJoinedGroups:, getter=joinedGroups) NSArray* joinedGroups;
     @property (nullable, nonatomic, setter=setMailFolders:, getter=mailFolders) NSArray* mailFolders;
@@ -72,6 +75,8 @@
     @property (nullable, nonatomic, setter=setPhoto:, getter=photo) MSGraphProfilePhoto* photo;
     @property (nullable, nonatomic, setter=setPhotos:, getter=photos) NSArray* photos;
     @property (nullable, nonatomic, setter=setDrive:, getter=drive) MSGraphDrive* drive;
+    @property (nullable, nonatomic, setter=setDrives:, getter=drives) NSArray* drives;
+    @property (nullable, nonatomic, setter=setSharepoint:, getter=sharepoint) MSGraphSharePoint* sharepoint;
     @property (nullable, nonatomic, setter=setInsights:, getter=insights) MSGraphOfficeGraphInsights* insights;
     @property (nullable, nonatomic, setter=setTrendingAround:, getter=trendingAround) NSArray* trendingAround;
     @property (nullable, nonatomic, setter=setWorkingWith:, getter=workingWith) NSArray* workingWith;

@@ -42,14 +42,17 @@
 @property (nonatomic, getter=isOrganizerOptional) BOOL  isOrganizerOptional;
 
 
-@property (nonatomic, getter=returnSuggestionHints) BOOL  returnSuggestionHints;
+@property (nonatomic, getter=returnSuggestionReasons) BOOL  returnSuggestionReasons;
+
+
+@property (nonatomic, getter=minimumAttendeePercentage) CGFloat  minimumAttendeePercentage;
 
 @end
 
 @implementation MSGraphUserFindMeetingTimesRequest
 
 
-- (instancetype)initWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionHints:(BOOL)returnSuggestionHints URL:(NSURL *)url options:(NSArray *)options client:(ODataBaseClient*)client
+- (instancetype)initWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionReasons:(BOOL)returnSuggestionReasons minimumAttendeePercentage:(CGFloat)minimumAttendeePercentage URL:(NSURL *)url options:(NSArray *)options client:(ODataBaseClient*)client
 {
     self = [super initWithURL:url options:options client:client];
     if (self){
@@ -59,14 +62,15 @@
         _meetingDuration = meetingDuration;
         _maxCandidates = maxCandidates;
         _isOrganizerOptional = isOrganizerOptional;
-        _returnSuggestionHints = returnSuggestionHints;
+        _returnSuggestionReasons = returnSuggestionReasons;
+        _minimumAttendeePercentage = minimumAttendeePercentage;
     }
     return self;
 }
 
 - (NSMutableURLRequest *)mutableRequest
 {
-    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:[MSObject getNSJsonSerializationCompatibleValue:_attendees],@"Attendees",[MSObject getNSJsonSerializationCompatibleValue:_locationConstraint],@"LocationConstraint",[MSObject getNSJsonSerializationCompatibleValue:_timeConstraint],@"TimeConstraint",[MSObject getNSJsonSerializationCompatibleValue:[NSNumber numberWithInt:*_meetingDuration]],@"MeetingDuration",[MSObject getNSJsonSerializationCompatibleValue:@(_maxCandidates)],@"MaxCandidates",[MSObject getNSJsonSerializationCompatibleValue:@(_isOrganizerOptional)],@"IsOrganizerOptional",[MSObject getNSJsonSerializationCompatibleValue:@(_returnSuggestionHints)],@"ReturnSuggestionHints",nil];
+    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:[MSObject getNSJsonSerializationCompatibleValue:_attendees],@"Attendees",[MSObject getNSJsonSerializationCompatibleValue:_locationConstraint],@"LocationConstraint",[MSObject getNSJsonSerializationCompatibleValue:_timeConstraint],@"TimeConstraint",[MSObject getNSJsonSerializationCompatibleValue:_meetingDuration],@"MeetingDuration",[MSObject getNSJsonSerializationCompatibleValue:@(_maxCandidates)],@"MaxCandidates",[MSObject getNSJsonSerializationCompatibleValue:@(_isOrganizerOptional)],@"IsOrganizerOptional",[MSObject getNSJsonSerializationCompatibleValue:@(_returnSuggestionReasons)],@"ReturnSuggestionReasons",[MSObject getNSJsonSerializationCompatibleValue:@(_minimumAttendeePercentage)],@"MinimumAttendeePercentage",nil];
 
 
     NSData *body = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
@@ -74,12 +78,12 @@
 }
 
 
-- (MSURLSessionDataTask *)executeWithCompletion:(void (^)(MSGraphMeetingTimeCandidatesResult *response, NSError *error))completionHandler
+- (MSURLSessionDataTask *)executeWithCompletion:(void (^)(MSGraphMeetingTimeSuggestionsResult *response, NSError *error))completionHandler
 {
 
     MSURLSessionDataTask *task = [self taskWithRequest:self.mutableRequest
                                 odObjectWithDictionary:^(id responseObject){
-                                                           return [[MSGraphMeetingTimeCandidatesResult alloc] initWithDictionary:responseObject];
+                                                           return [[MSGraphMeetingTimeSuggestionsResult alloc] initWithDictionary:responseObject];
                                                        }
                                             completion:completionHandler];
     [task execute];

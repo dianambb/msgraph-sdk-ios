@@ -10,7 +10,6 @@
 
 @property (readonly) NSMutableURLRequest *mutableRequest;
 
-- (instancetype)initWithToken:(NSString *)token URL:(NSURL *)url options:(NSArray *)options client:(ODataBaseClient*)client;
 
 - (MSURLSessionDataTask *)executeWithCompletion:(void (^)(MSCollection *response, MSGraphDriveItemDeltaRequest *nextRequest, NSError *error))completionHandler;
 

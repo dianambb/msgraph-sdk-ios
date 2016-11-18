@@ -34,6 +34,16 @@
 
 }
 
+- (MSGraphDriveSearchRequestBuilder *)searchWithQ:(NSString *)q 
+{
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.search"];
+    return [[MSGraphDriveSearchRequestBuilder alloc] initWithQ:q
+                                                           URL:actionURL
+                                                        client:self.client];
+
+
+}
+
 - (MSGraphDriveRecentRequestBuilder *)recent
 {
     return [[MSGraphDriveRecentRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.recent"] client:self.client];

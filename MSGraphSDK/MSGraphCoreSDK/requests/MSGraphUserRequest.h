@@ -10,6 +10,8 @@
 @class MSGraphMemberOfCollectionRequestBuilder;
 @class MSGraphCreatedObjectsCollectionRequestBuilder;
 @class MSGraphOwnedObjectsCollectionRequestBuilder;
+@class MSGraphScopedRoleMembershipRequestBuilder;
+@class MSGraphScopedAdministratorOfCollectionRequestBuilder;
 @class MSGraphMessageRequestBuilder;
 @class MSGraphMessagesCollectionRequestBuilder;
 @class MSGraphGroupRequestBuilder;
@@ -33,6 +35,8 @@
 @class MSGraphProfilePhotoRequestBuilder;
 @class MSGraphPhotosCollectionRequestBuilder;
 @class MSGraphDriveRequestBuilder;
+@class MSGraphDrivesCollectionRequestBuilder;
+@class MSGraphSharePointRequestBuilder;
 @class MSGraphOfficeGraphInsightsRequestBuilder;
 @class MSGraphDriveItemRequestBuilder;
 @class MSGraphTrendingAroundCollectionRequestBuilder;

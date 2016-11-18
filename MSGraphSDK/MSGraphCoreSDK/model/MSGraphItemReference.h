@@ -10,6 +10,8 @@
 
 @property (nullable, nonatomic, setter=setDriveId:, getter=driveId) NSString* driveId;
 @property (nullable, nonatomic, setter=setItemReferenceId:, getter=itemReferenceId) NSString* itemReferenceId;
+@property (nullable, nonatomic, setter=setName:, getter=name) NSString* name;
 @property (nullable, nonatomic, setter=setPath:, getter=path) NSString* path;
+@property (nullable, nonatomic, setter=setShareId:, getter=shareId) NSString* shareId;
 
 @end

@@ -34,6 +34,23 @@
     return [[self owners] directoryObject:directoryObject];
 }
 
+- (MSGraphApplicationPoliciesCollectionWithReferencesRequestBuilder *)policies
+{
+    return [[MSGraphApplicationPoliciesCollectionWithReferencesRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"policies"]  
+                                                                                          client:self.client];
+}
+
+- (MSGraphDirectoryObjectRequestBuilder *)policies:(NSString *)directoryObject
+{
+    return [[self policies] directoryObject:directoryObject];
+}
+
+-(MSGraphConnectorGroupRequestBuilder *)connectorGroup
+{
+    return [[MSGraphConnectorGroupRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"connectorGroup"] client:self.client];
+
+}
+
 - (MSGraphApplicationMainLogoRequest *) mainLogoRequestWithOptions:(NSArray *)options
 {
     NSURL *mainLogoURL = [self.requestURL URLByAppendingPathComponent:@"mainLogo"];

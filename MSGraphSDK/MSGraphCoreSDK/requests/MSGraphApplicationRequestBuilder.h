@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphApplicationRequest, MSGraphExtensionPropertyRequestBuilder, MSGraphApplicationExtensionPropertiesCollectionRequestBuilder, MSGraphDirectoryObjectRequestBuilder, MSGraphCreatedOnBehalfOfRequestBuilder, MSGraphApplicationOwnersCollectionWithReferencesRequestBuilder, MSGraphApplicationMainLogoRequest;
+@class MSGraphApplicationRequest, MSGraphExtensionPropertyRequestBuilder, MSGraphApplicationExtensionPropertiesCollectionRequestBuilder, MSGraphDirectoryObjectRequestBuilder, MSGraphCreatedOnBehalfOfRequestBuilder, MSGraphApplicationOwnersCollectionWithReferencesRequestBuilder, MSGraphApplicationPoliciesCollectionWithReferencesRequestBuilder, MSGraphConnectorGroupRequestBuilder, MSGraphApplicationMainLogoRequest;
 
 
 #import "MSGraphModels.h"
@@ -20,6 +20,12 @@
 - (MSGraphApplicationOwnersCollectionWithReferencesRequestBuilder *)owners;
 
 - (MSGraphDirectoryObjectRequestBuilder *)owners:(NSString *)directoryObject;
+
+- (MSGraphApplicationPoliciesCollectionWithReferencesRequestBuilder *)policies;
+
+- (MSGraphDirectoryObjectRequestBuilder *)policies:(NSString *)directoryObject;
+
+- (MSGraphConnectorGroupRequestBuilder *) connectorGroup;
 
 - (MSGraphApplicationMainLogoRequest *) mainLogoRequestWithOptions:(NSArray *)options;
 

@@ -27,6 +27,7 @@
     NSArray* _attachments;
     NSArray* _singleValueExtendedProperties;
     NSArray* _multiValueExtendedProperties;
+    NSArray* _mentions;
 }
 @end
 
@@ -272,6 +273,31 @@
 {
     _multiValueExtendedProperties = val;
     self.dictionary[@"multiValueExtendedProperties"] = val;
+}
+
+- (NSArray*) mentions
+{
+    if(!_mentions){
+        
+    NSMutableArray *mentionsResult = [NSMutableArray array];
+    NSArray *mentions = self.dictionary[@"mentions"];
+
+    if ([mentions isKindOfClass:[NSArray class]]){
+        for (id mention in mentions){
+            [mentionsResult addObject:[[MSGraphMention alloc] initWithDictionary: mention]];
+        }
+    }
+
+    _mentions = mentionsResult;
+        
+    }
+    return _mentions;
+}
+
+- (void) setMentions: (NSArray*) val
+{
+    _mentions = val;
+    self.dictionary[@"mentions"] = val;
 }
 
 

@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphDirectoryRoleRequest, MSGraphDirectoryObjectRequestBuilder, MSGraphDirectoryRoleMembersCollectionWithReferencesRequestBuilder;
+@class MSGraphDirectoryRoleRequest, MSGraphDirectoryObjectRequestBuilder, MSGraphDirectoryRoleMembersCollectionWithReferencesRequestBuilder, MSGraphScopedRoleMembershipRequestBuilder, MSGraphDirectoryRoleScopedAdministratorsCollectionRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -14,6 +14,10 @@
 - (MSGraphDirectoryRoleMembersCollectionWithReferencesRequestBuilder *)members;
 
 - (MSGraphDirectoryObjectRequestBuilder *)members:(NSString *)directoryObject;
+
+- (MSGraphDirectoryRoleScopedAdministratorsCollectionRequestBuilder *)scopedAdministrators;
+
+- (MSGraphScopedRoleMembershipRequestBuilder *)scopedAdministrators:(NSString *)scopedRoleMembership;
 
 
 - (MSGraphDirectoryRoleRequest *) request;

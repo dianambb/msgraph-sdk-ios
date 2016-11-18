@@ -82,11 +82,11 @@
 
     if ([references isKindOfClass:[NSDictionary class]]){
         [references enumerateKeysAndObjectsUsingBlock:^(NSString* key, id value, BOOL* stop){
-		   [referencesResult setValue:[[MSGraphExternalReference alloc] initWithDictionary:value] forKey:key];
-		}];
+            [referencesResult setValue:[[MSGraphExternalReference alloc] initWithDictionary:value] forKey:key];
+        }];
     }
 
-	_references = referencesResult;
+    _references = referencesResult;
         
     }
     return _references;
@@ -107,11 +107,11 @@
 
     if ([checklist isKindOfClass:[NSDictionary class]]){
         [checklist enumerateKeysAndObjectsUsingBlock:^(NSString* key, id value, BOOL* stop){
-		   [checklistResult setValue:[[MSGraphChecklistItem alloc] initWithDictionary:value] forKey:key];
-		}];
+            [checklistResult setValue:[[MSGraphChecklistItem alloc] initWithDictionary:value] forKey:key];
+        }];
     }
 
-	_checklist = checklistResult;
+    _checklist = checklistResult;
         
     }
     return _checklist;

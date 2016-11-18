@@ -14,17 +14,54 @@
 
 @interface MSGraphRemoteItem()
 {
+    MSGraphIdentitySet* _createdBy;
+    NSDate* _createdDateTime;
     MSGraphFile* _file;
     MSGraphFileSystemInfo* _fileSystemInfo;
     MSGraphFolder* _folder;
     NSString* _remoteItemId;
+    MSGraphIdentitySet* _lastModifiedBy;
+    NSDate* _lastModifiedDateTime;
     NSString* _name;
+    MSGraphPackage* _package;
     MSGraphItemReference* _parentReference;
+    MSGraphSharepointIds* _sharepointIds;
     int64_t _size;
+    MSGraphSpecialFolder* _specialFolder;
+    NSString* _webDavUrl;
+    NSString* _webUrl;
 }
 @end
 
 @implementation MSGraphRemoteItem
+
+- (MSGraphIdentitySet*) createdBy
+{
+    if(!_createdBy){
+        _createdBy = [[MSGraphIdentitySet alloc] initWithDictionary: self.dictionary[@"createdBy"]];
+    }
+    return _createdBy;
+}
+
+- (void) setCreatedBy: (MSGraphIdentitySet*) val
+{
+    _createdBy = val;
+    self.dictionary[@"createdBy"] = val;
+}
+
+- (NSDate*) createdDateTime
+{
+    if(!_createdDateTime){
+        _createdDateTime = [NSDate ms_dateFromString: self.dictionary[@"createdDateTime"]];
+    }
+    return _createdDateTime;
+}
+
+- (void) setCreatedDateTime: (NSDate*) val
+{
+    _createdDateTime = val;
+    self.dictionary[@"createdDateTime"] = val;
+}
 
 - (MSGraphFile*) file
 {
@@ -82,6 +119,34 @@
     self.dictionary[@"id"] = val;
 }
 
+- (MSGraphIdentitySet*) lastModifiedBy
+{
+    if(!_lastModifiedBy){
+        _lastModifiedBy = [[MSGraphIdentitySet alloc] initWithDictionary: self.dictionary[@"lastModifiedBy"]];
+    }
+    return _lastModifiedBy;
+}
+
+- (void) setLastModifiedBy: (MSGraphIdentitySet*) val
+{
+    _lastModifiedBy = val;
+    self.dictionary[@"lastModifiedBy"] = val;
+}
+
+- (NSDate*) lastModifiedDateTime
+{
+    if(!_lastModifiedDateTime){
+        _lastModifiedDateTime = [NSDate ms_dateFromString: self.dictionary[@"lastModifiedDateTime"]];
+    }
+    return _lastModifiedDateTime;
+}
+
+- (void) setLastModifiedDateTime: (NSDate*) val
+{
+    _lastModifiedDateTime = val;
+    self.dictionary[@"lastModifiedDateTime"] = val;
+}
+
 - (NSString*) name
 {
     if([[NSNull null] isEqual:self.dictionary[@"name"]])
@@ -94,6 +159,20 @@
 - (void) setName: (NSString*) val
 {
     self.dictionary[@"name"] = val;
+}
+
+- (MSGraphPackage*) package
+{
+    if(!_package){
+        _package = [[MSGraphPackage alloc] initWithDictionary: self.dictionary[@"package"]];
+    }
+    return _package;
+}
+
+- (void) setPackage: (MSGraphPackage*) val
+{
+    _package = val;
+    self.dictionary[@"package"] = val;
 }
 
 - (MSGraphItemReference*) parentReference
@@ -110,6 +189,20 @@
     self.dictionary[@"parentReference"] = val;
 }
 
+- (MSGraphSharepointIds*) sharepointIds
+{
+    if(!_sharepointIds){
+        _sharepointIds = [[MSGraphSharepointIds alloc] initWithDictionary: self.dictionary[@"sharepointIds"]];
+    }
+    return _sharepointIds;
+}
+
+- (void) setSharepointIds: (MSGraphSharepointIds*) val
+{
+    _sharepointIds = val;
+    self.dictionary[@"sharepointIds"] = val;
+}
+
 - (int64_t) size
 {
     _size = [self.dictionary[@"size"] longLongValue];
@@ -120,6 +213,48 @@
 {
     _size = val;
     self.dictionary[@"size"] = @(val);
+}
+
+- (MSGraphSpecialFolder*) specialFolder
+{
+    if(!_specialFolder){
+        _specialFolder = [[MSGraphSpecialFolder alloc] initWithDictionary: self.dictionary[@"specialFolder"]];
+    }
+    return _specialFolder;
+}
+
+- (void) setSpecialFolder: (MSGraphSpecialFolder*) val
+{
+    _specialFolder = val;
+    self.dictionary[@"specialFolder"] = val;
+}
+
+- (NSString*) webDavUrl
+{
+    if([[NSNull null] isEqual:self.dictionary[@"webDavUrl"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"webDavUrl"];
+}
+
+- (void) setWebDavUrl: (NSString*) val
+{
+    self.dictionary[@"webDavUrl"] = val;
+}
+
+- (NSString*) webUrl
+{
+    if([[NSNull null] isEqual:self.dictionary[@"webUrl"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"webUrl"];
+}
+
+- (void) setWebUrl: (NSString*) val
+{
+    self.dictionary[@"webUrl"] = val;
 }
 
 @end

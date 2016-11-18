@@ -16,6 +16,7 @@
 {
     MSGraphHashes* _hashes;
     NSString* _mimeType;
+    BOOL _processingMetadata;
 }
 @end
 
@@ -47,6 +48,18 @@
 - (void) setMimeType: (NSString*) val
 {
     self.dictionary[@"mimeType"] = val;
+}
+
+- (BOOL) processingMetadata
+{
+    _processingMetadata = [self.dictionary[@"processingMetadata"] boolValue];
+    return _processingMetadata;
+}
+
+- (void) setProcessingMetadata: (BOOL) val
+{
+    _processingMetadata = val;
+    self.dictionary[@"processingMetadata"] = @(val);
 }
 
 @end

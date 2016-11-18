@@ -13,6 +13,7 @@
 @class MSGraphCreatedObjectsCollectionRequestBuilder;
 @class MSGraphOwnersCollectionRequestBuilder;
 @class MSGraphOwnedObjectsCollectionRequestBuilder;
+@class MSGraphPoliciesCollectionRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

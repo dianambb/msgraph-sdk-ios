@@ -41,6 +41,7 @@
     NSArray* _createdObjects;
     NSArray* _owners;
     NSArray* _ownedObjects;
+    NSArray* _policies;
 }
 @end
 
@@ -545,6 +546,31 @@
 {
     _ownedObjects = val;
     self.dictionary[@"ownedObjects"] = val;
+}
+
+- (NSArray*) policies
+{
+    if(!_policies){
+        
+    NSMutableArray *policiesResult = [NSMutableArray array];
+    NSArray *policies = self.dictionary[@"policies"];
+
+    if ([policies isKindOfClass:[NSArray class]]){
+        for (id directoryObject in policies){
+            [policiesResult addObject:[[MSGraphDirectoryObject alloc] initWithDictionary: directoryObject]];
+        }
+    }
+
+    _policies = policiesResult;
+        
+    }
+    return _policies;
+}
+
+- (void) setPolicies: (NSArray*) val
+{
+    _policies = val;
+    self.dictionary[@"policies"] = val;
 }
 
 

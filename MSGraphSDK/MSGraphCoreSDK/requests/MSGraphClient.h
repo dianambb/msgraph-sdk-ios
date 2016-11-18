@@ -6,6 +6,8 @@
 @class MSGraphDirectoryObjectRequestBuilder;
 @class MSGraphApplicationsCollectionRequestBuilder;
 @class MSGraphApplicationRequestBuilder;
+@class MSGraphAdministrativeUnitsCollectionRequestBuilder;
+@class MSGraphAdministrativeUnitRequestBuilder;
 @class MSGraphAppRoleAssignmentsCollectionRequestBuilder;
 @class MSGraphAppRoleAssignmentRequestBuilder;
 @class MSGraphContactsCollectionRequestBuilder;
@@ -24,6 +26,8 @@
 @class MSGraphOrganizationRequestBuilder;
 @class MSGraphOauth2PermissionGrantsCollectionRequestBuilder;
 @class MSGraphOAuth2PermissionGrantRequestBuilder;
+@class MSGraphScopedRoleMembershipsCollectionRequestBuilder;
+@class MSGraphScopedRoleMembershipRequestBuilder;
 @class MSGraphServicePrincipalsCollectionRequestBuilder;
 @class MSGraphServicePrincipalRequestBuilder;
 @class MSGraphSettingsCollectionRequestBuilder;
@@ -32,10 +36,14 @@
 @class MSGraphSubscribedSkuRequestBuilder;
 @class MSGraphUsersCollectionRequestBuilder;
 @class MSGraphUserRequestBuilder;
+@class MSGraphPoliciesCollectionRequestBuilder;
+@class MSGraphPolicyRequestBuilder;
 @class MSGraphWorkbooksCollectionRequestBuilder;
 @class MSGraphDriveItemRequestBuilder;
 @class MSGraphDrivesCollectionRequestBuilder;
 @class MSGraphDriveRequestBuilder;
+@class MSGraphSharesCollectionRequestBuilder;
+@class MSGraphSharedDriveItemRequestBuilder;
 @class MSGraphTasksCollectionRequestBuilder;
 @class MSGraphTaskRequestBuilder;
 @class MSGraphPlansCollectionRequestBuilder;
@@ -58,10 +66,26 @@
 @class MSGraphUnfamiliarLocationRiskEventRequestBuilder;
 @class MSGraphMalwareRiskEventsCollectionRequestBuilder;
 @class MSGraphMalwareRiskEventRequestBuilder;
+@class MSGraphPrivilegedRolesCollectionRequestBuilder;
+@class MSGraphPrivilegedRoleRequestBuilder;
+@class MSGraphPrivilegedRoleAssignmentsCollectionRequestBuilder;
+@class MSGraphPrivilegedRoleAssignmentRequestBuilder;
+@class MSGraphPrivilegedOperationEventsCollectionRequestBuilder;
+@class MSGraphPrivilegedOperationEventRequestBuilder;
+@class MSGraphPrivilegedSignupStatusCollectionRequestBuilder;
+@class MSGraphPrivilegedSignupStatusRequestBuilder;
+@class MSGraphConnectorsCollectionRequestBuilder;
+@class MSGraphConnectorRequestBuilder;
+@class MSGraphConnectorGroupsCollectionRequestBuilder;
+@class MSGraphConnectorGroupRequestBuilder;
+@class MSGraphInvitationsCollectionRequestBuilder;
+@class MSGraphInvitationRequestBuilder;
 @class MSGraphMeCollectionRequestBuilder;
 @class MSGraphUserRequestBuilder;
 @class MSGraphDriveCollectionRequestBuilder;
 @class MSGraphDriveRequestBuilder;
+@class MSGraphSharePointCollectionRequestBuilder;
+@class MSGraphSharePointRequestBuilder;
 
 #import "ODataBaseClient.h"
 #import "MSGraphModels.h"
@@ -82,6 +106,10 @@
 -(MSGraphApplicationsCollectionRequestBuilder *)applications;
 
 -(MSGraphApplicationRequestBuilder *)applications:(NSString*)applicationsId;
+
+-(MSGraphAdministrativeUnitsCollectionRequestBuilder *)administrativeUnits;
+
+-(MSGraphAdministrativeUnitRequestBuilder *)administrativeUnits:(NSString*)administrativeUnitsId;
 
 -(MSGraphAppRoleAssignmentsCollectionRequestBuilder *)appRoleAssignments;
 
@@ -119,6 +147,10 @@
 
 -(MSGraphOAuth2PermissionGrantRequestBuilder *)oauth2PermissionGrants:(NSString*)oauth2PermissionGrantsId;
 
+-(MSGraphScopedRoleMembershipsCollectionRequestBuilder *)scopedRoleMemberships;
+
+-(MSGraphScopedRoleMembershipRequestBuilder *)scopedRoleMemberships:(NSString*)scopedRoleMembershipsId;
+
 -(MSGraphServicePrincipalsCollectionRequestBuilder *)servicePrincipals;
 
 -(MSGraphServicePrincipalRequestBuilder *)servicePrincipals:(NSString*)servicePrincipalsId;
@@ -135,6 +167,10 @@
 
 -(MSGraphUserRequestBuilder *)users:(NSString*)usersId;
 
+-(MSGraphPoliciesCollectionRequestBuilder *)policies;
+
+-(MSGraphPolicyRequestBuilder *)policies:(NSString*)policiesId;
+
 -(MSGraphWorkbooksCollectionRequestBuilder *)workbooks;
 
 -(MSGraphDriveItemRequestBuilder *)workbooks:(NSString*)workbooksId;
@@ -142,6 +178,10 @@
 -(MSGraphDrivesCollectionRequestBuilder *)drives;
 
 -(MSGraphDriveRequestBuilder *)drives:(NSString*)drivesId;
+
+-(MSGraphSharesCollectionRequestBuilder *)shares;
+
+-(MSGraphSharedDriveItemRequestBuilder *)shares:(NSString*)sharesId;
 
 -(MSGraphTasksCollectionRequestBuilder *)tasks;
 
@@ -187,7 +227,36 @@
 
 -(MSGraphMalwareRiskEventRequestBuilder *)malwareRiskEvents:(NSString*)malwareRiskEventsId;
 
+-(MSGraphPrivilegedRolesCollectionRequestBuilder *)privilegedRoles;
+
+-(MSGraphPrivilegedRoleRequestBuilder *)privilegedRoles:(NSString*)privilegedRolesId;
+
+-(MSGraphPrivilegedRoleAssignmentsCollectionRequestBuilder *)privilegedRoleAssignments;
+
+-(MSGraphPrivilegedRoleAssignmentRequestBuilder *)privilegedRoleAssignments:(NSString*)privilegedRoleAssignmentsId;
+
+-(MSGraphPrivilegedOperationEventsCollectionRequestBuilder *)privilegedOperationEvents;
+
+-(MSGraphPrivilegedOperationEventRequestBuilder *)privilegedOperationEvents:(NSString*)privilegedOperationEventsId;
+
+-(MSGraphPrivilegedSignupStatusCollectionRequestBuilder *)privilegedSignupStatus;
+
+-(MSGraphPrivilegedSignupStatusRequestBuilder *)privilegedSignupStatus:(NSString*)privilegedSignupStatusId;
+
+-(MSGraphConnectorsCollectionRequestBuilder *)connectors;
+
+-(MSGraphConnectorRequestBuilder *)connectors:(NSString*)connectorsId;
+
+-(MSGraphConnectorGroupsCollectionRequestBuilder *)connectorGroups;
+
+-(MSGraphConnectorGroupRequestBuilder *)connectorGroups:(NSString*)connectorGroupsId;
+
+-(MSGraphInvitationsCollectionRequestBuilder *)invitations;
+
+-(MSGraphInvitationRequestBuilder *)invitations:(NSString*)invitationsId;
+
 -(MSGraphUserRequestBuilder *) me;
 -(MSGraphDriveRequestBuilder *) drive;
+-(MSGraphSharePointRequestBuilder *) sharePoint;
 
 @end

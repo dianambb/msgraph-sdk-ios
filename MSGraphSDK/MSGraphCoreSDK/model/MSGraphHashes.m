@@ -16,6 +16,7 @@
 {
     NSString* _crc32Hash;
     NSString* _sha1Hash;
+    NSString* _quickXorHash;
 }
 @end
 
@@ -47,6 +48,20 @@
 - (void) setSha1Hash: (NSString*) val
 {
     self.dictionary[@"sha1Hash"] = val;
+}
+
+- (NSString*) quickXorHash
+{
+    if([[NSNull null] isEqual:self.dictionary[@"quickXorHash"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"quickXorHash"];
+}
+
+- (void) setQuickXorHash: (NSString*) val
+{
+    self.dictionary[@"quickXorHash"] = val;
 }
 
 @end

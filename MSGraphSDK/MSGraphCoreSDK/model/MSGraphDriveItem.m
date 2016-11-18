@@ -16,35 +16,37 @@
 {
     MSGraphIdentitySet* _createdBy;
     NSDate* _createdDateTime;
-    NSString* _cTag;
     NSString* _driveItemDescription;
     NSString* _eTag;
     MSGraphIdentitySet* _lastModifiedBy;
     NSDate* _lastModifiedDateTime;
     NSString* _name;
-    MSGraphItemReference* _parentReference;
-    int64_t _size;
-    NSString* _webDavUrl;
     NSString* _webUrl;
     MSGraphAudio* _audio;
+    NSString* _cTag;
     MSGraphDeleted* _deleted;
     MSGraphFile* _file;
     MSGraphFileSystemInfo* _fileSystemInfo;
     MSGraphFolder* _folder;
     MSGraphImage* _image;
     MSGraphGeoCoordinates* _location;
+    MSGraphPackage* _package;
+    MSGraphItemReference* _parentReference;
     MSGraphPhoto* _photo;
     MSGraphRemoteItem* _remoteItem;
+    MSGraphRoot* _root;
     MSGraphSearchResult* _searchResult;
     MSGraphShared* _shared;
+    MSGraphSharepointIds* _sharepointIds;
+    int64_t _size;
     MSGraphSpecialFolder* _specialFolder;
     MSGraphVideo* _video;
-    MSGraphPackage* _package;
+    NSString* _webDavUrl;
     MSGraphWorkbook* _workbook;
     MSGraphUser* _createdByUser;
     MSGraphUser* _lastModifiedByUser;
-    NSArray* _permissions;
     NSArray* _children;
+    NSArray* _permissions;
     NSArray* _thumbnails;
 }
 @end
@@ -84,20 +86,6 @@
 {
     _createdDateTime = val;
     self.dictionary[@"createdDateTime"] = val;
-}
-
-- (NSString*) cTag
-{
-    if([[NSNull null] isEqual:self.dictionary[@"cTag"]])
-    {
-        return nil;
-    }   
-    return self.dictionary[@"cTag"];
-}
-
-- (void) setCTag: (NSString*) val
-{
-    self.dictionary[@"cTag"] = val;
 }
 
 - (NSString*) driveItemDescription
@@ -170,46 +158,6 @@
     self.dictionary[@"name"] = val;
 }
 
-- (MSGraphItemReference*) parentReference
-{
-    if(!_parentReference){
-        _parentReference = [[MSGraphItemReference alloc] initWithDictionary: self.dictionary[@"parentReference"]];
-    }
-    return _parentReference;
-}
-
-- (void) setParentReference: (MSGraphItemReference*) val
-{
-    _parentReference = val;
-    self.dictionary[@"parentReference"] = val;
-}
-
-- (int64_t) size
-{
-    _size = [self.dictionary[@"size"] longLongValue];
-    return _size;
-}
-
-- (void) setSize: (int64_t) val
-{
-    _size = val;
-    self.dictionary[@"size"] = @(val);
-}
-
-- (NSString*) webDavUrl
-{
-    if([[NSNull null] isEqual:self.dictionary[@"webDavUrl"]])
-    {
-        return nil;
-    }   
-    return self.dictionary[@"webDavUrl"];
-}
-
-- (void) setWebDavUrl: (NSString*) val
-{
-    self.dictionary[@"webDavUrl"] = val;
-}
-
 - (NSString*) webUrl
 {
     if([[NSNull null] isEqual:self.dictionary[@"webUrl"]])
@@ -236,6 +184,20 @@
 {
     _audio = val;
     self.dictionary[@"audio"] = val;
+}
+
+- (NSString*) cTag
+{
+    if([[NSNull null] isEqual:self.dictionary[@"cTag"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"cTag"];
+}
+
+- (void) setCTag: (NSString*) val
+{
+    self.dictionary[@"cTag"] = val;
 }
 
 - (MSGraphDeleted*) deleted
@@ -322,6 +284,34 @@
     self.dictionary[@"location"] = val;
 }
 
+- (MSGraphPackage*) package
+{
+    if(!_package){
+        _package = [[MSGraphPackage alloc] initWithDictionary: self.dictionary[@"package"]];
+    }
+    return _package;
+}
+
+- (void) setPackage: (MSGraphPackage*) val
+{
+    _package = val;
+    self.dictionary[@"package"] = val;
+}
+
+- (MSGraphItemReference*) parentReference
+{
+    if(!_parentReference){
+        _parentReference = [[MSGraphItemReference alloc] initWithDictionary: self.dictionary[@"parentReference"]];
+    }
+    return _parentReference;
+}
+
+- (void) setParentReference: (MSGraphItemReference*) val
+{
+    _parentReference = val;
+    self.dictionary[@"parentReference"] = val;
+}
+
 - (MSGraphPhoto*) photo
 {
     if(!_photo){
@@ -348,6 +338,20 @@
 {
     _remoteItem = val;
     self.dictionary[@"remoteItem"] = val;
+}
+
+- (MSGraphRoot*) root
+{
+    if(!_root){
+        _root = [[MSGraphRoot alloc] initWithDictionary: self.dictionary[@"root"]];
+    }
+    return _root;
+}
+
+- (void) setRoot: (MSGraphRoot*) val
+{
+    _root = val;
+    self.dictionary[@"root"] = val;
 }
 
 - (MSGraphSearchResult*) searchResult
@@ -378,6 +382,32 @@
     self.dictionary[@"shared"] = val;
 }
 
+- (MSGraphSharepointIds*) sharepointIds
+{
+    if(!_sharepointIds){
+        _sharepointIds = [[MSGraphSharepointIds alloc] initWithDictionary: self.dictionary[@"sharepointIds"]];
+    }
+    return _sharepointIds;
+}
+
+- (void) setSharepointIds: (MSGraphSharepointIds*) val
+{
+    _sharepointIds = val;
+    self.dictionary[@"sharepointIds"] = val;
+}
+
+- (int64_t) size
+{
+    _size = [self.dictionary[@"size"] longLongValue];
+    return _size;
+}
+
+- (void) setSize: (int64_t) val
+{
+    _size = val;
+    self.dictionary[@"size"] = @(val);
+}
+
 - (MSGraphSpecialFolder*) specialFolder
 {
     if(!_specialFolder){
@@ -406,18 +436,18 @@
     self.dictionary[@"video"] = val;
 }
 
-- (MSGraphPackage*) package
+- (NSString*) webDavUrl
 {
-    if(!_package){
-        _package = [[MSGraphPackage alloc] initWithDictionary: self.dictionary[@"package"]];
-    }
-    return _package;
+    if([[NSNull null] isEqual:self.dictionary[@"webDavUrl"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"webDavUrl"];
 }
 
-- (void) setPackage: (MSGraphPackage*) val
+- (void) setWebDavUrl: (NSString*) val
 {
-    _package = val;
-    self.dictionary[@"package"] = val;
+    self.dictionary[@"webDavUrl"] = val;
 }
 
 - (MSGraphWorkbook*) workbook
@@ -462,31 +492,6 @@
     self.dictionary[@"lastModifiedByUser"] = val;
 }
 
-- (NSArray*) permissions
-{
-    if(!_permissions){
-        
-    NSMutableArray *permissionsResult = [NSMutableArray array];
-    NSArray *permissions = self.dictionary[@"permissions"];
-
-    if ([permissions isKindOfClass:[NSArray class]]){
-        for (id permission in permissions){
-            [permissionsResult addObject:[[MSGraphPermission alloc] initWithDictionary: permission]];
-        }
-    }
-
-    _permissions = permissionsResult;
-        
-    }
-    return _permissions;
-}
-
-- (void) setPermissions: (NSArray*) val
-{
-    _permissions = val;
-    self.dictionary[@"permissions"] = val;
-}
-
 - (NSArray*) children
 {
     if(!_children){
@@ -510,6 +515,31 @@
 {
     _children = val;
     self.dictionary[@"children"] = val;
+}
+
+- (NSArray*) permissions
+{
+    if(!_permissions){
+        
+    NSMutableArray *permissionsResult = [NSMutableArray array];
+    NSArray *permissions = self.dictionary[@"permissions"];
+
+    if ([permissions isKindOfClass:[NSArray class]]){
+        for (id permission in permissions){
+            [permissionsResult addObject:[[MSGraphPermission alloc] initWithDictionary: permission]];
+        }
+    }
+
+    _permissions = permissionsResult;
+        
+    }
+    return _permissions;
+}
+
+- (void) setPermissions: (NSArray*) val
+{
+    _permissions = val;
+    self.dictionary[@"permissions"] = val;
 }
 
 - (NSArray*) thumbnails

@@ -36,9 +36,12 @@
     NSArray* _replyUrls;
     NSArray* _requiredResourceAccess;
     NSString* _samlMetadataUrl;
+    MSGraphOnPremisesPublishing* _onPremisesPublishing;
     NSArray* _extensionProperties;
     MSGraphDirectoryObject* _createdOnBehalfOf;
     NSArray* _owners;
+    NSArray* _policies;
+    MSGraphConnectorGroup* _connectorGroup;
 }
 @end
 
@@ -403,6 +406,20 @@
     self.dictionary[@"samlMetadataUrl"] = val;
 }
 
+- (MSGraphOnPremisesPublishing*) onPremisesPublishing
+{
+    if(!_onPremisesPublishing){
+        _onPremisesPublishing = [[MSGraphOnPremisesPublishing alloc] initWithDictionary: self.dictionary[@"onPremisesPublishing"]];
+    }
+    return _onPremisesPublishing;
+}
+
+- (void) setOnPremisesPublishing: (MSGraphOnPremisesPublishing*) val
+{
+    _onPremisesPublishing = val;
+    self.dictionary[@"onPremisesPublishing"] = val;
+}
+
 - (NSArray*) extensionProperties
 {
     if(!_extensionProperties){
@@ -465,6 +482,45 @@
 {
     _owners = val;
     self.dictionary[@"owners"] = val;
+}
+
+- (NSArray*) policies
+{
+    if(!_policies){
+        
+    NSMutableArray *policiesResult = [NSMutableArray array];
+    NSArray *policies = self.dictionary[@"policies"];
+
+    if ([policies isKindOfClass:[NSArray class]]){
+        for (id directoryObject in policies){
+            [policiesResult addObject:[[MSGraphDirectoryObject alloc] initWithDictionary: directoryObject]];
+        }
+    }
+
+    _policies = policiesResult;
+        
+    }
+    return _policies;
+}
+
+- (void) setPolicies: (NSArray*) val
+{
+    _policies = val;
+    self.dictionary[@"policies"] = val;
+}
+
+- (MSGraphConnectorGroup*) connectorGroup
+{
+    if(!_connectorGroup){
+        _connectorGroup = [[MSGraphConnectorGroup alloc] initWithDictionary: self.dictionary[@"connectorGroup"]];
+    }
+    return _connectorGroup;
+}
+
+- (void) setConnectorGroup: (MSGraphConnectorGroup*) val
+{
+    _connectorGroup = val;
+    self.dictionary[@"connectorGroup"] = val;
 }
 
 

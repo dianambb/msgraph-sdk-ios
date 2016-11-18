@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphDriveRequest, MSGraphDriveItemRequestBuilder, MSGraphDriveItemsCollectionRequestBuilder, MSGraphDriveSpecialCollectionRequestBuilder, MSGraphRootRequestBuilder, MSGraphDriveRecentRequestBuilder, MSGraphDriveSharedWithMeRequestBuilder;
+@class MSGraphDriveRequest, MSGraphDriveItemRequestBuilder, MSGraphDriveItemsCollectionRequestBuilder, MSGraphDriveSpecialCollectionRequestBuilder, MSGraphRootRequestBuilder, MSGraphDriveSearchRequestBuilder, MSGraphDriveRecentRequestBuilder, MSGraphDriveSharedWithMeRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -20,6 +20,8 @@
 - (MSGraphDriveItemRequestBuilder *)special:(NSString *)driveItem;
 
 - (MSGraphDriveItemRequestBuilder *) root;
+
+- (MSGraphDriveSearchRequestBuilder *)searchWithQ:(NSString *)q ;
 
 - (MSGraphDriveRecentRequestBuilder *)recent;
 

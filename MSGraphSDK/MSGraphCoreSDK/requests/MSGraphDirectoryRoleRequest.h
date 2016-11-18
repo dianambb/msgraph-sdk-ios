@@ -5,6 +5,8 @@
 @class MSURLSessionDataTask;
 @class MSGraphDirectoryObjectRequestBuilder;
 @class MSGraphMembersCollectionRequestBuilder;
+@class MSGraphScopedRoleMembershipRequestBuilder;
+@class MSGraphScopedAdministratorsCollectionRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

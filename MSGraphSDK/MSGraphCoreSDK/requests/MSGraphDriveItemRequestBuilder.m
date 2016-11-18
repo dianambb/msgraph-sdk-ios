@@ -24,17 +24,6 @@
 
 }
 
-- (MSGraphDriveItemPermissionsCollectionRequestBuilder *)permissions
-{
-    return [[MSGraphDriveItemPermissionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"permissions"]  
-                                                                             client:self.client];
-}
-
-- (MSGraphPermissionRequestBuilder *)permissions:(NSString *)permission
-{
-    return [[self permissions] permission:permission];
-}
-
 - (MSGraphDriveItemChildrenCollectionRequestBuilder *)children
 {
     return [[MSGraphDriveItemChildrenCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"children"]  
@@ -44,6 +33,17 @@
 - (MSGraphDriveItemRequestBuilder *)children:(NSString *)driveItem
 {
     return [[self children] driveItem:driveItem];
+}
+
+- (MSGraphDriveItemPermissionsCollectionRequestBuilder *)permissions
+{
+    return [[MSGraphDriveItemPermissionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"permissions"]  
+                                                                             client:self.client];
+}
+
+- (MSGraphPermissionRequestBuilder *)permissions:(NSString *)permission
+{
+    return [[self permissions] permission:permission];
 }
 
 - (MSGraphDriveItemThumbnailsCollectionRequestBuilder *)thumbnails
@@ -75,6 +75,16 @@
                                                                     scope:scope
                                                                       URL:actionURL
                                                                    client:self.client];
+
+
+}
+
+- (MSGraphDriveItemCreateUploadSessionRequestBuilder *)createUploadSessionWithItem:(MSGraphDriveItemUploadableProperties *)item 
+{
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.createUploadSession"];
+    return [[MSGraphDriveItemCreateUploadSessionRequestBuilder alloc] initWithItem:item
+                                                                               URL:actionURL
+                                                                            client:self.client];
 
 
 }
@@ -114,6 +124,11 @@
 
 }
 
+- (MSGraphDriveItemDeltaRequestBuilder *)delta
+{
+    return [[MSGraphDriveItemDeltaRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.delta"] client:self.client];
+}
+
 - (MSGraphDriveItemDeltaRequestBuilder *)deltaWithToken:(NSString *)token 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.delta"];
@@ -122,11 +137,6 @@
                                                                client:self.client];
 
 
-}
-
-- (MSGraphDriveItemDeltaRequestBuilder *)delta
-{
-    return [[MSGraphDriveItemDeltaRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.delta"] client:self.client];
 }
 
 

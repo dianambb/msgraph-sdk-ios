@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 
 
-@class MSGraphEmailAddress, MSGraphPhysicalAddress, MSGraphFollowupFlag, MSGraphExtension, MSGraphSingleValueLegacyExtendedProperty, MSGraphMultiValueLegacyExtendedProperty, MSGraphProfilePhoto; 
+@class MSGraphEmailAddress, MSGraphWebsite, MSGraphPhone, MSGraphPhysicalAddress, MSDate, MSGraphFollowupFlag, MSGraphExtension, MSGraphSingleValueLegacyExtendedProperty, MSGraphMultiValueLegacyExtendedProperty, MSGraphProfilePhoto; 
 
 
 #import "MSGraphOutlookItem.h"
@@ -23,24 +23,23 @@
     @property (nullable, nonatomic, setter=setYomiCompanyName:, getter=yomiCompanyName) NSString* yomiCompanyName;
     @property (nullable, nonatomic, setter=setGeneration:, getter=generation) NSString* generation;
     @property (nullable, nonatomic, setter=setEmailAddresses:, getter=emailAddresses) NSArray* emailAddresses;
+    @property (nullable, nonatomic, setter=setWebsites:, getter=websites) NSArray* websites;
     @property (nullable, nonatomic, setter=setImAddresses:, getter=imAddresses) NSArray* imAddresses;
     @property (nullable, nonatomic, setter=setJobTitle:, getter=jobTitle) NSString* jobTitle;
     @property (nullable, nonatomic, setter=setCompanyName:, getter=companyName) NSString* companyName;
     @property (nullable, nonatomic, setter=setDepartment:, getter=department) NSString* department;
     @property (nullable, nonatomic, setter=setOfficeLocation:, getter=officeLocation) NSString* officeLocation;
     @property (nullable, nonatomic, setter=setProfession:, getter=profession) NSString* profession;
-    @property (nullable, nonatomic, setter=setBusinessHomePage:, getter=businessHomePage) NSString* businessHomePage;
     @property (nullable, nonatomic, setter=setAssistantName:, getter=assistantName) NSString* assistantName;
     @property (nullable, nonatomic, setter=setManager:, getter=manager) NSString* manager;
-    @property (nullable, nonatomic, setter=setHomePhones:, getter=homePhones) NSArray* homePhones;
-    @property (nullable, nonatomic, setter=setMobilePhone:, getter=mobilePhone) NSString* mobilePhone;
-    @property (nullable, nonatomic, setter=setBusinessPhones:, getter=businessPhones) NSArray* businessPhones;
-    @property (nullable, nonatomic, setter=setHomeAddress:, getter=homeAddress) MSGraphPhysicalAddress* homeAddress;
-    @property (nullable, nonatomic, setter=setBusinessAddress:, getter=businessAddress) MSGraphPhysicalAddress* businessAddress;
-    @property (nullable, nonatomic, setter=setOtherAddress:, getter=otherAddress) MSGraphPhysicalAddress* otherAddress;
+    @property (nullable, nonatomic, setter=setPhones:, getter=phones) NSArray* phones;
+    @property (nullable, nonatomic, setter=setPostalAddresses:, getter=postalAddresses) NSArray* postalAddresses;
     @property (nullable, nonatomic, setter=setSpouseName:, getter=spouseName) NSString* spouseName;
     @property (nullable, nonatomic, setter=setPersonalNotes:, getter=personalNotes) NSString* personalNotes;
     @property (nullable, nonatomic, setter=setChildren:, getter=children) NSArray* children;
+    @property (nullable, nonatomic, setter=setWeddingAnniversary:, getter=weddingAnniversary) MSDate* weddingAnniversary;
+    @property (nullable, nonatomic, setter=setGender:, getter=gender) NSString* gender;
+    @property (nonatomic, setter=setIsFavorite:, getter=isFavorite) BOOL isFavorite;
     @property (nullable, nonatomic, setter=setFlag:, getter=flag) MSGraphFollowupFlag* flag;
     @property (nullable, nonatomic, setter=setExtensions:, getter=extensions) NSArray* extensions;
     @property (nullable, nonatomic, setter=setSingleValueExtendedProperties:, getter=singleValueExtendedProperties) NSArray* singleValueExtendedProperties;

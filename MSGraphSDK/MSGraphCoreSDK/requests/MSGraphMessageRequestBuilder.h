@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphMessageRequest, MSGraphExtensionRequestBuilder, MSGraphMessageExtensionsCollectionRequestBuilder, MSGraphAttachmentRequestBuilder, MSGraphMessageAttachmentsCollectionRequestBuilder, MSGraphSingleValueLegacyExtendedPropertyRequestBuilder, MSGraphMessageSingleValueExtendedPropertiesCollectionRequestBuilder, MSGraphMultiValueLegacyExtendedPropertyRequestBuilder, MSGraphMessageMultiValueExtendedPropertiesCollectionRequestBuilder, MSGraphMessageCopyRequestBuilder, MSGraphMessageMoveRequestBuilder, MSGraphMessageCreateReplyRequestBuilder, MSGraphMessageCreateReplyAllRequestBuilder, MSGraphMessageCreateForwardRequestBuilder, MSGraphMessageReplyRequestBuilder, MSGraphMessageReplyAllRequestBuilder, MSGraphMessageForwardRequestBuilder, MSGraphMessageSendRequestBuilder, MSGraphMessageUnsubscribeRequestBuilder;
+@class MSGraphMessageRequest, MSGraphAttachmentRequestBuilder, MSGraphMessageAttachmentsCollectionRequestBuilder, MSGraphExtensionRequestBuilder, MSGraphMessageExtensionsCollectionRequestBuilder, MSGraphSingleValueLegacyExtendedPropertyRequestBuilder, MSGraphMessageSingleValueExtendedPropertiesCollectionRequestBuilder, MSGraphMultiValueLegacyExtendedPropertyRequestBuilder, MSGraphMessageMultiValueExtendedPropertiesCollectionRequestBuilder, MSGraphMentionRequestBuilder, MSGraphMessageMentionsCollectionRequestBuilder, MSGraphMessageCopyRequestBuilder, MSGraphMessageMoveRequestBuilder, MSGraphMessageCreateReplyRequestBuilder, MSGraphMessageCreateReplyAllRequestBuilder, MSGraphMessageCreateForwardRequestBuilder, MSGraphMessageReplyRequestBuilder, MSGraphMessageReplyAllRequestBuilder, MSGraphMessageForwardRequestBuilder, MSGraphMessageSendRequestBuilder, MSGraphMessageUnsubscribeRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -11,13 +11,13 @@
 
 @interface MSGraphMessageRequestBuilder : MSGraphOutlookItemRequestBuilder
 
-- (MSGraphMessageExtensionsCollectionRequestBuilder *)extensions;
-
-- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension;
-
 - (MSGraphMessageAttachmentsCollectionRequestBuilder *)attachments;
 
 - (MSGraphAttachmentRequestBuilder *)attachments:(NSString *)attachment;
+
+- (MSGraphMessageExtensionsCollectionRequestBuilder *)extensions;
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension;
 
 - (MSGraphMessageSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties;
 
@@ -26,6 +26,10 @@
 - (MSGraphMessageMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties;
 
 - (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty;
+
+- (MSGraphMessageMentionsCollectionRequestBuilder *)mentions;
+
+- (MSGraphMentionRequestBuilder *)mentions:(NSString *)mention;
 
 - (MSGraphMessageCopyRequestBuilder *)copyWithDestinationId:(NSString *)destinationId ;
 

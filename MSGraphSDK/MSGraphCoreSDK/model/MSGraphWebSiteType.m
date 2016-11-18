@@ -2,68 +2,90 @@
 
 
 
-#include <MSGraphWebSiteType.h>
+#include <MSGraphWebsiteType.h>
 
-@interface MSGraphWebSiteType () {
-    MSGraphWebSiteTypeValue _enumValue;
+@interface MSGraphWebsiteType () {
+    MSGraphWebsiteTypeValue _enumValue;
 }
-@property (nonatomic, readwrite) MSGraphWebSiteTypeValue enumValue;
+@property (nonatomic, readwrite) MSGraphWebsiteTypeValue enumValue;
 @end
 
-@implementation MSGraphWebSiteType
+@implementation MSGraphWebsiteType
 
-+ (MSGraphWebSiteType*) unknown {
-    static MSGraphWebSiteType *_unknown;
++ (MSGraphWebsiteType*) other {
+    static MSGraphWebsiteType *_other;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _unknown = [[MSGraphWebSiteType alloc] init];
-        _unknown.enumValue = MSGraphWebSiteTypeUnknown;
+        _other = [[MSGraphWebsiteType alloc] init];
+        _other.enumValue = MSGraphWebsiteTypeOther;
     });
-    return _unknown;
+    return _other;
 }
-+ (MSGraphWebSiteType*) personalHomePage {
-    static MSGraphWebSiteType *_personalHomePage;
++ (MSGraphWebsiteType*) home {
+    static MSGraphWebsiteType *_home;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _personalHomePage = [[MSGraphWebSiteType alloc] init];
-        _personalHomePage.enumValue = MSGraphWebSiteTypePersonalHomePage;
+        _home = [[MSGraphWebsiteType alloc] init];
+        _home.enumValue = MSGraphWebsiteTypeHome;
     });
-    return _personalHomePage;
+    return _home;
 }
-+ (MSGraphWebSiteType*) businessHomePage {
-    static MSGraphWebSiteType *_businessHomePage;
++ (MSGraphWebsiteType*) work {
+    static MSGraphWebsiteType *_work;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _businessHomePage = [[MSGraphWebSiteType alloc] init];
-        _businessHomePage.enumValue = MSGraphWebSiteTypeBusinessHomePage;
+        _work = [[MSGraphWebsiteType alloc] init];
+        _work.enumValue = MSGraphWebsiteTypeWork;
     });
-    return _businessHomePage;
+    return _work;
+}
++ (MSGraphWebsiteType*) blog {
+    static MSGraphWebsiteType *_blog;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _blog = [[MSGraphWebsiteType alloc] init];
+        _blog.enumValue = MSGraphWebsiteTypeBlog;
+    });
+    return _blog;
+}
++ (MSGraphWebsiteType*) profile {
+    static MSGraphWebsiteType *_profile;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _profile = [[MSGraphWebsiteType alloc] init];
+        _profile.enumValue = MSGraphWebsiteTypeProfile;
+    });
+    return _profile;
 }
 
-+ (MSGraphWebSiteType*) UnknownEnumValue {
-    static MSGraphWebSiteType *_unknownValue;
++ (MSGraphWebsiteType*) UnknownEnumValue {
+    static MSGraphWebsiteType *_unknownValue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _unknownValue = [[MSGraphWebSiteType alloc] init];
-        _unknownValue.enumValue = MSGraphWebSiteTypeEndOfEnum;
+        _unknownValue = [[MSGraphWebsiteType alloc] init];
+        _unknownValue.enumValue = MSGraphWebsiteTypeEndOfEnum;
     });
     return _unknownValue;
 }
 
 
-+ (MSGraphWebSiteType*) webSiteTypeWithEnumValue:(MSGraphWebSiteTypeValue)val {
++ (MSGraphWebsiteType*) websiteTypeWithEnumValue:(MSGraphWebsiteTypeValue)val {
 
     switch(val)
     {
-        case MSGraphWebSiteTypeUnknown:
-            return [MSGraphWebSiteType unknown];
-        case MSGraphWebSiteTypePersonalHomePage:
-            return [MSGraphWebSiteType personalHomePage];
-        case MSGraphWebSiteTypeBusinessHomePage:
-            return [MSGraphWebSiteType businessHomePage];
-        case MSGraphWebSiteTypeEndOfEnum:
+        case MSGraphWebsiteTypeOther:
+            return [MSGraphWebsiteType other];
+        case MSGraphWebsiteTypeHome:
+            return [MSGraphWebsiteType home];
+        case MSGraphWebsiteTypeWork:
+            return [MSGraphWebsiteType work];
+        case MSGraphWebsiteTypeBlog:
+            return [MSGraphWebsiteType blog];
+        case MSGraphWebsiteTypeProfile:
+            return [MSGraphWebsiteType profile];
+        case MSGraphWebsiteTypeEndOfEnum:
         default:
-            return [MSGraphWebSiteType UnknownEnumValue];
+            return [MSGraphWebsiteType UnknownEnumValue];
     }
 
     return nil;
@@ -73,13 +95,17 @@
 
     switch(self.enumValue)
     {
-        case MSGraphWebSiteTypeUnknown:
-            return @"unknown";
-        case MSGraphWebSiteTypePersonalHomePage:
-            return @"personalHomePage";
-        case MSGraphWebSiteTypeBusinessHomePage:
-            return @"businessHomePage";
-        case MSGraphWebSiteTypeEndOfEnum:
+        case MSGraphWebsiteTypeOther:
+            return @"other";
+        case MSGraphWebsiteTypeHome:
+            return @"home";
+        case MSGraphWebsiteTypeWork:
+            return @"work";
+        case MSGraphWebsiteTypeBlog:
+            return @"blog";
+        case MSGraphWebsiteTypeProfile:
+            return @"profile";
+        case MSGraphWebsiteTypeEndOfEnum:
         default:
             return nil;
     }
@@ -87,30 +113,38 @@
     return nil;
 }
 
-- (MSGraphWebSiteTypeValue) enumValue {
+- (MSGraphWebsiteTypeValue) enumValue {
     return _enumValue;
 }
 
 @end
 
-@implementation NSString (MSGraphWebSiteType)
+@implementation NSString (MSGraphWebsiteType)
 
-- (MSGraphWebSiteType*) toMSGraphWebSiteType{
+- (MSGraphWebsiteType*) toMSGraphWebsiteType{
 
-    if([self isEqualToString:@"unknown"])
+    if([self isEqualToString:@"other"])
     {
-          return [MSGraphWebSiteType unknown];
+          return [MSGraphWebsiteType other];
     }
-    else if([self isEqualToString:@"personalHomePage"])
+    else if([self isEqualToString:@"home"])
     {
-          return [MSGraphWebSiteType personalHomePage];
+          return [MSGraphWebsiteType home];
     }
-    else if([self isEqualToString:@"businessHomePage"])
+    else if([self isEqualToString:@"work"])
     {
-          return [MSGraphWebSiteType businessHomePage];
+          return [MSGraphWebsiteType work];
+    }
+    else if([self isEqualToString:@"blog"])
+    {
+          return [MSGraphWebsiteType blog];
+    }
+    else if([self isEqualToString:@"profile"])
+    {
+          return [MSGraphWebsiteType profile];
     }
     else {
-        return [MSGraphWebSiteType UnknownEnumValue];
+        return [MSGraphWebsiteType UnknownEnumValue];
     }
 }
 

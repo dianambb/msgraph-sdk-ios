@@ -273,11 +273,11 @@
 
     if ([appliedCategories isKindOfClass:[NSDictionary class]]){
         [appliedCategories enumerateKeysAndObjectsUsingBlock:^(NSString* key, id value, BOOL* stop){
-		   [appliedCategoriesResult setValue:value forKey:key];
-		}];
+            [appliedCategoriesResult setValue:value forKey:key];
+        }];
     }
 
-	_appliedCategories = appliedCategoriesResult;
+    _appliedCategories = appliedCategoriesResult;
         
     }
     return _appliedCategories;

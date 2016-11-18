@@ -23,7 +23,7 @@
     NSArray* _emailAddresses;
     NSArray* _phones;
     NSArray* _postalAddresses;
-    NSArray* _webSites;
+    NSArray* _websites;
     NSString* _title;
     NSString* _companyName;
     NSString* _yomiCompany;
@@ -33,6 +33,7 @@
     NSArray* _sources;
     NSString* _mailboxType;
     NSString* _personType;
+    NSString* _userPrincipalName;
 }
 @end
 
@@ -202,29 +203,29 @@
     self.dictionary[@"postalAddresses"] = val;
 }
 
-- (NSArray*) webSites
+- (NSArray*) websites
 {
-    if(!_webSites){
+    if(!_websites){
         
-    NSMutableArray *webSitesResult = [NSMutableArray array];
-    NSArray *webSites = self.dictionary[@"webSites"];
+    NSMutableArray *websitesResult = [NSMutableArray array];
+    NSArray *websites = self.dictionary[@"websites"];
 
-    if ([webSites isKindOfClass:[NSArray class]]){
-        for (id webSite in webSites){
-            [webSitesResult addObject:[[MSGraphWebSite alloc] initWithDictionary: webSite]];
+    if ([websites isKindOfClass:[NSArray class]]){
+        for (id website in websites){
+            [websitesResult addObject:[[MSGraphWebsite alloc] initWithDictionary: website]];
         }
     }
 
-    _webSites = webSitesResult;
+    _websites = websitesResult;
         
     }
-    return _webSites;
+    return _websites;
 }
 
-- (void) setWebSites: (NSArray*) val
+- (void) setWebsites: (NSArray*) val
 {
-    _webSites = val;
-    self.dictionary[@"webSites"] = val;
+    _websites = val;
+    self.dictionary[@"websites"] = val;
 }
 
 - (NSString*) title
@@ -362,6 +363,20 @@
 - (void) setPersonType: (NSString*) val
 {
     self.dictionary[@"personType"] = val;
+}
+
+- (NSString*) userPrincipalName
+{
+    if([[NSNull null] isEqual:self.dictionary[@"userPrincipalName"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"userPrincipalName"];
+}
+
+- (void) setUserPrincipalName: (NSString*) val
+{
+    self.dictionary[@"userPrincipalName"] = val;
 }
 
 

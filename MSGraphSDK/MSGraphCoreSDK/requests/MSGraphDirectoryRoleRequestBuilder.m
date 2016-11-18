@@ -17,6 +17,17 @@
     return [[self members] directoryObject:directoryObject];
 }
 
+- (MSGraphDirectoryRoleScopedAdministratorsCollectionRequestBuilder *)scopedAdministrators
+{
+    return [[MSGraphDirectoryRoleScopedAdministratorsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"scopedAdministrators"]  
+                                                                                          client:self.client];
+}
+
+- (MSGraphScopedRoleMembershipRequestBuilder *)scopedAdministrators:(NSString *)scopedRoleMembership
+{
+    return [[self scopedAdministrators] scopedRoleMembership:scopedRoleMembership];
+}
+
 
 - (MSGraphDirectoryRoleRequest *)request
 {

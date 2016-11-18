@@ -83,6 +83,17 @@
     return [[self ownedObjects] directoryObject:directoryObject];
 }
 
+- (MSGraphServicePrincipalPoliciesCollectionWithReferencesRequestBuilder *)policies
+{
+    return [[MSGraphServicePrincipalPoliciesCollectionWithReferencesRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"policies"]  
+                                                                                               client:self.client];
+}
+
+- (MSGraphDirectoryObjectRequestBuilder *)policies:(NSString *)directoryObject
+{
+    return [[self policies] directoryObject:directoryObject];
+}
+
 
 - (MSGraphServicePrincipalRequest *)request
 {

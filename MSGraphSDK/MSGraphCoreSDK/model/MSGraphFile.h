@@ -11,5 +11,6 @@
 
 @property (nullable, nonatomic, setter=setHashes:, getter=hashes) MSGraphHashes* hashes;
 @property (nullable, nonatomic, setter=setMimeType:, getter=mimeType) NSString* mimeType;
+@property (nonatomic, setter=setProcessingMetadata:, getter=processingMetadata) BOOL processingMetadata;
 
 @end

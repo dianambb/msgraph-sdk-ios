@@ -35,5 +35,6 @@
     @property (nullable, nonatomic, setter=setCreatedObjects:, getter=createdObjects) NSArray* createdObjects;
     @property (nullable, nonatomic, setter=setOwners:, getter=owners) NSArray* owners;
     @property (nullable, nonatomic, setter=setOwnedObjects:, getter=ownedObjects) NSArray* ownedObjects;
+    @property (nullable, nonatomic, setter=setPolicies:, getter=policies) NSArray* policies;
   
 @end

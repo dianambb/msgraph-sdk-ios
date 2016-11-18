@@ -42,11 +42,11 @@
 
     if ([sharedWith isKindOfClass:[NSDictionary class]]){
         [sharedWith enumerateKeysAndObjectsUsingBlock:^(NSString* key, id value, BOOL* stop){
-		   [sharedWithResult setValue:value forKey:key];
-		}];
+            [sharedWithResult setValue:value forKey:key];
+        }];
     }
 
-	_sharedWith = sharedWithResult;
+    _sharedWith = sharedWithResult;
         
     }
     return _sharedWith;

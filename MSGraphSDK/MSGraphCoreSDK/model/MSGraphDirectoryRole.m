@@ -18,6 +18,7 @@
     NSString* _displayName;
     NSString* _roleTemplateId;
     NSArray* _members;
+    NSArray* _scopedAdministrators;
 }
 @end
 
@@ -95,6 +96,31 @@
 {
     _members = val;
     self.dictionary[@"members"] = val;
+}
+
+- (NSArray*) scopedAdministrators
+{
+    if(!_scopedAdministrators){
+        
+    NSMutableArray *scopedAdministratorsResult = [NSMutableArray array];
+    NSArray *scopedAdministrators = self.dictionary[@"scopedAdministrators"];
+
+    if ([scopedAdministrators isKindOfClass:[NSArray class]]){
+        for (id scopedRoleMembership in scopedAdministrators){
+            [scopedAdministratorsResult addObject:[[MSGraphScopedRoleMembership alloc] initWithDictionary: scopedRoleMembership]];
+        }
+    }
+
+    _scopedAdministrators = scopedAdministratorsResult;
+        
+    }
+    return _scopedAdministrators;
+}
+
+- (void) setScopedAdministrators: (NSArray*) val
+{
+    _scopedAdministrators = val;
+    self.dictionary[@"scopedAdministrators"] = val;
 }
 
 

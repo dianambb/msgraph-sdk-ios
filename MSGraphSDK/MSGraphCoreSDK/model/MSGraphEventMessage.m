@@ -21,6 +21,7 @@
     MSGraphEventType* _type;
     MSGraphPatternedRecurrence* _recurrence;
     BOOL _isOutOfDate;
+    BOOL _isAllDay;
     MSGraphEvent* _event;
 }
 @end
@@ -128,6 +129,18 @@
 {
     _isOutOfDate = val;
     self.dictionary[@"isOutOfDate"] = @(val);
+}
+
+- (BOOL) isAllDay
+{
+    _isAllDay = [self.dictionary[@"isAllDay"] boolValue];
+    return _isAllDay;
+}
+
+- (void) setIsAllDay: (BOOL) val
+{
+    _isAllDay = val;
+    self.dictionary[@"isAllDay"] = @(val);
 }
 
 - (MSGraphEvent*) event

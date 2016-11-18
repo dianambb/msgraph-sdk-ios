@@ -39,6 +39,8 @@
     NSString* _preferredLanguage;
     NSArray* _provisionedPlans;
     NSArray* _proxyAddresses;
+    NSDate* _refreshTokensValidFromDateTime;
+    BOOL _showInAddressList;
     NSString* _state;
     NSString* _streetAddress;
     NSString* _surname;
@@ -63,6 +65,7 @@
     NSArray* _memberOf;
     NSArray* _createdObjects;
     NSArray* _ownedObjects;
+    NSArray* _scopedAdministratorOf;
     NSArray* _messages;
     NSArray* _joinedGroups;
     NSArray* _mailFolders;
@@ -78,6 +81,8 @@
     MSGraphProfilePhoto* _photo;
     NSArray* _photos;
     MSGraphDrive* _drive;
+    NSArray* _drives;
+    MSGraphSharePoint* _sharepoint;
     MSGraphOfficeGraphInsights* _insights;
     NSArray* _trendingAround;
     NSArray* _workingWith;
@@ -465,6 +470,32 @@
 - (void) setProxyAddresses: (NSArray*) val
 {
     self.dictionary[@"proxyAddresses"] = val;
+}
+
+- (NSDate*) refreshTokensValidFromDateTime
+{
+    if(!_refreshTokensValidFromDateTime){
+        _refreshTokensValidFromDateTime = [NSDate ms_dateFromString: self.dictionary[@"refreshTokensValidFromDateTime"]];
+    }
+    return _refreshTokensValidFromDateTime;
+}
+
+- (void) setRefreshTokensValidFromDateTime: (NSDate*) val
+{
+    _refreshTokensValidFromDateTime = val;
+    self.dictionary[@"refreshTokensValidFromDateTime"] = val;
+}
+
+- (BOOL) showInAddressList
+{
+    _showInAddressList = [self.dictionary[@"showInAddressList"] boolValue];
+    return _showInAddressList;
+}
+
+- (void) setShowInAddressList: (BOOL) val
+{
+    _showInAddressList = val;
+    self.dictionary[@"showInAddressList"] = @(val);
 }
 
 - (NSString*) state
@@ -869,6 +900,31 @@
     self.dictionary[@"ownedObjects"] = val;
 }
 
+- (NSArray*) scopedAdministratorOf
+{
+    if(!_scopedAdministratorOf){
+        
+    NSMutableArray *scopedAdministratorOfResult = [NSMutableArray array];
+    NSArray *scopedAdministratorOf = self.dictionary[@"scopedAdministratorOf"];
+
+    if ([scopedAdministratorOf isKindOfClass:[NSArray class]]){
+        for (id scopedRoleMembership in scopedAdministratorOf){
+            [scopedAdministratorOfResult addObject:[[MSGraphScopedRoleMembership alloc] initWithDictionary: scopedRoleMembership]];
+        }
+    }
+
+    _scopedAdministratorOf = scopedAdministratorOfResult;
+        
+    }
+    return _scopedAdministratorOf;
+}
+
+- (void) setScopedAdministratorOf: (NSArray*) val
+{
+    _scopedAdministratorOf = val;
+    self.dictionary[@"scopedAdministratorOf"] = val;
+}
+
 - (NSArray*) messages
 {
     if(!_messages){
@@ -1198,6 +1254,45 @@
 {
     _drive = val;
     self.dictionary[@"drive"] = val;
+}
+
+- (NSArray*) drives
+{
+    if(!_drives){
+        
+    NSMutableArray *drivesResult = [NSMutableArray array];
+    NSArray *drives = self.dictionary[@"drives"];
+
+    if ([drives isKindOfClass:[NSArray class]]){
+        for (id drive in drives){
+            [drivesResult addObject:[[MSGraphDrive alloc] initWithDictionary: drive]];
+        }
+    }
+
+    _drives = drivesResult;
+        
+    }
+    return _drives;
+}
+
+- (void) setDrives: (NSArray*) val
+{
+    _drives = val;
+    self.dictionary[@"drives"] = val;
+}
+
+- (MSGraphSharePoint*) sharepoint
+{
+    if(!_sharepoint){
+        _sharepoint = [[MSGraphSharePoint alloc] initWithDictionary: self.dictionary[@"sharepoint"]];
+    }
+    return _sharepoint;
+}
+
+- (void) setSharepoint: (MSGraphSharePoint*) val
+{
+    _sharepoint = val;
+    self.dictionary[@"sharepoint"] = val;
 }
 
 - (MSGraphOfficeGraphInsights*) insights

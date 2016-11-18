@@ -12,15 +12,6 @@
 
 @implementation MSGraphPhoneType
 
-+ (MSGraphPhoneType*) unknown {
-    static MSGraphPhoneType *_unknown;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _unknown = [[MSGraphPhoneType alloc] init];
-        _unknown.enumValue = MSGraphPhoneTypeUnknown;
-    });
-    return _unknown;
-}
 + (MSGraphPhoneType*) home {
     static MSGraphPhoneType *_home;
     static dispatch_once_t onceToken;
@@ -66,24 +57,6 @@
     });
     return _assistant;
 }
-+ (MSGraphPhoneType*) callback {
-    static MSGraphPhoneType *_callback;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _callback = [[MSGraphPhoneType alloc] init];
-        _callback.enumValue = MSGraphPhoneTypeCallback;
-    });
-    return _callback;
-}
-+ (MSGraphPhoneType*) car {
-    static MSGraphPhoneType *_car;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _car = [[MSGraphPhoneType alloc] init];
-        _car.enumValue = MSGraphPhoneTypeCar;
-    });
-    return _car;
-}
 + (MSGraphPhoneType*) homeFax {
     static MSGraphPhoneType *_homeFax;
     static dispatch_once_t onceToken;
@@ -120,15 +93,6 @@
     });
     return _pager;
 }
-+ (MSGraphPhoneType*) primary {
-    static MSGraphPhoneType *_primary;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _primary = [[MSGraphPhoneType alloc] init];
-        _primary.enumValue = MSGraphPhoneTypePrimary;
-    });
-    return _primary;
-}
 + (MSGraphPhoneType*) radio {
     static MSGraphPhoneType *_radio;
     static dispatch_once_t onceToken;
@@ -137,33 +101,6 @@
         _radio.enumValue = MSGraphPhoneTypeRadio;
     });
     return _radio;
-}
-+ (MSGraphPhoneType*) telex {
-    static MSGraphPhoneType *_telex;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _telex = [[MSGraphPhoneType alloc] init];
-        _telex.enumValue = MSGraphPhoneTypeTelex;
-    });
-    return _telex;
-}
-+ (MSGraphPhoneType*) ttyTdd {
-    static MSGraphPhoneType *_ttyTdd;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _ttyTdd = [[MSGraphPhoneType alloc] init];
-        _ttyTdd.enumValue = MSGraphPhoneTypeTtyTdd;
-    });
-    return _ttyTdd;
-}
-+ (MSGraphPhoneType*) organizationMain {
-    static MSGraphPhoneType *_organizationMain;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _organizationMain = [[MSGraphPhoneType alloc] init];
-        _organizationMain.enumValue = MSGraphPhoneTypeOrganizationMain;
-    });
-    return _organizationMain;
 }
 
 + (MSGraphPhoneType*) UnknownEnumValue {
@@ -181,8 +118,6 @@
 
     switch(val)
     {
-        case MSGraphPhoneTypeUnknown:
-            return [MSGraphPhoneType unknown];
         case MSGraphPhoneTypeHome:
             return [MSGraphPhoneType home];
         case MSGraphPhoneTypeBusiness:
@@ -193,10 +128,6 @@
             return [MSGraphPhoneType other];
         case MSGraphPhoneTypeAssistant:
             return [MSGraphPhoneType assistant];
-        case MSGraphPhoneTypeCallback:
-            return [MSGraphPhoneType callback];
-        case MSGraphPhoneTypeCar:
-            return [MSGraphPhoneType car];
         case MSGraphPhoneTypeHomeFax:
             return [MSGraphPhoneType homeFax];
         case MSGraphPhoneTypeBusinessFax:
@@ -205,16 +136,8 @@
             return [MSGraphPhoneType otherFax];
         case MSGraphPhoneTypePager:
             return [MSGraphPhoneType pager];
-        case MSGraphPhoneTypePrimary:
-            return [MSGraphPhoneType primary];
         case MSGraphPhoneTypeRadio:
             return [MSGraphPhoneType radio];
-        case MSGraphPhoneTypeTelex:
-            return [MSGraphPhoneType telex];
-        case MSGraphPhoneTypeTtyTdd:
-            return [MSGraphPhoneType ttyTdd];
-        case MSGraphPhoneTypeOrganizationMain:
-            return [MSGraphPhoneType organizationMain];
         case MSGraphPhoneTypeEndOfEnum:
         default:
             return [MSGraphPhoneType UnknownEnumValue];
@@ -227,8 +150,6 @@
 
     switch(self.enumValue)
     {
-        case MSGraphPhoneTypeUnknown:
-            return @"unknown";
         case MSGraphPhoneTypeHome:
             return @"home";
         case MSGraphPhoneTypeBusiness:
@@ -239,10 +160,6 @@
             return @"other";
         case MSGraphPhoneTypeAssistant:
             return @"assistant";
-        case MSGraphPhoneTypeCallback:
-            return @"callback";
-        case MSGraphPhoneTypeCar:
-            return @"car";
         case MSGraphPhoneTypeHomeFax:
             return @"homeFax";
         case MSGraphPhoneTypeBusinessFax:
@@ -251,16 +168,8 @@
             return @"otherFax";
         case MSGraphPhoneTypePager:
             return @"pager";
-        case MSGraphPhoneTypePrimary:
-            return @"primary";
         case MSGraphPhoneTypeRadio:
             return @"radio";
-        case MSGraphPhoneTypeTelex:
-            return @"telex";
-        case MSGraphPhoneTypeTtyTdd:
-            return @"ttyTdd";
-        case MSGraphPhoneTypeOrganizationMain:
-            return @"organizationMain";
         case MSGraphPhoneTypeEndOfEnum:
         default:
             return nil;
@@ -279,11 +188,7 @@
 
 - (MSGraphPhoneType*) toMSGraphPhoneType{
 
-    if([self isEqualToString:@"unknown"])
-    {
-          return [MSGraphPhoneType unknown];
-    }
-    else if([self isEqualToString:@"home"])
+    if([self isEqualToString:@"home"])
     {
           return [MSGraphPhoneType home];
     }
@@ -303,14 +208,6 @@
     {
           return [MSGraphPhoneType assistant];
     }
-    else if([self isEqualToString:@"callback"])
-    {
-          return [MSGraphPhoneType callback];
-    }
-    else if([self isEqualToString:@"car"])
-    {
-          return [MSGraphPhoneType car];
-    }
     else if([self isEqualToString:@"homeFax"])
     {
           return [MSGraphPhoneType homeFax];
@@ -327,25 +224,9 @@
     {
           return [MSGraphPhoneType pager];
     }
-    else if([self isEqualToString:@"primary"])
-    {
-          return [MSGraphPhoneType primary];
-    }
     else if([self isEqualToString:@"radio"])
     {
           return [MSGraphPhoneType radio];
-    }
-    else if([self isEqualToString:@"telex"])
-    {
-          return [MSGraphPhoneType telex];
-    }
-    else if([self isEqualToString:@"ttyTdd"])
-    {
-          return [MSGraphPhoneType ttyTdd];
-    }
-    else if([self isEqualToString:@"organizationMain"])
-    {
-          return [MSGraphPhoneType organizationMain];
     }
     else {
         return [MSGraphPhoneType UnknownEnumValue];

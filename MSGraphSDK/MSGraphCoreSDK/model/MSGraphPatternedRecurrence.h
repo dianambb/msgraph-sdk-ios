@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphRecurrencePattern; 
+@class MSGraphRecurrencePattern, MSGraphRecurrenceRange; 
 
 
 #import "MSObject.h"
@@ -10,5 +10,6 @@
 @interface MSGraphPatternedRecurrence : MSObject
 
 @property (nullable, nonatomic, setter=setPattern:, getter=pattern) MSGraphRecurrencePattern* pattern;
+@property (nullable, nonatomic, setter=setRange:, getter=range) MSGraphRecurrenceRange* range;
 
 @end

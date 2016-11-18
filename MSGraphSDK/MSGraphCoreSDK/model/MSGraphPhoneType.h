@@ -6,45 +6,31 @@
 
 typedef NS_ENUM(NSInteger, MSGraphPhoneTypeValue){
 
-	MSGraphPhoneTypeUnknown = 0,
-	MSGraphPhoneTypeHome = 1,
-	MSGraphPhoneTypeBusiness = 2,
-	MSGraphPhoneTypeMobile = 3,
-	MSGraphPhoneTypeOther = 4,
-	MSGraphPhoneTypeAssistant = 5,
-	MSGraphPhoneTypeCallback = 6,
-	MSGraphPhoneTypeCar = 7,
-	MSGraphPhoneTypeHomeFax = 8,
-	MSGraphPhoneTypeBusinessFax = 9,
-	MSGraphPhoneTypeOtherFax = 10,
-	MSGraphPhoneTypePager = 11,
-	MSGraphPhoneTypePrimary = 12,
-	MSGraphPhoneTypeRadio = 13,
-	MSGraphPhoneTypeTelex = 14,
-	MSGraphPhoneTypeTtyTdd = 15,
-	MSGraphPhoneTypeOrganizationMain = 16,
+	MSGraphPhoneTypeHome = 0,
+	MSGraphPhoneTypeBusiness = 1,
+	MSGraphPhoneTypeMobile = 2,
+	MSGraphPhoneTypeOther = 3,
+	MSGraphPhoneTypeAssistant = 4,
+	MSGraphPhoneTypeHomeFax = 5,
+	MSGraphPhoneTypeBusinessFax = 6,
+	MSGraphPhoneTypeOtherFax = 7,
+	MSGraphPhoneTypePager = 8,
+	MSGraphPhoneTypeRadio = 9,
     MSGraphPhoneTypeEndOfEnum
 };
 
 @interface MSGraphPhoneType : NSObject
 
-+(MSGraphPhoneType*) unknown;
 +(MSGraphPhoneType*) home;
 +(MSGraphPhoneType*) business;
 +(MSGraphPhoneType*) mobile;
 +(MSGraphPhoneType*) other;
 +(MSGraphPhoneType*) assistant;
-+(MSGraphPhoneType*) callback;
-+(MSGraphPhoneType*) car;
 +(MSGraphPhoneType*) homeFax;
 +(MSGraphPhoneType*) businessFax;
 +(MSGraphPhoneType*) otherFax;
 +(MSGraphPhoneType*) pager;
-+(MSGraphPhoneType*) primary;
 +(MSGraphPhoneType*) radio;
-+(MSGraphPhoneType*) telex;
-+(MSGraphPhoneType*) ttyTdd;
-+(MSGraphPhoneType*) organizationMain;
 
 +(MSGraphPhoneType*) UnknownEnumValue;
 

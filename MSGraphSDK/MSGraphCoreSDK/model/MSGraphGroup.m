@@ -14,17 +14,24 @@
 
 @interface MSGraphGroup()
 {
+    NSString* _classification;
+    NSDate* _createdDateTime;
     NSString* _groupDescription;
     NSString* _displayName;
     NSArray* _groupTypes;
     NSString* _mail;
     BOOL _mailEnabled;
     NSString* _mailNickname;
+    NSString* _membershipRule;
+    NSString* _membershipRuleProcessingState;
     NSDate* _onPremisesLastSyncDateTime;
     NSString* _onPremisesSecurityIdentifier;
     BOOL _onPremisesSyncEnabled;
+    NSString* _preferredLanguage;
     NSArray* _proxyAddresses;
+    NSDate* _renewedDateTime;
     BOOL _securityEnabled;
+    NSString* _theme;
     NSString* _visibility;
     MSGraphGroupAccessType* _accessType;
     BOOL _allowExternalSenders;
@@ -47,6 +54,7 @@
     NSArray* _acceptedSenders;
     NSArray* _rejectedSenders;
     MSGraphDrive* _drive;
+    MSGraphSharePoint* _sharepoint;
     NSArray* _plans;
     MSGraphNotes* _notes;
 }
@@ -61,6 +69,34 @@
     }
     return self;
 }
+- (NSString*) classification
+{
+    if([[NSNull null] isEqual:self.dictionary[@"classification"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"classification"];
+}
+
+- (void) setClassification: (NSString*) val
+{
+    self.dictionary[@"classification"] = val;
+}
+
+- (NSDate*) createdDateTime
+{
+    if(!_createdDateTime){
+        _createdDateTime = [NSDate ms_dateFromString: self.dictionary[@"createdDateTime"]];
+    }
+    return _createdDateTime;
+}
+
+- (void) setCreatedDateTime: (NSDate*) val
+{
+    _createdDateTime = val;
+    self.dictionary[@"createdDateTime"] = val;
+}
+
 - (NSString*) groupDescription
 {
     if([[NSNull null] isEqual:self.dictionary[@"description"]])
@@ -139,6 +175,34 @@
     self.dictionary[@"mailNickname"] = val;
 }
 
+- (NSString*) membershipRule
+{
+    if([[NSNull null] isEqual:self.dictionary[@"membershipRule"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"membershipRule"];
+}
+
+- (void) setMembershipRule: (NSString*) val
+{
+    self.dictionary[@"membershipRule"] = val;
+}
+
+- (NSString*) membershipRuleProcessingState
+{
+    if([[NSNull null] isEqual:self.dictionary[@"membershipRuleProcessingState"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"membershipRuleProcessingState"];
+}
+
+- (void) setMembershipRuleProcessingState: (NSString*) val
+{
+    self.dictionary[@"membershipRuleProcessingState"] = val;
+}
+
 - (NSDate*) onPremisesLastSyncDateTime
 {
     if(!_onPremisesLastSyncDateTime){
@@ -179,6 +243,20 @@
     self.dictionary[@"onPremisesSyncEnabled"] = @(val);
 }
 
+- (NSString*) preferredLanguage
+{
+    if([[NSNull null] isEqual:self.dictionary[@"preferredLanguage"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"preferredLanguage"];
+}
+
+- (void) setPreferredLanguage: (NSString*) val
+{
+    self.dictionary[@"preferredLanguage"] = val;
+}
+
 - (NSArray*) proxyAddresses
 {
     return self.dictionary[@"proxyAddresses"];
@@ -187,6 +265,20 @@
 - (void) setProxyAddresses: (NSArray*) val
 {
     self.dictionary[@"proxyAddresses"] = val;
+}
+
+- (NSDate*) renewedDateTime
+{
+    if(!_renewedDateTime){
+        _renewedDateTime = [NSDate ms_dateFromString: self.dictionary[@"renewedDateTime"]];
+    }
+    return _renewedDateTime;
+}
+
+- (void) setRenewedDateTime: (NSDate*) val
+{
+    _renewedDateTime = val;
+    self.dictionary[@"renewedDateTime"] = val;
 }
 
 - (BOOL) securityEnabled
@@ -199,6 +291,20 @@
 {
     _securityEnabled = val;
     self.dictionary[@"securityEnabled"] = @(val);
+}
+
+- (NSString*) theme
+{
+    if([[NSNull null] isEqual:self.dictionary[@"theme"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"theme"];
+}
+
+- (void) setTheme: (NSString*) val
+{
+    self.dictionary[@"theme"] = val;
 }
 
 - (NSString*) visibility
@@ -618,6 +724,20 @@
 {
     _drive = val;
     self.dictionary[@"drive"] = val;
+}
+
+- (MSGraphSharePoint*) sharepoint
+{
+    if(!_sharepoint){
+        _sharepoint = [[MSGraphSharePoint alloc] initWithDictionary: self.dictionary[@"sharepoint"]];
+    }
+    return _sharepoint;
+}
+
+- (void) setSharepoint: (MSGraphSharePoint*) val
+{
+    _sharepoint = val;
+    self.dictionary[@"sharepoint"] = val;
 }
 
 - (NSArray*) plans

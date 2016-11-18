@@ -12,6 +12,8 @@
 @class MSGraphSingleValueExtendedPropertiesCollectionRequestBuilder;
 @class MSGraphMultiValueLegacyExtendedPropertyRequestBuilder;
 @class MSGraphMultiValueExtendedPropertiesCollectionRequestBuilder;
+@class MSGraphMentionRequestBuilder;
+@class MSGraphMentionsCollectionRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 
