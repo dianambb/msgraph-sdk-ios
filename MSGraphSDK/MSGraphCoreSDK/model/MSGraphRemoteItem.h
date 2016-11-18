@@ -20,7 +20,6 @@
 @property (nullable, nonatomic, setter=setName:, getter=name) NSString* name;
 @property (nullable, nonatomic, setter=setPackage:, getter=package) MSGraphPackage* package;
 @property (nullable, nonatomic, setter=setParentReference:, getter=parentReference) MSGraphItemReference* parentReference;
-@property (nullable, nonatomic, setter=setSharepointIds:, getter=sharepointIds) MSGraphSharepointIds* sharepointIds;
 @property (nonatomic, setter=setSize:, getter=size) int64_t size;
 @property (nullable, nonatomic, setter=setSpecialFolder:, getter=specialFolder) MSGraphSpecialFolder* specialFolder;
 @property (nullable, nonatomic, setter=setWebDavUrl:, getter=webDavUrl) NSString* webDavUrl;

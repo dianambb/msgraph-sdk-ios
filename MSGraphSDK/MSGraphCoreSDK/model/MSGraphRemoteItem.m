@@ -25,7 +25,6 @@
     NSString* _name;
     MSGraphPackage* _package;
     MSGraphItemReference* _parentReference;
-    MSGraphSharepointIds* _sharepointIds;
     int64_t _size;
     MSGraphSpecialFolder* _specialFolder;
     NSString* _webDavUrl;
@@ -187,20 +186,6 @@
 {
     _parentReference = val;
     self.dictionary[@"parentReference"] = val;
-}
-
-- (MSGraphSharepointIds*) sharepointIds
-{
-    if(!_sharepointIds){
-        _sharepointIds = [[MSGraphSharepointIds alloc] initWithDictionary: self.dictionary[@"sharepointIds"]];
-    }
-    return _sharepointIds;
-}
-
-- (void) setSharepointIds: (MSGraphSharepointIds*) val
-{
-    _sharepointIds = val;
-    self.dictionary[@"sharepointIds"] = val;
 }
 
 - (int64_t) size
