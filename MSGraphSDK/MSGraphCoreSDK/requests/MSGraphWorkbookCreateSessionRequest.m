@@ -51,12 +51,12 @@
 }
 
 
-- (MSURLSessionDataTask *)executeWithCompletion:(void (^)(MSGraphWorkbookSessionInfo *response, NSError *error))completionHandler
+- (MSURLSessionDataTask *)executeWithCompletion:(void (^)(MSGraphSessionInfo *response, NSError *error))completionHandler
 {
 
     MSURLSessionDataTask *task = [self taskWithRequest:self.mutableRequest
                                 odObjectWithDictionary:^(id responseObject){
-                                                           return [[MSGraphWorkbookSessionInfo alloc] initWithDictionary:responseObject];
+                                                           return [[MSGraphSessionInfo alloc] initWithDictionary:responseObject];
                                                        }
                                             completion:completionHandler];
     [task execute];

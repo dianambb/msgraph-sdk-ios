@@ -9,24 +9,17 @@
 
 @interface MSGraphGroup : MSGraphDirectoryObject
 
-  @property (nullable, nonatomic, setter=setClassification:, getter=classification) NSString* classification;
-    @property (nullable, nonatomic, setter=setCreatedDateTime:, getter=createdDateTime) NSDate* createdDateTime;
-    @property (nullable, nonatomic, setter=setGroupDescription:, getter=groupDescription) NSString* groupDescription;
+  @property (nullable, nonatomic, setter=setGroupDescription:, getter=groupDescription) NSString* groupDescription;
     @property (nullable, nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
     @property (nonnull, nonatomic, setter=setGroupTypes:, getter=groupTypes) NSArray* groupTypes;
     @property (nullable, nonatomic, setter=setMail:, getter=mail) NSString* mail;
     @property (nonatomic, setter=setMailEnabled:, getter=mailEnabled) BOOL mailEnabled;
     @property (nullable, nonatomic, setter=setMailNickname:, getter=mailNickname) NSString* mailNickname;
-    @property (nullable, nonatomic, setter=setMembershipRule:, getter=membershipRule) NSString* membershipRule;
-    @property (nullable, nonatomic, setter=setMembershipRuleProcessingState:, getter=membershipRuleProcessingState) NSString* membershipRuleProcessingState;
     @property (nullable, nonatomic, setter=setOnPremisesLastSyncDateTime:, getter=onPremisesLastSyncDateTime) NSDate* onPremisesLastSyncDateTime;
     @property (nullable, nonatomic, setter=setOnPremisesSecurityIdentifier:, getter=onPremisesSecurityIdentifier) NSString* onPremisesSecurityIdentifier;
     @property (nonatomic, setter=setOnPremisesSyncEnabled:, getter=onPremisesSyncEnabled) BOOL onPremisesSyncEnabled;
-    @property (nullable, nonatomic, setter=setPreferredLanguage:, getter=preferredLanguage) NSString* preferredLanguage;
     @property (nonnull, nonatomic, setter=setProxyAddresses:, getter=proxyAddresses) NSArray* proxyAddresses;
-    @property (nullable, nonatomic, setter=setRenewedDateTime:, getter=renewedDateTime) NSDate* renewedDateTime;
     @property (nonatomic, setter=setSecurityEnabled:, getter=securityEnabled) BOOL securityEnabled;
-    @property (nullable, nonatomic, setter=setTheme:, getter=theme) NSString* theme;
     @property (nullable, nonatomic, setter=setVisibility:, getter=visibility) NSString* visibility;
     @property (nullable, nonatomic, setter=setAccessType:, getter=accessType) MSGraphGroupAccessType* accessType;
     @property (nonatomic, setter=setAllowExternalSenders:, getter=allowExternalSenders) BOOL allowExternalSenders;

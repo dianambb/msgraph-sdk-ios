@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 
 
-@class MSGraphWorkbookNamesCollectionRequest, MSGraphWorkbookNamedItemRequestBuilder;
+@class MSGraphWorkbookNamesCollectionRequest, MSGraphNamedItemRequestBuilder;
 
 #import "MSGraphModels.h"
 #import "MSCollectionRequestBuilder.h"
@@ -15,7 +15,7 @@
 
 - (MSGraphWorkbookNamesCollectionRequest *)requestWithOptions:(NSArray *)options;
 
-- (MSGraphWorkbookNamedItemRequestBuilder *)workbookNamedItem:(NSString *)workbookNamedItem;
+- (MSGraphNamedItemRequestBuilder *)namedItem:(NSString *)namedItem;
 
 
 @end

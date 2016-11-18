@@ -25,17 +25,14 @@
 @property (nonatomic, getter=isOrganizerOptional) BOOL  isOrganizerOptional;
 
 
-@property (nonatomic, getter=returnSuggestionReasons) BOOL  returnSuggestionReasons;
-
-
-@property (nonatomic, getter=minimumAttendeePercentage) CGFloat  minimumAttendeePercentage;
+@property (nonatomic, getter=returnSuggestionHints) BOOL  returnSuggestionHints;
 
 @end
 
 @implementation MSGraphUserFindMeetingTimesRequestBuilder
 
 
-- (instancetype)initWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionReasons:(BOOL)returnSuggestionReasons minimumAttendeePercentage:(CGFloat)minimumAttendeePercentage URL:(NSURL *)url client:(ODataBaseClient*)client
+- (instancetype)initWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionHints:(BOOL)returnSuggestionHints URL:(NSURL *)url client:(ODataBaseClient*)client
 {
     self = [super initWithURL:url client:client];
     if (self){
@@ -45,8 +42,7 @@
         _meetingDuration = meetingDuration;
         _maxCandidates = maxCandidates;
         _isOrganizerOptional = isOrganizerOptional;
-        _returnSuggestionReasons = returnSuggestionReasons;
-        _minimumAttendeePercentage = minimumAttendeePercentage;
+        _returnSuggestionHints = returnSuggestionHints;
     }
     return self;
 }
@@ -65,8 +61,7 @@
                                                          meetingDuration:self.meetingDuration
                                                            maxCandidates:self.maxCandidates
                                                      isOrganizerOptional:self.isOrganizerOptional
-                                                 returnSuggestionReasons:self.returnSuggestionReasons
-                                               minimumAttendeePercentage:self.minimumAttendeePercentage
+                                                   returnSuggestionHints:self.returnSuggestionHints
                                                                      URL:self.requestURL
                                                                  options:options
                                                                   client:self.client];

@@ -45,12 +45,6 @@
     return [[self policies] directoryObject:directoryObject];
 }
 
--(MSGraphConnectorGroupRequestBuilder *)connectorGroup
-{
-    return [[MSGraphConnectorGroupRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"connectorGroup"] client:self.client];
-
-}
-
 - (MSGraphApplicationMainLogoRequest *) mainLogoRequestWithOptions:(NSArray *)options
 {
     NSURL *mainLogoURL = [self.requestURL URLByAppendingPathComponent:@"mainLogo"];

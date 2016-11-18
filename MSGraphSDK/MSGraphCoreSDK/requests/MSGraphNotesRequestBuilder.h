@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphNotesRequest, MSGraphNotebookRequestBuilder, MSGraphNotesNotebooksCollectionRequestBuilder, MSGraphSectionRequestBuilder, MSGraphNotesSectionsCollectionRequestBuilder, MSGraphSectionGroupRequestBuilder, MSGraphNotesSectionGroupsCollectionRequestBuilder, MSGraphPageRequestBuilder, MSGraphNotesPagesCollectionRequestBuilder, MSGraphResourceRequestBuilder, MSGraphNotesResourcesCollectionRequestBuilder, MSGraphNotesOperationRequestBuilder, MSGraphNotesOperationsCollectionRequestBuilder, MSGraphPageStreamRequest, MSGraphResourceStreamRequest;
+@class MSGraphNotesRequest, MSGraphNotebookRequestBuilder, MSGraphNotesNotebooksCollectionRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -14,34 +14,6 @@
 - (MSGraphNotesNotebooksCollectionRequestBuilder *)notebooks;
 
 - (MSGraphNotebookRequestBuilder *)notebooks:(NSString *)notebook;
-
-- (MSGraphNotesSectionsCollectionRequestBuilder *)sections;
-
-- (MSGraphSectionRequestBuilder *)sections:(NSString *)section;
-
-- (MSGraphNotesSectionGroupsCollectionRequestBuilder *)sectionGroups;
-
-- (MSGraphSectionGroupRequestBuilder *)sectionGroups:(NSString *)sectionGroup;
-
-- (MSGraphNotesPagesCollectionRequestBuilder *)pages;
-
-- (MSGraphPageRequestBuilder *)pages:(NSString *)page;
-
-- (MSGraphNotesResourcesCollectionRequestBuilder *)resources;
-
-- (MSGraphResourceRequestBuilder *)resources:(NSString *)resource;
-
-- (MSGraphNotesOperationsCollectionRequestBuilder *)operations;
-
-- (MSGraphNotesOperationRequestBuilder *)operations:(NSString *)notesOperation;
-
-- (MSGraphPageStreamRequest *) pagesValueWithOptions:(NSArray *)options;
-
-- (MSGraphPageStreamRequest *) pagesValue;
-
-- (MSGraphResourceStreamRequest *) resourcesValueWithOptions:(NSArray *)options;
-
-- (MSGraphResourceStreamRequest *) resourcesValue;
 
 
 - (MSGraphNotesRequest *) request;

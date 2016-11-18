@@ -12,6 +12,6 @@
 
 - (instancetype)initWithPersistChanges:(BOOL)persistChanges URL:(NSURL *)url options:(NSArray *)options client:(ODataBaseClient*)client;
 
-- (MSURLSessionDataTask *)executeWithCompletion:(void (^)(MSGraphWorkbookSessionInfo *response, NSError *error))completionHandler;
+- (MSURLSessionDataTask *)executeWithCompletion:(void (^)(MSGraphSessionInfo *response, NSError *error))completionHandler;
 
 @end

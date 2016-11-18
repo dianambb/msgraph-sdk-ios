@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphAutomaticRepliesSetting, MSGraphLocaleInfo; 
+@class MSGraphAutomaticRepliesSetting; 
 
 
 #import "MSObject.h"
@@ -11,6 +11,5 @@
 
 @property (nullable, nonatomic, setter=setAutomaticRepliesSetting:, getter=automaticRepliesSetting) MSGraphAutomaticRepliesSetting* automaticRepliesSetting;
 @property (nullable, nonatomic, setter=setTimeZone:, getter=timeZone) NSString* timeZone;
-@property (nullable, nonatomic, setter=setLanguage:, getter=language) MSGraphLocaleInfo* language;
 
 @end

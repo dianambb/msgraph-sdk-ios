@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphNotebookRequest, MSGraphSectionRequestBuilder, MSGraphNotebookSectionsCollectionRequestBuilder, MSGraphSectionGroupRequestBuilder, MSGraphNotebookSectionGroupsCollectionRequestBuilder, MSGraphNotebookCopyNotebookRequestBuilder, MSGraphNotebookExportNotebookRequestBuilder, MSGraphNotebookImportNotebookRequestBuilder;
+@class MSGraphNotebookRequest, MSGraphNotebookCopyNotebookRequestBuilder, MSGraphNotebookExportNotebookRequestBuilder, MSGraphNotebookImportNotebookRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -10,14 +10,6 @@
 
 
 @interface MSGraphNotebookRequestBuilder : MSGraphEntityRequestBuilder
-
-- (MSGraphNotebookSectionsCollectionRequestBuilder *)sections;
-
-- (MSGraphSectionRequestBuilder *)sections:(NSString *)section;
-
-- (MSGraphNotebookSectionGroupsCollectionRequestBuilder *)sectionGroups;
-
-- (MSGraphSectionGroupRequestBuilder *)sectionGroups:(NSString *)sectionGroup;
 
 - (MSGraphNotebookCopyNotebookRequestBuilder *)copyNotebookWithGroupId:(NSString *)groupId renameAs:(NSString *)renameAs notebookFolder:(NSString *)notebookFolder ;
 

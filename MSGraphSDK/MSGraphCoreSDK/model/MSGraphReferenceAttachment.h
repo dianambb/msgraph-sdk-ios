@@ -9,7 +9,7 @@
 
 @interface MSGraphReferenceAttachment : MSGraphAttachment
 
-  @property (nullable, nonatomic, setter=setSourceUrl:, getter=sourceUrl) NSString* sourceUrl;
+  @property (nonnull, nonatomic, setter=setSourceUrl:, getter=sourceUrl) NSString* sourceUrl;
     @property (nullable, nonatomic, setter=setProviderType:, getter=providerType) MSGraphReferenceAttachmentProvider* providerType;
     @property (nullable, nonatomic, setter=setThumbnailUrl:, getter=thumbnailUrl) NSString* thumbnailUrl;
     @property (nullable, nonatomic, setter=setPreviewUrl:, getter=previewUrl) NSString* previewUrl;

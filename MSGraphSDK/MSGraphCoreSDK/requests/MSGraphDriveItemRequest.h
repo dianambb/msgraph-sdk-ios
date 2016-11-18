@@ -5,10 +5,10 @@
 @class MSURLSessionDataTask;
 @class MSGraphWorkbookRequestBuilder;
 @class MSGraphUserRequestBuilder;
-@class MSGraphDriveItemRequestBuilder;
-@class MSGraphChildrenCollectionRequestBuilder;
 @class MSGraphPermissionRequestBuilder;
 @class MSGraphPermissionsCollectionRequestBuilder;
+@class MSGraphDriveItemRequestBuilder;
+@class MSGraphChildrenCollectionRequestBuilder;
 @class MSGraphThumbnailSetRequestBuilder;
 @class MSGraphThumbnailsCollectionRequestBuilder;
 #import "MSGraphModels.h"

@@ -14,24 +14,24 @@
 
 @interface MSGraphLocatedRiskEvent()
 {
-    MSGraphSignInLocation* _location;
+    NSString* _location;
     NSString* _ipAddress;
 }
 @end
 
 @implementation MSGraphLocatedRiskEvent
 
-- (MSGraphSignInLocation*) location
+- (NSString*) location
 {
-    if(!_location){
-        _location = [[MSGraphSignInLocation alloc] initWithDictionary: self.dictionary[@"location"]];
-    }
-    return _location;
+    if([[NSNull null] isEqual:self.dictionary[@"location"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"location"];
 }
 
-- (void) setLocation: (MSGraphSignInLocation*) val
+- (void) setLocation: (NSString*) val
 {
-    _location = val;
     self.dictionary[@"location"] = val;
 }
 

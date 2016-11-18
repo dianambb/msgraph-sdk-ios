@@ -37,16 +37,14 @@
     BOOL _isRead;
     BOOL _isDraft;
     NSString* _webLink;
-    MSGraphMentionsPreview* _mentionsPreview;
     MSGraphInferenceClassificationType* _inferenceClassification;
     NSArray* _unsubscribeData;
     BOOL _unsubscribeEnabled;
     MSGraphFollowupFlag* _flag;
-    NSArray* _attachments;
     NSArray* _extensions;
+    NSArray* _attachments;
     NSArray* _singleValueExtendedProperties;
     NSArray* _multiValueExtendedProperties;
-    NSArray* _mentions;
 }
 @end
 
@@ -415,20 +413,6 @@
     self.dictionary[@"webLink"] = val;
 }
 
-- (MSGraphMentionsPreview*) mentionsPreview
-{
-    if(!_mentionsPreview){
-        _mentionsPreview = [[MSGraphMentionsPreview alloc] initWithDictionary: self.dictionary[@"mentionsPreview"]];
-    }
-    return _mentionsPreview;
-}
-
-- (void) setMentionsPreview: (MSGraphMentionsPreview*) val
-{
-    _mentionsPreview = val;
-    self.dictionary[@"mentionsPreview"] = val;
-}
-
 - (MSGraphInferenceClassificationType*) inferenceClassification
 {
     if(!_inferenceClassification){
@@ -483,31 +467,6 @@
     self.dictionary[@"flag"] = val;
 }
 
-- (NSArray*) attachments
-{
-    if(!_attachments){
-        
-    NSMutableArray *attachmentsResult = [NSMutableArray array];
-    NSArray *attachments = self.dictionary[@"attachments"];
-
-    if ([attachments isKindOfClass:[NSArray class]]){
-        for (id attachment in attachments){
-            [attachmentsResult addObject:[[MSGraphAttachment alloc] initWithDictionary: attachment]];
-        }
-    }
-
-    _attachments = attachmentsResult;
-        
-    }
-    return _attachments;
-}
-
-- (void) setAttachments: (NSArray*) val
-{
-    _attachments = val;
-    self.dictionary[@"attachments"] = val;
-}
-
 - (NSArray*) extensions
 {
     if(!_extensions){
@@ -531,6 +490,31 @@
 {
     _extensions = val;
     self.dictionary[@"extensions"] = val;
+}
+
+- (NSArray*) attachments
+{
+    if(!_attachments){
+        
+    NSMutableArray *attachmentsResult = [NSMutableArray array];
+    NSArray *attachments = self.dictionary[@"attachments"];
+
+    if ([attachments isKindOfClass:[NSArray class]]){
+        for (id attachment in attachments){
+            [attachmentsResult addObject:[[MSGraphAttachment alloc] initWithDictionary: attachment]];
+        }
+    }
+
+    _attachments = attachmentsResult;
+        
+    }
+    return _attachments;
+}
+
+- (void) setAttachments: (NSArray*) val
+{
+    _attachments = val;
+    self.dictionary[@"attachments"] = val;
 }
 
 - (NSArray*) singleValueExtendedProperties
@@ -581,31 +565,6 @@
 {
     _multiValueExtendedProperties = val;
     self.dictionary[@"multiValueExtendedProperties"] = val;
-}
-
-- (NSArray*) mentions
-{
-    if(!_mentions){
-        
-    NSMutableArray *mentionsResult = [NSMutableArray array];
-    NSArray *mentions = self.dictionary[@"mentions"];
-
-    if ([mentions isKindOfClass:[NSArray class]]){
-        for (id mention in mentions){
-            [mentionsResult addObject:[[MSGraphMention alloc] initWithDictionary: mention]];
-        }
-    }
-
-    _mentions = mentionsResult;
-        
-    }
-    return _mentions;
-}
-
-- (void) setMentions: (NSArray*) val
-{
-    _mentions = val;
-    self.dictionary[@"mentions"] = val;
 }
 
 

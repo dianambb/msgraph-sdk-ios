@@ -34,10 +34,6 @@
 }
 - (NSString*) sourceUrl
 {
-    if([[NSNull null] isEqual:self.dictionary[@"sourceUrl"]])
-    {
-        return nil;
-    }   
     return self.dictionary[@"sourceUrl"];
 }
 

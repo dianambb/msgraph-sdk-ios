@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphPostRequest, MSGraphExtensionRequestBuilder, MSGraphPostExtensionsCollectionRequestBuilder, MSGraphPostRequestBuilder, MSGraphInReplyToRequestBuilder, MSGraphAttachmentRequestBuilder, MSGraphPostAttachmentsCollectionRequestBuilder, MSGraphSingleValueLegacyExtendedPropertyRequestBuilder, MSGraphPostSingleValueExtendedPropertiesCollectionRequestBuilder, MSGraphMultiValueLegacyExtendedPropertyRequestBuilder, MSGraphPostMultiValueExtendedPropertiesCollectionRequestBuilder, MSGraphMentionRequestBuilder, MSGraphPostMentionsCollectionRequestBuilder, MSGraphPostForwardRequestBuilder, MSGraphPostReplyRequestBuilder;
+@class MSGraphPostRequest, MSGraphExtensionRequestBuilder, MSGraphPostExtensionsCollectionRequestBuilder, MSGraphPostRequestBuilder, MSGraphInReplyToRequestBuilder, MSGraphAttachmentRequestBuilder, MSGraphPostAttachmentsCollectionRequestBuilder, MSGraphSingleValueLegacyExtendedPropertyRequestBuilder, MSGraphPostSingleValueExtendedPropertiesCollectionRequestBuilder, MSGraphMultiValueLegacyExtendedPropertyRequestBuilder, MSGraphPostMultiValueExtendedPropertiesCollectionRequestBuilder, MSGraphPostForwardRequestBuilder, MSGraphPostReplyRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -28,10 +28,6 @@
 - (MSGraphPostMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties;
 
 - (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty;
-
-- (MSGraphPostMentionsCollectionRequestBuilder *)mentions;
-
-- (MSGraphMentionRequestBuilder *)mentions:(NSString *)mention;
 
 - (MSGraphPostForwardRequestBuilder *)forwardWithComment:(NSString *)comment toRecipients:(NSArray *)toRecipients ;
 

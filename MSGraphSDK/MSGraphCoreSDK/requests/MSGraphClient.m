@@ -247,18 +247,6 @@
 }
 
 
--(MSGraphSharesCollectionRequestBuilder *)shares
-{
-    return [[MSGraphSharesCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"shares"] 
-                                                                       client:self];
-}
-
--(MSGraphSharedDriveItemRequestBuilder*)shares:(NSString*)sharedDriveItem
-{
-    return [[self shares] sharedDriveItem:sharedDriveItem];
-}
-
-
 -(MSGraphTasksCollectionRequestBuilder *)tasks
 {
     return [[MSGraphTasksCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"tasks"] 
@@ -390,90 +378,6 @@
     return [[self malwareRiskEvents] malwareRiskEvent:malwareRiskEvent];
 }
 
-
--(MSGraphPrivilegedRolesCollectionRequestBuilder *)privilegedRoles
-{
-    return [[MSGraphPrivilegedRolesCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"privilegedRoles"] 
-                                                                      client:self];
-}
-
--(MSGraphPrivilegedRoleRequestBuilder*)privilegedRoles:(NSString*)privilegedRole
-{
-    return [[self privilegedRoles] privilegedRole:privilegedRole];
-}
-
-
--(MSGraphPrivilegedRoleAssignmentsCollectionRequestBuilder *)privilegedRoleAssignments
-{
-    return [[MSGraphPrivilegedRoleAssignmentsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"privilegedRoleAssignments"] 
-                                                                                client:self];
-}
-
--(MSGraphPrivilegedRoleAssignmentRequestBuilder*)privilegedRoleAssignments:(NSString*)privilegedRoleAssignment
-{
-    return [[self privilegedRoleAssignments] privilegedRoleAssignment:privilegedRoleAssignment];
-}
-
-
--(MSGraphPrivilegedOperationEventsCollectionRequestBuilder *)privilegedOperationEvents
-{
-    return [[MSGraphPrivilegedOperationEventsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"privilegedOperationEvents"] 
-                                                                                client:self];
-}
-
--(MSGraphPrivilegedOperationEventRequestBuilder*)privilegedOperationEvents:(NSString*)privilegedOperationEvent
-{
-    return [[self privilegedOperationEvents] privilegedOperationEvent:privilegedOperationEvent];
-}
-
-
--(MSGraphPrivilegedSignupStatusCollectionRequestBuilder *)privilegedSignupStatus
-{
-    return [[MSGraphPrivilegedSignupStatusCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"privilegedSignupStatus"] 
-                                                                              client:self];
-}
-
--(MSGraphPrivilegedSignupStatusRequestBuilder*)privilegedSignupStatus:(NSString*)privilegedSignupStatus
-{
-    return [[self privilegedSignupStatus] privilegedSignupStatus:privilegedSignupStatus];
-}
-
-
--(MSGraphConnectorsCollectionRequestBuilder *)connectors
-{
-    return [[MSGraphConnectorsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"connectors"] 
-                                                                 client:self];
-}
-
--(MSGraphConnectorRequestBuilder*)connectors:(NSString*)connector
-{
-    return [[self connectors] connector:connector];
-}
-
-
--(MSGraphConnectorGroupsCollectionRequestBuilder *)connectorGroups
-{
-    return [[MSGraphConnectorGroupsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"connectorGroups"] 
-                                                                      client:self];
-}
-
--(MSGraphConnectorGroupRequestBuilder*)connectorGroups:(NSString*)connectorGroup
-{
-    return [[self connectorGroups] connectorGroup:connectorGroup];
-}
-
-
--(MSGraphInvitationsCollectionRequestBuilder *)invitations
-{
-    return [[MSGraphInvitationsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"invitations"] 
-                                                                  client:self];
-}
-
--(MSGraphInvitationRequestBuilder*)invitations:(NSString*)invitation
-{
-    return [[self invitations] invitation:invitation];
-}
-
     -(MSGraphUserRequestBuilder *) me
     {
     return [[MSGraphUserRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"me"] 
@@ -483,11 +387,6 @@
     {
     return [[MSGraphDriveRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"drive"] 
                                                    client:self];
-    }
-    -(MSGraphSharePointRequestBuilder *) sharePoint
-    {
-    return [[MSGraphSharePointRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"sharePoint"] 
-                                                        client:self];
     }
 
 @end

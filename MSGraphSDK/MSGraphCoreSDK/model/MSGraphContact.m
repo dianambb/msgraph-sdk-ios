@@ -29,23 +29,24 @@
     NSString* _yomiCompanyName;
     NSString* _generation;
     NSArray* _emailAddresses;
-    NSArray* _websites;
     NSArray* _imAddresses;
     NSString* _jobTitle;
     NSString* _companyName;
     NSString* _department;
     NSString* _officeLocation;
     NSString* _profession;
+    NSString* _businessHomePage;
     NSString* _assistantName;
     NSString* _manager;
-    NSArray* _phones;
-    NSArray* _postalAddresses;
+    NSArray* _homePhones;
+    NSString* _mobilePhone;
+    NSArray* _businessPhones;
+    MSGraphPhysicalAddress* _homeAddress;
+    MSGraphPhysicalAddress* _businessAddress;
+    MSGraphPhysicalAddress* _otherAddress;
     NSString* _spouseName;
     NSString* _personalNotes;
     NSArray* _children;
-    MSDate* _weddingAnniversary;
-    NSString* _gender;
-    BOOL _isFavorite;
     MSGraphFollowupFlag* _flag;
     NSArray* _extensions;
     NSArray* _singleValueExtendedProperties;
@@ -284,31 +285,6 @@
     self.dictionary[@"emailAddresses"] = val;
 }
 
-- (NSArray*) websites
-{
-    if(!_websites){
-        
-    NSMutableArray *websitesResult = [NSMutableArray array];
-    NSArray *websites = self.dictionary[@"websites"];
-
-    if ([websites isKindOfClass:[NSArray class]]){
-        for (id website in websites){
-            [websitesResult addObject:[[MSGraphWebsite alloc] initWithDictionary: website]];
-        }
-    }
-
-    _websites = websitesResult;
-        
-    }
-    return _websites;
-}
-
-- (void) setWebsites: (NSArray*) val
-{
-    _websites = val;
-    self.dictionary[@"websites"] = val;
-}
-
 - (NSArray*) imAddresses
 {
     if([[NSNull null] isEqual:self.dictionary[@"imAddresses"]])
@@ -393,6 +369,20 @@
     self.dictionary[@"profession"] = val;
 }
 
+- (NSString*) businessHomePage
+{
+    if([[NSNull null] isEqual:self.dictionary[@"businessHomePage"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"businessHomePage"];
+}
+
+- (void) setBusinessHomePage: (NSString*) val
+{
+    self.dictionary[@"businessHomePage"] = val;
+}
+
 - (NSString*) assistantName
 {
     if([[NSNull null] isEqual:self.dictionary[@"assistantName"]])
@@ -421,54 +411,88 @@
     self.dictionary[@"manager"] = val;
 }
 
-- (NSArray*) phones
+- (NSArray*) homePhones
 {
-    if(!_phones){
-        
-    NSMutableArray *phonesResult = [NSMutableArray array];
-    NSArray *phones = self.dictionary[@"phones"];
-
-    if ([phones isKindOfClass:[NSArray class]]){
-        for (id phone in phones){
-            [phonesResult addObject:[[MSGraphPhone alloc] initWithDictionary: phone]];
-        }
-    }
-
-    _phones = phonesResult;
-        
-    }
-    return _phones;
+    if([[NSNull null] isEqual:self.dictionary[@"homePhones"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"homePhones"];
 }
 
-- (void) setPhones: (NSArray*) val
+- (void) setHomePhones: (NSArray*) val
 {
-    _phones = val;
-    self.dictionary[@"phones"] = val;
+    self.dictionary[@"homePhones"] = val;
 }
 
-- (NSArray*) postalAddresses
+- (NSString*) mobilePhone
 {
-    if(!_postalAddresses){
-        
-    NSMutableArray *postalAddressesResult = [NSMutableArray array];
-    NSArray *postalAddresses = self.dictionary[@"postalAddresses"];
-
-    if ([postalAddresses isKindOfClass:[NSArray class]]){
-        for (id physicalAddress in postalAddresses){
-            [postalAddressesResult addObject:[[MSGraphPhysicalAddress alloc] initWithDictionary: physicalAddress]];
-        }
-    }
-
-    _postalAddresses = postalAddressesResult;
-        
-    }
-    return _postalAddresses;
+    if([[NSNull null] isEqual:self.dictionary[@"mobilePhone"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"mobilePhone"];
 }
 
-- (void) setPostalAddresses: (NSArray*) val
+- (void) setMobilePhone: (NSString*) val
 {
-    _postalAddresses = val;
-    self.dictionary[@"postalAddresses"] = val;
+    self.dictionary[@"mobilePhone"] = val;
+}
+
+- (NSArray*) businessPhones
+{
+    if([[NSNull null] isEqual:self.dictionary[@"businessPhones"]])
+    {
+        return nil;
+    }   
+    return self.dictionary[@"businessPhones"];
+}
+
+- (void) setBusinessPhones: (NSArray*) val
+{
+    self.dictionary[@"businessPhones"] = val;
+}
+
+- (MSGraphPhysicalAddress*) homeAddress
+{
+    if(!_homeAddress){
+        _homeAddress = [[MSGraphPhysicalAddress alloc] initWithDictionary: self.dictionary[@"homeAddress"]];
+    }
+    return _homeAddress;
+}
+
+- (void) setHomeAddress: (MSGraphPhysicalAddress*) val
+{
+    _homeAddress = val;
+    self.dictionary[@"homeAddress"] = val;
+}
+
+- (MSGraphPhysicalAddress*) businessAddress
+{
+    if(!_businessAddress){
+        _businessAddress = [[MSGraphPhysicalAddress alloc] initWithDictionary: self.dictionary[@"businessAddress"]];
+    }
+    return _businessAddress;
+}
+
+- (void) setBusinessAddress: (MSGraphPhysicalAddress*) val
+{
+    _businessAddress = val;
+    self.dictionary[@"businessAddress"] = val;
+}
+
+- (MSGraphPhysicalAddress*) otherAddress
+{
+    if(!_otherAddress){
+        _otherAddress = [[MSGraphPhysicalAddress alloc] initWithDictionary: self.dictionary[@"otherAddress"]];
+    }
+    return _otherAddress;
+}
+
+- (void) setOtherAddress: (MSGraphPhysicalAddress*) val
+{
+    _otherAddress = val;
+    self.dictionary[@"otherAddress"] = val;
 }
 
 - (NSString*) spouseName
@@ -511,46 +535,6 @@
 - (void) setChildren: (NSArray*) val
 {
     self.dictionary[@"children"] = val;
-}
-
-- (MSDate*) weddingAnniversary
-{
-    if(!_weddingAnniversary){
-        _weddingAnniversary = [MSDate ms_dateFromString: self.dictionary[@"weddingAnniversary"]];
-    }
-    return _weddingAnniversary;
-}
-
-- (void) setWeddingAnniversary: (MSDate*) val
-{
-    _weddingAnniversary = val;
-    self.dictionary[@"weddingAnniversary"] = val;
-}
-
-- (NSString*) gender
-{
-    if([[NSNull null] isEqual:self.dictionary[@"gender"]])
-    {
-        return nil;
-    }   
-    return self.dictionary[@"gender"];
-}
-
-- (void) setGender: (NSString*) val
-{
-    self.dictionary[@"gender"] = val;
-}
-
-- (BOOL) isFavorite
-{
-    _isFavorite = [self.dictionary[@"isFavorite"] boolValue];
-    return _isFavorite;
-}
-
-- (void) setIsFavorite: (BOOL) val
-{
-    _isFavorite = val;
-    self.dictionary[@"isFavorite"] = @(val);
 }
 
 - (MSGraphFollowupFlag*) flag

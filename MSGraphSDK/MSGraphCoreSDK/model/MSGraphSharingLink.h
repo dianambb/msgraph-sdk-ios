@@ -11,7 +11,6 @@
 
 @property (nullable, nonatomic, setter=setApplication:, getter=application) MSGraphIdentity* application;
 @property (nullable, nonatomic, setter=setType:, getter=type) NSString* type;
-@property (nullable, nonatomic, setter=setScope:, getter=scope) NSString* scope;
 @property (nullable, nonatomic, setter=setWebUrl:, getter=webUrl) NSString* webUrl;
 
 @end

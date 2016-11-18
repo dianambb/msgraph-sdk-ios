@@ -5,16 +5,6 @@
 @class MSURLSessionDataTask;
 @class MSGraphNotebookRequestBuilder;
 @class MSGraphNotebooksCollectionRequestBuilder;
-@class MSGraphSectionRequestBuilder;
-@class MSGraphSectionsCollectionRequestBuilder;
-@class MSGraphSectionGroupRequestBuilder;
-@class MSGraphSectionGroupsCollectionRequestBuilder;
-@class MSGraphPageRequestBuilder;
-@class MSGraphPagesCollectionRequestBuilder;
-@class MSGraphResourceRequestBuilder;
-@class MSGraphResourcesCollectionRequestBuilder;
-@class MSGraphNotesOperationRequestBuilder;
-@class MSGraphOperationsCollectionRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

@@ -33,8 +33,6 @@
     @property (nullable, nonatomic, setter=setPreferredLanguage:, getter=preferredLanguage) NSString* preferredLanguage;
     @property (nonnull, nonatomic, setter=setProvisionedPlans:, getter=provisionedPlans) NSArray* provisionedPlans;
     @property (nonnull, nonatomic, setter=setProxyAddresses:, getter=proxyAddresses) NSArray* proxyAddresses;
-    @property (nullable, nonatomic, setter=setRefreshTokensValidFromDateTime:, getter=refreshTokensValidFromDateTime) NSDate* refreshTokensValidFromDateTime;
-    @property (nonatomic, setter=setShowInAddressList:, getter=showInAddressList) BOOL showInAddressList;
     @property (nullable, nonatomic, setter=setState:, getter=state) NSString* state;
     @property (nullable, nonatomic, setter=setStreetAddress:, getter=streetAddress) NSString* streetAddress;
     @property (nullable, nonatomic, setter=setSurname:, getter=surname) NSString* surname;
@@ -75,8 +73,6 @@
     @property (nullable, nonatomic, setter=setPhoto:, getter=photo) MSGraphProfilePhoto* photo;
     @property (nullable, nonatomic, setter=setPhotos:, getter=photos) NSArray* photos;
     @property (nullable, nonatomic, setter=setDrive:, getter=drive) MSGraphDrive* drive;
-    @property (nullable, nonatomic, setter=setDrives:, getter=drives) NSArray* drives;
-    @property (nullable, nonatomic, setter=setSharepoint:, getter=sharepoint) MSGraphSharePoint* sharepoint;
     @property (nullable, nonatomic, setter=setInsights:, getter=insights) MSGraphOfficeGraphInsights* insights;
     @property (nullable, nonatomic, setter=setTrendingAround:, getter=trendingAround) NSArray* trendingAround;
     @property (nullable, nonatomic, setter=setWorkingWith:, getter=workingWith) NSArray* workingWith;

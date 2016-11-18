@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 
 
-@class MSGraphNotebookLinks, MSGraphOneNoteIdentitySet, MSGraphSection, MSGraphSectionGroup; 
+@class MSGraphNotebookLinks, MSGraphOneNoteIdentitySet; 
 #import "MSGraphUserRole.h"
 
 
@@ -23,7 +23,5 @@
     @property (nullable, nonatomic, setter=setLastModifiedTime:, getter=lastModifiedTime) NSDate* lastModifiedTime;
     @property (nullable, nonatomic, setter=setNotebookSelf:, getter=notebookSelf) NSString* notebookSelf;
     @property (nullable, nonatomic, setter=setCreatedTime:, getter=createdTime) NSDate* createdTime;
-    @property (nullable, nonatomic, setter=setSections:, getter=sections) NSArray* sections;
-    @property (nullable, nonatomic, setter=setSectionGroups:, getter=sectionGroups) NSArray* sectionGroups;
   
 @end

@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 
 
-@class MSGraphRankedEmailAddress, MSGraphPhone, MSGraphLocation, MSGraphWebsite, MSGraphPersonDataSource; 
+@class MSGraphRankedEmailAddress, MSGraphPhone, MSGraphLocation, MSGraphWebSite, MSGraphPersonDataSource; 
 
 
 #import "MSGraphEntity.h"
@@ -17,7 +17,7 @@
     @property (nullable, nonatomic, setter=setEmailAddresses:, getter=emailAddresses) NSArray* emailAddresses;
     @property (nullable, nonatomic, setter=setPhones:, getter=phones) NSArray* phones;
     @property (nullable, nonatomic, setter=setPostalAddresses:, getter=postalAddresses) NSArray* postalAddresses;
-    @property (nullable, nonatomic, setter=setWebsites:, getter=websites) NSArray* websites;
+    @property (nullable, nonatomic, setter=setWebSites:, getter=webSites) NSArray* webSites;
     @property (nullable, nonatomic, setter=setTitle:, getter=title) NSString* title;
     @property (nullable, nonatomic, setter=setCompanyName:, getter=companyName) NSString* companyName;
     @property (nullable, nonatomic, setter=setYomiCompany:, getter=yomiCompany) NSString* yomiCompany;
@@ -27,6 +27,5 @@
     @property (nullable, nonatomic, setter=setSources:, getter=sources) NSArray* sources;
     @property (nullable, nonatomic, setter=setMailboxType:, getter=mailboxType) NSString* mailboxType;
     @property (nullable, nonatomic, setter=setPersonType:, getter=personType) NSString* personType;
-    @property (nullable, nonatomic, setter=setUserPrincipalName:, getter=userPrincipalName) NSString* userPrincipalName;
   
 @end

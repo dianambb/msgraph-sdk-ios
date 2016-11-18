@@ -100,17 +100,6 @@
 
 }
 
-- (MSGraphEventForwardRequestBuilder *)forwardWithComment:(NSString *)comment toRecipients:(NSArray *)toRecipients 
-{
-    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.forward"];
-    return [[MSGraphEventForwardRequestBuilder alloc] initWithComment:comment
-                                                         toRecipients:toRecipients
-                                                                  URL:actionURL
-                                                               client:self.client];
-
-
-}
-
 - (MSGraphEventSnoozeReminderRequestBuilder *)snoozeReminderWithNewReminderTime:(MSGraphDateTimeTimeZone *)newReminderTime 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.snoozeReminder"];

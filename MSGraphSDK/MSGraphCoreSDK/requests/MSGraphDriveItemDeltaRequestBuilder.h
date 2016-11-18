@@ -10,6 +10,8 @@
 
 @interface MSGraphDriveItemDeltaRequestBuilder : MSRequestBuilder
 
+- (instancetype)initWithToken:(NSString *)token URL:(NSURL *)url client:(ODataBaseClient*)client;
+
 - (MSGraphDriveItemDeltaRequest *)request;
 
 - (MSGraphDriveItemDeltaRequest *)requestWithOptions:(NSArray *)options;

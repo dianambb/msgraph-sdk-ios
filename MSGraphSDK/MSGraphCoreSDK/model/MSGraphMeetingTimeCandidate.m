@@ -14,7 +14,7 @@
 
 @interface MSGraphMeetingTimeCandidate()
 {
-    MSGraphTimeSlotOLD* _meetingTimeSlot;
+    MSGraphTimeSlot* _meetingTimeSlot;
     CGFloat _confidence;
     MSGraphFreeBusyStatus* _organizerAvailability;
     NSArray* _attendeeAvailability;
@@ -25,15 +25,15 @@
 
 @implementation MSGraphMeetingTimeCandidate
 
-- (MSGraphTimeSlotOLD*) meetingTimeSlot
+- (MSGraphTimeSlot*) meetingTimeSlot
 {
     if(!_meetingTimeSlot){
-        _meetingTimeSlot = [[MSGraphTimeSlotOLD alloc] initWithDictionary: self.dictionary[@"meetingTimeSlot"]];
+        _meetingTimeSlot = [[MSGraphTimeSlot alloc] initWithDictionary: self.dictionary[@"meetingTimeSlot"]];
     }
     return _meetingTimeSlot;
 }
 
-- (void) setMeetingTimeSlot: (MSGraphTimeSlotOLD*) val
+- (void) setMeetingTimeSlot: (MSGraphTimeSlot*) val
 {
     _meetingTimeSlot = val;
     self.dictionary[@"meetingTimeSlot"] = val;

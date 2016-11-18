@@ -16,7 +16,6 @@
 {
     MSGraphIdentity* _application;
     NSString* _type;
-    NSString* _scope;
     NSString* _webUrl;
 }
 @end
@@ -49,20 +48,6 @@
 - (void) setType: (NSString*) val
 {
     self.dictionary[@"type"] = val;
-}
-
-- (NSString*) scope
-{
-    if([[NSNull null] isEqual:self.dictionary[@"scope"]])
-    {
-        return nil;
-    }   
-    return self.dictionary[@"scope"];
-}
-
-- (void) setScope: (NSString*) val
-{
-    self.dictionary[@"scope"] = val;
 }
 
 - (NSString*) webUrl

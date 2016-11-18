@@ -2,15 +2,14 @@
 
 
 
-#import "MSGraphWebsiteType.h"
+#import "MSGraphWebSiteType.h"
 
 
 #import "MSObject.h"
 
-@interface MSGraphWebsite : MSObject
+@interface MSGraphWebSite : MSObject
 
-@property (nullable, nonatomic, setter=setType:, getter=type) MSGraphWebsiteType* type;
-@property (nullable, nonatomic, setter=setAddress:, getter=address) NSString* address;
-@property (nullable, nonatomic, setter=setDisplayName:, getter=displayName) NSString* displayName;
+@property (nullable, nonatomic, setter=setType:, getter=type) MSGraphWebSiteType* type;
+@property (nullable, nonatomic, setter=setUrl:, getter=url) NSString* url;
 
 @end

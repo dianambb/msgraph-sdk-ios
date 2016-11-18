@@ -56,17 +56,6 @@
     return [[self multiValueExtendedProperties] multiValueLegacyExtendedProperty:multiValueLegacyExtendedProperty];
 }
 
-- (MSGraphPostMentionsCollectionRequestBuilder *)mentions
-{
-    return [[MSGraphPostMentionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"mentions"]  
-                                                                     client:self.client];
-}
-
-- (MSGraphMentionRequestBuilder *)mentions:(NSString *)mention
-{
-    return [[self mentions] mention:mention];
-}
-
 - (MSGraphPostForwardRequestBuilder *)forwardWithComment:(NSString *)comment toRecipients:(NSArray *)toRecipients 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.forward"];

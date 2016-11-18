@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphTimeSlotOLD, MSGraphAttendeeAvailability, MSGraphLocation; 
+@class MSGraphTimeSlot, MSGraphAttendeeAvailability, MSGraphLocation; 
 #import <UIKit/UiKit.h>
 #import "MSGraphFreeBusyStatus.h"
 
@@ -11,7 +11,7 @@
 
 @interface MSGraphMeetingTimeCandidate : MSObject
 
-@property (nullable, nonatomic, setter=setMeetingTimeSlot:, getter=meetingTimeSlot) MSGraphTimeSlotOLD* meetingTimeSlot;
+@property (nullable, nonatomic, setter=setMeetingTimeSlot:, getter=meetingTimeSlot) MSGraphTimeSlot* meetingTimeSlot;
 @property (nonatomic, setter=setConfidence:, getter=confidence) CGFloat confidence;
 @property (nullable, nonatomic, setter=setOrganizerAvailability:, getter=organizerAvailability) MSGraphFreeBusyStatus* organizerAvailability;
 @property (nullable, nonatomic, setter=setAttendeeAvailability:, getter=attendeeAvailability) NSArray* attendeeAvailability;

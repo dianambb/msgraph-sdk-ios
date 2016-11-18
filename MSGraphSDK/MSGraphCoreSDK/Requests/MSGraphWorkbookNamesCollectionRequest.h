@@ -2,12 +2,12 @@
 
 
 
-@class MSGraphWorkbookNamedItemRequest, MSURLSessionDataTask;
+@class MSGraphNamedItemRequest, MSURLSessionDataTask;
 
 #import "MSGraphModels.h"
 #import "MSCollectionRequest.h"
 
-typedef void (^MSGraphWorkbookNamedItemCompletionHandler)(MSGraphWorkbookNamedItem *response, NSError *error);
+typedef void (^MSGraphNamedItemCompletionHandler)(MSGraphNamedItem *response, NSError *error);
 
 typedef void (^MSGraphWorkbookNamesCollectionCompletionHandler)(MSCollection *response, MSGraphWorkbookNamesCollectionRequest *nextRequest, NSError *error);
 
@@ -15,6 +15,6 @@ typedef void (^MSGraphWorkbookNamesCollectionCompletionHandler)(MSCollection *re
 
 - (MSURLSessionDataTask *)getWithCompletion:(MSGraphWorkbookNamesCollectionCompletionHandler)completionHandler;
 
-- (MSURLSessionDataTask *)addWorkbookNamedItem:(MSGraphWorkbookNamedItem*)workbookNamedItem withCompletion:(MSGraphWorkbookNamedItemCompletionHandler)completionHandler;
+- (MSURLSessionDataTask *)addNamedItem:(MSGraphNamedItem*)namedItem withCompletion:(MSGraphNamedItemCompletionHandler)completionHandler;
 
 @end

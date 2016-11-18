@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 
 
-@class MSGraphAddIn, MSGraphAppRole, MSGraphKeyCredential, MSGraphOAuth2Permission, MSGraphPasswordCredential, MSGraphRequiredResourceAccess, MSGraphOnPremisesPublishing, MSGraphExtensionProperty, MSGraphDirectoryObject, MSGraphConnectorGroup; 
+@class MSGraphAddIn, MSGraphAppRole, MSGraphKeyCredential, MSGraphOAuth2Permission, MSGraphPasswordCredential, MSGraphRequiredResourceAccess, MSGraphExtensionProperty, MSGraphDirectoryObject; 
 
 
 #import "MSGraphDirectoryObject.h"
@@ -30,11 +30,9 @@
     @property (nonnull, nonatomic, setter=setReplyUrls:, getter=replyUrls) NSArray* replyUrls;
     @property (nonnull, nonatomic, setter=setRequiredResourceAccess:, getter=requiredResourceAccess) NSArray* requiredResourceAccess;
     @property (nullable, nonatomic, setter=setSamlMetadataUrl:, getter=samlMetadataUrl) NSString* samlMetadataUrl;
-    @property (nullable, nonatomic, setter=setOnPremisesPublishing:, getter=onPremisesPublishing) MSGraphOnPremisesPublishing* onPremisesPublishing;
     @property (nullable, nonatomic, setter=setExtensionProperties:, getter=extensionProperties) NSArray* extensionProperties;
     @property (nullable, nonatomic, setter=setCreatedOnBehalfOf:, getter=createdOnBehalfOf) MSGraphDirectoryObject* createdOnBehalfOf;
     @property (nullable, nonatomic, setter=setOwners:, getter=owners) NSArray* owners;
     @property (nullable, nonatomic, setter=setPolicies:, getter=policies) NSArray* policies;
-    @property (nullable, nonatomic, setter=setConnectorGroup:, getter=connectorGroup) MSGraphConnectorGroup* connectorGroup;
   
 @end

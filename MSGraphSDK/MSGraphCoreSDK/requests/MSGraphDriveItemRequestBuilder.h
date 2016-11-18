@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphDriveItemRequest, MSGraphWorkbookRequestBuilder, MSGraphUserRequestBuilder, MSGraphCreatedByUserRequestBuilder, MSGraphLastModifiedByUserRequestBuilder, MSGraphDriveItemRequestBuilder, MSGraphDriveItemChildrenCollectionRequestBuilder, MSGraphPermissionRequestBuilder, MSGraphDriveItemPermissionsCollectionRequestBuilder, MSGraphThumbnailSetRequestBuilder, MSGraphDriveItemThumbnailsCollectionRequestBuilder, MSGraphDriveItemContentRequest, MSGraphDriveItemCreateLinkRequestBuilder, MSGraphDriveItemCreateUploadSessionRequestBuilder, MSGraphDriveItemInviteRequestBuilder, MSGraphDriveItemCopyRequestBuilder, MSGraphDriveItemSearchRequestBuilder, MSGraphDriveItemDeltaRequestBuilder;
+@class MSGraphDriveItemRequest, MSGraphWorkbookRequestBuilder, MSGraphUserRequestBuilder, MSGraphCreatedByUserRequestBuilder, MSGraphLastModifiedByUserRequestBuilder, MSGraphPermissionRequestBuilder, MSGraphDriveItemPermissionsCollectionRequestBuilder, MSGraphDriveItemRequestBuilder, MSGraphDriveItemChildrenCollectionRequestBuilder, MSGraphThumbnailSetRequestBuilder, MSGraphDriveItemThumbnailsCollectionRequestBuilder, MSGraphDriveItemContentRequest, MSGraphDriveItemCreateLinkRequestBuilder, MSGraphDriveItemInviteRequestBuilder, MSGraphDriveItemCopyRequestBuilder, MSGraphDriveItemSearchRequestBuilder, MSGraphDriveItemDeltaRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -17,13 +17,13 @@
 
 - (MSGraphUserRequestBuilder *) lastModifiedByUser;
 
-- (MSGraphDriveItemChildrenCollectionRequestBuilder *)children;
-
-- (MSGraphDriveItemRequestBuilder *)children:(NSString *)driveItem;
-
 - (MSGraphDriveItemPermissionsCollectionRequestBuilder *)permissions;
 
 - (MSGraphPermissionRequestBuilder *)permissions:(NSString *)permission;
+
+- (MSGraphDriveItemChildrenCollectionRequestBuilder *)children;
+
+- (MSGraphDriveItemRequestBuilder *)children:(NSString *)driveItem;
 
 - (MSGraphDriveItemThumbnailsCollectionRequestBuilder *)thumbnails;
 
@@ -35,17 +35,15 @@
 
 - (MSGraphDriveItemCreateLinkRequestBuilder *)createLinkWithType:(NSString *)type scope:(NSString *)scope ;
 
-- (MSGraphDriveItemCreateUploadSessionRequestBuilder *)createUploadSessionWithItem:(MSGraphDriveItemUploadableProperties *)item ;
-
 - (MSGraphDriveItemInviteRequestBuilder *)inviteWithRequireSignIn:(BOOL)requireSignIn roles:(NSArray *)roles sendInvitation:(BOOL)sendInvitation message:(NSString *)message recipients:(NSArray *)recipients ;
 
 - (MSGraphDriveItemCopyRequestBuilder *)copyWithName:(NSString *)name parentReference:(MSGraphItemReference *)parentReference ;
 
 - (MSGraphDriveItemSearchRequestBuilder *)searchWithQ:(NSString *)q ;
 
-- (MSGraphDriveItemDeltaRequestBuilder *)delta;
-
 - (MSGraphDriveItemDeltaRequestBuilder *)deltaWithToken:(NSString *)token ;
+
+- (MSGraphDriveItemDeltaRequestBuilder *)delta;
 
 
 - (MSGraphDriveItemRequest *) request;

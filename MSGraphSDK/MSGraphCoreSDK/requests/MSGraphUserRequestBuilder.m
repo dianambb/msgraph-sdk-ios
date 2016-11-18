@@ -234,23 +234,6 @@
 
 }
 
-- (MSGraphUserDrivesCollectionRequestBuilder *)drives
-{
-    return [[MSGraphUserDrivesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"drives"]  
-                                                                   client:self.client];
-}
-
-- (MSGraphDriveRequestBuilder *)drives:(NSString *)drive
-{
-    return [[self drives] drive:drive];
-}
-
--(MSGraphSharePointRequestBuilder *)sharepoint
-{
-    return [[MSGraphSharePointRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"sharepoint"] client:self.client];
-
-}
-
 -(MSGraphOfficeGraphInsightsRequestBuilder *)insights
 {
     return [[MSGraphOfficeGraphInsightsRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"insights"] client:self.client];
@@ -351,11 +334,6 @@
 
 }
 
-- (MSGraphUserInvalidateAllRefreshTokensRequestBuilder *)invalidateAllRefreshTokens
-{
-    return [[MSGraphUserInvalidateAllRefreshTokensRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.invalidateAllRefreshTokens"] client:self.client];
-}
-
 - (MSGraphUserSendMailRequestBuilder *)sendMailWithMessage:(MSGraphMessage *)message saveToSentItems:(BOOL)saveToSentItems 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.sendMail"];
@@ -367,23 +345,7 @@
 
 }
 
-- (MSGraphUserFindMeetingTimesOLDRequestBuilder *)findMeetingTimesOLDWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionHints:(BOOL)returnSuggestionHints 
-{
-    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.findMeetingTimesOLD"];
-    return [[MSGraphUserFindMeetingTimesOLDRequestBuilder alloc] initWithAttendees:attendees
-                                                                locationConstraint:locationConstraint
-                                                                    timeConstraint:timeConstraint
-                                                                   meetingDuration:meetingDuration
-                                                                     maxCandidates:maxCandidates
-                                                               isOrganizerOptional:isOrganizerOptional
-                                                             returnSuggestionHints:returnSuggestionHints
-                                                                               URL:actionURL
-                                                                            client:self.client];
-
-
-}
-
-- (MSGraphUserFindMeetingTimesRequestBuilder *)findMeetingTimesWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionReasons:(BOOL)returnSuggestionReasons minimumAttendeePercentage:(CGFloat)minimumAttendeePercentage 
+- (MSGraphUserFindMeetingTimesRequestBuilder *)findMeetingTimesWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionHints:(BOOL)returnSuggestionHints 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.findMeetingTimes"];
     return [[MSGraphUserFindMeetingTimesRequestBuilder alloc] initWithAttendees:attendees
@@ -392,19 +354,7 @@
                                                                 meetingDuration:meetingDuration
                                                                   maxCandidates:maxCandidates
                                                             isOrganizerOptional:isOrganizerOptional
-                                                        returnSuggestionReasons:returnSuggestionReasons
-                                                      minimumAttendeePercentage:minimumAttendeePercentage
-                                                                            URL:actionURL
-                                                                         client:self.client];
-
-
-}
-
-- (MSGraphUserGetMailTipsRequestBuilder *)getMailTipsWithEmailAddresses:(NSArray *)emailAddresses mailTipsOptions:(MSGraphMailTipsType *)mailTipsOptions 
-{
-    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.getMailTips"];
-    return [[MSGraphUserGetMailTipsRequestBuilder alloc] initWithEmailAddresses:emailAddresses
-                                                                mailTipsOptions:mailTipsOptions
+                                                          returnSuggestionHints:returnSuggestionHints
                                                                             URL:actionURL
                                                                          client:self.client];
 

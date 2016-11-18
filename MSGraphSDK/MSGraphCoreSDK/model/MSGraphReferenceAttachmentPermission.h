@@ -9,10 +9,6 @@ typedef NS_ENUM(NSInteger, MSGraphReferenceAttachmentPermissionValue){
 	MSGraphReferenceAttachmentPermissionOther = 0,
 	MSGraphReferenceAttachmentPermissionView = 1,
 	MSGraphReferenceAttachmentPermissionEdit = 2,
-	MSGraphReferenceAttachmentPermissionAnonymousView = 3,
-	MSGraphReferenceAttachmentPermissionAnonymousEdit = 4,
-	MSGraphReferenceAttachmentPermissionOrganizationView = 5,
-	MSGraphReferenceAttachmentPermissionOrganizationEdit = 6,
     MSGraphReferenceAttachmentPermissionEndOfEnum
 };
 
@@ -21,10 +17,6 @@ typedef NS_ENUM(NSInteger, MSGraphReferenceAttachmentPermissionValue){
 +(MSGraphReferenceAttachmentPermission*) other;
 +(MSGraphReferenceAttachmentPermission*) view;
 +(MSGraphReferenceAttachmentPermission*) edit;
-+(MSGraphReferenceAttachmentPermission*) anonymousView;
-+(MSGraphReferenceAttachmentPermission*) anonymousEdit;
-+(MSGraphReferenceAttachmentPermission*) organizationView;
-+(MSGraphReferenceAttachmentPermission*) organizationEdit;
 
 +(MSGraphReferenceAttachmentPermission*) UnknownEnumValue;
 

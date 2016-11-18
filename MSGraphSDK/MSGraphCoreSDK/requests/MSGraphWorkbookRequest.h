@@ -3,14 +3,9 @@
 
 
 @class MSURLSessionDataTask;
-@class MSGraphWorkbookApplicationRequestBuilder;
-@class MSGraphWorkbookNamedItemRequestBuilder;
+@class MSGraphExcelApplicationRequestBuilder;
+@class MSGraphNamedItemRequestBuilder;
 @class MSGraphNamesCollectionRequestBuilder;
-@class MSGraphWorkbookTableRequestBuilder;
-@class MSGraphTablesCollectionRequestBuilder;
-@class MSGraphWorkbookWorksheetRequestBuilder;
-@class MSGraphWorksheetsCollectionRequestBuilder;
-@class MSGraphWorkbookFunctionsRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

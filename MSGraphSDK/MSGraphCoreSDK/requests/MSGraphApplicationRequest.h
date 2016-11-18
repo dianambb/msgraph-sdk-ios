@@ -8,7 +8,6 @@
 @class MSGraphDirectoryObjectRequestBuilder;
 @class MSGraphOwnersCollectionRequestBuilder;
 @class MSGraphPoliciesCollectionRequestBuilder;
-@class MSGraphConnectorGroupRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

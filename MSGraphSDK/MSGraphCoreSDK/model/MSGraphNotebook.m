@@ -28,8 +28,6 @@
     NSDate* _lastModifiedTime;
     NSString* _notebookSelf;
     NSDate* _createdTime;
-    NSArray* _sections;
-    NSArray* _sectionGroups;
 }
 @end
 
@@ -232,56 +230,6 @@
 {
     _createdTime = val;
     self.dictionary[@"createdTime"] = val;
-}
-
-- (NSArray*) sections
-{
-    if(!_sections){
-        
-    NSMutableArray *sectionsResult = [NSMutableArray array];
-    NSArray *sections = self.dictionary[@"sections"];
-
-    if ([sections isKindOfClass:[NSArray class]]){
-        for (id section in sections){
-            [sectionsResult addObject:[[MSGraphSection alloc] initWithDictionary: section]];
-        }
-    }
-
-    _sections = sectionsResult;
-        
-    }
-    return _sections;
-}
-
-- (void) setSections: (NSArray*) val
-{
-    _sections = val;
-    self.dictionary[@"sections"] = val;
-}
-
-- (NSArray*) sectionGroups
-{
-    if(!_sectionGroups){
-        
-    NSMutableArray *sectionGroupsResult = [NSMutableArray array];
-    NSArray *sectionGroups = self.dictionary[@"sectionGroups"];
-
-    if ([sectionGroups isKindOfClass:[NSArray class]]){
-        for (id sectionGroup in sectionGroups){
-            [sectionGroupsResult addObject:[[MSGraphSectionGroup alloc] initWithDictionary: sectionGroup]];
-        }
-    }
-
-    _sectionGroups = sectionGroupsResult;
-        
-    }
-    return _sectionGroups;
-}
-
-- (void) setSectionGroups: (NSArray*) val
-{
-    _sectionGroups = val;
-    self.dictionary[@"sectionGroups"] = val;
 }
 
 

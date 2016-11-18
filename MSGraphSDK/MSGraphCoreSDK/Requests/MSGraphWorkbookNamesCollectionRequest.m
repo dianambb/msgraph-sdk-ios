@@ -27,7 +27,7 @@
 
     MSURLSessionDataTask * sessionDataTask = [self collectionTaskWithRequest:[self get]
                                              odObjectWithDictionary:^(id response){
-                                            return [[MSGraphWorkbookNamedItem alloc] initWithDictionary:response];
+                                            return [[MSGraphNamedItem alloc] initWithDictionary:response];
                                          }
                                                         completion:^(MSCollection *collectionResponse, NSError *error){
                                             if(!error && collectionResponse.nextLink && completionHandler){
@@ -44,9 +44,9 @@
 
 
 
-- (NSMutableURLRequest *)addWorkbookNamedItem:(MSGraphWorkbookNamedItem*)workbookNamedItem
+- (NSMutableURLRequest *)addNamedItem:(MSGraphNamedItem*)namedItem
 {
-    NSData *body = [NSJSONSerialization dataWithJSONObject:[workbookNamedItem dictionaryFromItem]
+    NSData *body = [NSJSONSerialization dataWithJSONObject:[namedItem dictionaryFromItem]
                                                    options:0
                                                      error:nil];
     return [self requestWithMethod:@"POST"
@@ -55,11 +55,11 @@
 
 }
 
-- (MSURLSessionDataTask *)addWorkbookNamedItem:(MSGraphWorkbookNamedItem*)workbookNamedItem withCompletion:(MSGraphWorkbookNamedItemCompletionHandler)completionHandler
+- (MSURLSessionDataTask *)addNamedItem:(MSGraphNamedItem*)namedItem withCompletion:(MSGraphNamedItemCompletionHandler)completionHandler
 {
-    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self addWorkbookNamedItem:workbookNamedItem]
+    MSURLSessionDataTask *sessionDataTask = [self taskWithRequest:[self addNamedItem:namedItem]
 							     odObjectWithDictionary:^(NSDictionary *response){
-                                            return [[MSGraphWorkbookNamedItem alloc] initWithDictionary:response];
+                                            return [[MSGraphNamedItem alloc] initWithDictionary:response];
                                         }
                                               completion:completionHandler];
     [sessionDataTask execute];

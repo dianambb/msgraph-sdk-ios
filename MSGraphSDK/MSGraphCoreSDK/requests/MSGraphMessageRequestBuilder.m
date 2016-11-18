@@ -6,17 +6,6 @@
 
 @implementation MSGraphMessageRequestBuilder
 
-- (MSGraphMessageAttachmentsCollectionRequestBuilder *)attachments
-{
-    return [[MSGraphMessageAttachmentsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"attachments"]  
-                                                                           client:self.client];
-}
-
-- (MSGraphAttachmentRequestBuilder *)attachments:(NSString *)attachment
-{
-    return [[self attachments] attachment:attachment];
-}
-
 - (MSGraphMessageExtensionsCollectionRequestBuilder *)extensions
 {
     return [[MSGraphMessageExtensionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"extensions"]  
@@ -26,6 +15,17 @@
 - (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension
 {
     return [[self extensions] extension:extension];
+}
+
+- (MSGraphMessageAttachmentsCollectionRequestBuilder *)attachments
+{
+    return [[MSGraphMessageAttachmentsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"attachments"]  
+                                                                           client:self.client];
+}
+
+- (MSGraphAttachmentRequestBuilder *)attachments:(NSString *)attachment
+{
+    return [[self attachments] attachment:attachment];
 }
 
 - (MSGraphMessageSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties
@@ -48,17 +48,6 @@
 - (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty
 {
     return [[self multiValueExtendedProperties] multiValueLegacyExtendedProperty:multiValueLegacyExtendedProperty];
-}
-
-- (MSGraphMessageMentionsCollectionRequestBuilder *)mentions
-{
-    return [[MSGraphMessageMentionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"mentions"]  
-                                                                        client:self.client];
-}
-
-- (MSGraphMentionRequestBuilder *)mentions:(NSString *)mention
-{
-    return [[self mentions] mention:mention];
 }
 
 - (MSGraphMessageCopyRequestBuilder *)copyWithDestinationId:(NSString *)destinationId 

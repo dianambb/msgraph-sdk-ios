@@ -3,10 +3,6 @@
 
 
 @class MSURLSessionDataTask;
-@class MSGraphSectionRequestBuilder;
-@class MSGraphSectionsCollectionRequestBuilder;
-@class MSGraphSectionGroupRequestBuilder;
-@class MSGraphSectionGroupsCollectionRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

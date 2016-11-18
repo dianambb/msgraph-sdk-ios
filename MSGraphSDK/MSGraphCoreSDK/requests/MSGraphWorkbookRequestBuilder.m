@@ -6,9 +6,9 @@
 
 @implementation MSGraphWorkbookRequestBuilder
 
--(MSGraphWorkbookApplicationRequestBuilder *)application
+-(MSGraphExcelApplicationRequestBuilder *)application
 {
-    return [[MSGraphWorkbookApplicationRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"application"] client:self.client];
+    return [[MSGraphExcelApplicationRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"application"] client:self.client];
 
 }
 
@@ -18,37 +18,9 @@
                                                                       client:self.client];
 }
 
-- (MSGraphWorkbookNamedItemRequestBuilder *)names:(NSString *)workbookNamedItem
+- (MSGraphNamedItemRequestBuilder *)names:(NSString *)namedItem
 {
-    return [[self names] workbookNamedItem:workbookNamedItem];
-}
-
-- (MSGraphWorkbookTablesCollectionRequestBuilder *)tables
-{
-    return [[MSGraphWorkbookTablesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"tables"]  
-                                                                       client:self.client];
-}
-
-- (MSGraphWorkbookTableRequestBuilder *)tables:(NSString *)workbookTable
-{
-    return [[self tables] workbookTable:workbookTable];
-}
-
-- (MSGraphWorkbookWorksheetsCollectionRequestBuilder *)worksheets
-{
-    return [[MSGraphWorkbookWorksheetsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"worksheets"]  
-                                                                           client:self.client];
-}
-
-- (MSGraphWorkbookWorksheetRequestBuilder *)worksheets:(NSString *)workbookWorksheet
-{
-    return [[self worksheets] workbookWorksheet:workbookWorksheet];
-}
-
--(MSGraphWorkbookFunctionsRequestBuilder *)functions
-{
-    return [[MSGraphWorkbookFunctionsRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"functions"] client:self.client];
-
+    return [[self names] namedItem:namedItem];
 }
 
 - (MSGraphWorkbookCreateSessionRequestBuilder *)createSessionWithPersistChanges:(BOOL)persistChanges 
@@ -64,11 +36,6 @@
 - (MSGraphWorkbookCloseSessionRequestBuilder *)closeSession
 {
     return [[MSGraphWorkbookCloseSessionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.closeSession"] client:self.client];
-}
-
-- (MSGraphWorkbookRefreshSessionRequestBuilder *)refreshSession
-{
-    return [[MSGraphWorkbookRefreshSessionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.refreshSession"] client:self.client];
 }
 
 - (MSGraphWorkbookProcessQueryRequestBuilder *)processQueryWithInput:(NSStream *)input 

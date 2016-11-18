@@ -35,8 +35,6 @@
 @class MSGraphProfilePhotoRequestBuilder;
 @class MSGraphPhotosCollectionRequestBuilder;
 @class MSGraphDriveRequestBuilder;
-@class MSGraphDrivesCollectionRequestBuilder;
-@class MSGraphSharePointRequestBuilder;
 @class MSGraphOfficeGraphInsightsRequestBuilder;
 @class MSGraphDriveItemRequestBuilder;
 @class MSGraphTrendingAroundCollectionRequestBuilder;

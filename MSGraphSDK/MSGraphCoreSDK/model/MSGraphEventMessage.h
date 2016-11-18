@@ -17,7 +17,6 @@
     @property (nullable, nonatomic, setter=setType:, getter=type) MSGraphEventType* type;
     @property (nullable, nonatomic, setter=setRecurrence:, getter=recurrence) MSGraphPatternedRecurrence* recurrence;
     @property (nonatomic, setter=setIsOutOfDate:, getter=isOutOfDate) BOOL isOutOfDate;
-    @property (nonatomic, setter=setIsAllDay:, getter=isAllDay) BOOL isAllDay;
     @property (nullable, nonatomic, setter=setEvent:, getter=event) MSGraphEvent* event;
   
 @end

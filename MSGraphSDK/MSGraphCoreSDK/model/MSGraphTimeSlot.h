@@ -2,14 +2,14 @@
 
 
 
-@class MSGraphDateTimeTimeZone; 
+@class MSGraphTimeStamp; 
 
 
 #import "MSObject.h"
 
 @interface MSGraphTimeSlot : MSObject
 
-@property (nullable, nonatomic, setter=setStart:, getter=start) MSGraphDateTimeTimeZone* start;
-@property (nullable, nonatomic, setter=setEnd:, getter=end) MSGraphDateTimeTimeZone* end;
+@property (nullable, nonatomic, setter=setStart:, getter=start) MSGraphTimeStamp* start;
+@property (nullable, nonatomic, setter=setEnd:, getter=end) MSGraphTimeStamp* end;
 
 @end

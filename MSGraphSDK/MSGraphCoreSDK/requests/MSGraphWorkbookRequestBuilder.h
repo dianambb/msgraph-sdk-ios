@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphWorkbookRequest, MSGraphWorkbookApplicationRequestBuilder, MSGraphApplicationRequestBuilder, MSGraphWorkbookNamedItemRequestBuilder, MSGraphWorkbookNamesCollectionRequestBuilder, MSGraphWorkbookTableRequestBuilder, MSGraphWorkbookTablesCollectionRequestBuilder, MSGraphWorkbookWorksheetRequestBuilder, MSGraphWorkbookWorksheetsCollectionRequestBuilder, MSGraphWorkbookFunctionsRequestBuilder, MSGraphFunctionsRequestBuilder, MSGraphWorkbookCreateSessionRequestBuilder, MSGraphWorkbookCloseSessionRequestBuilder, MSGraphWorkbookRefreshSessionRequestBuilder, MSGraphWorkbookProcessQueryRequestBuilder;
+@class MSGraphWorkbookRequest, MSGraphExcelApplicationRequestBuilder, MSGraphApplicationRequestBuilder, MSGraphNamedItemRequestBuilder, MSGraphWorkbookNamesCollectionRequestBuilder, MSGraphWorkbookCreateSessionRequestBuilder, MSGraphWorkbookCloseSessionRequestBuilder, MSGraphWorkbookProcessQueryRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -11,27 +11,15 @@
 
 @interface MSGraphWorkbookRequestBuilder : MSGraphEntityRequestBuilder
 
-- (MSGraphWorkbookApplicationRequestBuilder *) application;
+- (MSGraphExcelApplicationRequestBuilder *) application;
 
 - (MSGraphWorkbookNamesCollectionRequestBuilder *)names;
 
-- (MSGraphWorkbookNamedItemRequestBuilder *)names:(NSString *)workbookNamedItem;
-
-- (MSGraphWorkbookTablesCollectionRequestBuilder *)tables;
-
-- (MSGraphWorkbookTableRequestBuilder *)tables:(NSString *)workbookTable;
-
-- (MSGraphWorkbookWorksheetsCollectionRequestBuilder *)worksheets;
-
-- (MSGraphWorkbookWorksheetRequestBuilder *)worksheets:(NSString *)workbookWorksheet;
-
-- (MSGraphWorkbookFunctionsRequestBuilder *) functions;
+- (MSGraphNamedItemRequestBuilder *)names:(NSString *)namedItem;
 
 - (MSGraphWorkbookCreateSessionRequestBuilder *)createSessionWithPersistChanges:(BOOL)persistChanges ;
 
 - (MSGraphWorkbookCloseSessionRequestBuilder *)closeSession;
-
-- (MSGraphWorkbookRefreshSessionRequestBuilder *)refreshSession;
 
 - (MSGraphWorkbookProcessQueryRequestBuilder *)processQueryWithInput:(NSStream *)input ;
 

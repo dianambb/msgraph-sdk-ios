@@ -6,28 +6,6 @@
 
 @implementation MSGraphNotebookRequestBuilder
 
-- (MSGraphNotebookSectionsCollectionRequestBuilder *)sections
-{
-    return [[MSGraphNotebookSectionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"sections"]  
-                                                                         client:self.client];
-}
-
-- (MSGraphSectionRequestBuilder *)sections:(NSString *)section
-{
-    return [[self sections] section:section];
-}
-
-- (MSGraphNotebookSectionGroupsCollectionRequestBuilder *)sectionGroups
-{
-    return [[MSGraphNotebookSectionGroupsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"sectionGroups"]  
-                                                                              client:self.client];
-}
-
-- (MSGraphSectionGroupRequestBuilder *)sectionGroups:(NSString *)sectionGroup
-{
-    return [[self sectionGroups] sectionGroup:sectionGroup];
-}
-
 - (MSGraphNotebookCopyNotebookRequestBuilder *)copyNotebookWithGroupId:(NSString *)groupId renameAs:(NSString *)renameAs notebookFolder:(NSString *)notebookFolder 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.CopyNotebook"];

@@ -190,11 +190,6 @@
     return [self photosValueWithOptions:nil];
 }
 
-- (MSGraphGroupRenewRequestBuilder *)renew
-{
-    return [[MSGraphGroupRenewRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.renew"] client:self.client];
-}
-
 - (MSGraphGroupSubscribeByMailRequestBuilder *)subscribeByMail
 {
     return [[MSGraphGroupSubscribeByMailRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.subscribeByMail"] client:self.client];

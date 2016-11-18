@@ -16,14 +16,7 @@
 {
     NSString* _name;
     MSGraphCalendarColor* _color;
-    BOOL _isDefaultCalendar;
     NSString* _changeKey;
-    BOOL _canShare;
-    BOOL _canViewPrivateItems;
-    BOOL _isShared;
-    BOOL _isSharedWithMe;
-    BOOL _canEdit;
-    MSGraphEmailAddress* _owner;
     NSArray* _events;
     NSArray* _calendarView;
     NSArray* _singleValueExtendedProperties;
@@ -68,18 +61,6 @@
     self.dictionary[@"color"] = val;
 }
 
-- (BOOL) isDefaultCalendar
-{
-    _isDefaultCalendar = [self.dictionary[@"isDefaultCalendar"] boolValue];
-    return _isDefaultCalendar;
-}
-
-- (void) setIsDefaultCalendar: (BOOL) val
-{
-    _isDefaultCalendar = val;
-    self.dictionary[@"isDefaultCalendar"] = @(val);
-}
-
 - (NSString*) changeKey
 {
     if([[NSNull null] isEqual:self.dictionary[@"changeKey"]])
@@ -92,80 +73,6 @@
 - (void) setChangeKey: (NSString*) val
 {
     self.dictionary[@"changeKey"] = val;
-}
-
-- (BOOL) canShare
-{
-    _canShare = [self.dictionary[@"canShare"] boolValue];
-    return _canShare;
-}
-
-- (void) setCanShare: (BOOL) val
-{
-    _canShare = val;
-    self.dictionary[@"canShare"] = @(val);
-}
-
-- (BOOL) canViewPrivateItems
-{
-    _canViewPrivateItems = [self.dictionary[@"canViewPrivateItems"] boolValue];
-    return _canViewPrivateItems;
-}
-
-- (void) setCanViewPrivateItems: (BOOL) val
-{
-    _canViewPrivateItems = val;
-    self.dictionary[@"canViewPrivateItems"] = @(val);
-}
-
-- (BOOL) isShared
-{
-    _isShared = [self.dictionary[@"isShared"] boolValue];
-    return _isShared;
-}
-
-- (void) setIsShared: (BOOL) val
-{
-    _isShared = val;
-    self.dictionary[@"isShared"] = @(val);
-}
-
-- (BOOL) isSharedWithMe
-{
-    _isSharedWithMe = [self.dictionary[@"isSharedWithMe"] boolValue];
-    return _isSharedWithMe;
-}
-
-- (void) setIsSharedWithMe: (BOOL) val
-{
-    _isSharedWithMe = val;
-    self.dictionary[@"isSharedWithMe"] = @(val);
-}
-
-- (BOOL) canEdit
-{
-    _canEdit = [self.dictionary[@"canEdit"] boolValue];
-    return _canEdit;
-}
-
-- (void) setCanEdit: (BOOL) val
-{
-    _canEdit = val;
-    self.dictionary[@"canEdit"] = @(val);
-}
-
-- (MSGraphEmailAddress*) owner
-{
-    if(!_owner){
-        _owner = [[MSGraphEmailAddress alloc] initWithDictionary: self.dictionary[@"owner"]];
-    }
-    return _owner;
-}
-
-- (void) setOwner: (MSGraphEmailAddress*) val
-{
-    _owner = val;
-    self.dictionary[@"owner"] = val;
 }
 
 - (NSArray*) events

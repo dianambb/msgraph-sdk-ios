@@ -15,9 +15,9 @@
 {
     return [[MSGraphWorkbookNamesCollectionRequest alloc] initWithURL:self.requestURL options:options client:self.client];
 }
-- (MSGraphWorkbookNamedItemRequestBuilder *)workbookNamedItem:(NSString *)workbookNamedItem
+- (MSGraphNamedItemRequestBuilder *)namedItem:(NSString *)namedItem
 {
-    return [[MSGraphWorkbookNamedItemRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:workbookNamedItem]
+    return [[MSGraphNamedItemRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:namedItem]
                                                    client:self.client];
 }
 

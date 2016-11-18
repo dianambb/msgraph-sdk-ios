@@ -16,9 +16,7 @@
 {
     NSString* _driveId;
     NSString* _itemReferenceId;
-    NSString* _name;
     NSString* _path;
-    NSString* _shareId;
 }
 @end
 
@@ -52,20 +50,6 @@
     self.dictionary[@"id"] = val;
 }
 
-- (NSString*) name
-{
-    if([[NSNull null] isEqual:self.dictionary[@"name"]])
-    {
-        return nil;
-    }   
-    return self.dictionary[@"name"];
-}
-
-- (void) setName: (NSString*) val
-{
-    self.dictionary[@"name"] = val;
-}
-
 - (NSString*) path
 {
     if([[NSNull null] isEqual:self.dictionary[@"path"]])
@@ -78,20 +62,6 @@
 - (void) setPath: (NSString*) val
 {
     self.dictionary[@"path"] = val;
-}
-
-- (NSString*) shareId
-{
-    if([[NSNull null] isEqual:self.dictionary[@"shareId"]])
-    {
-        return nil;
-    }   
-    return self.dictionary[@"shareId"];
-}
-
-- (void) setShareId: (NSString*) val
-{
-    self.dictionary[@"shareId"] = val;
 }
 
 @end

@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphThumbnailSetRequest;
+@class MSGraphThumbnailSetRequest, MSGraphThumbnailRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -10,6 +10,14 @@
 
 
 @interface MSGraphThumbnailSetRequestBuilder : MSGraphEntityRequestBuilder
+
+- (MSGraphThumbnailRequestBuilder *) large;
+
+- (MSGraphThumbnailRequestBuilder *) medium;
+
+- (MSGraphThumbnailRequestBuilder *) small;
+
+- (MSGraphThumbnailRequestBuilder *) source;
 
 
 - (MSGraphThumbnailSetRequest *) request;
