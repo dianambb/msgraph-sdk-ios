@@ -11,6 +11,6 @@
 @property (readonly) NSMutableURLRequest *mutableRequest;
 
 
-- (MSURLSessionDataTask *)executeWithCompletion:(void (^)(MSGraphBoolean *response, NSError *error))completionHandler;
+- (MSURLSessionDataTask *)executeWithCompletion:(void (^)(BOOL *response, NSError *error))completionHandler;
 
 @end
